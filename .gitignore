@@ -1,0 +1,6 @@
+_archive/
+_shot_*.png
+.trae-html-share-packages/
+~$*
+app.db
+__pycache__/
