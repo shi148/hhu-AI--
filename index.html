@@ -15,6 +15,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.reveal{transition:none;opacity:1;transform:none}}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:17px;line-height:1.6;letter-spacing:.001em;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,svg{display:block;max-width:100%}
 h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-decoration:none}
@@ -226,6 +227,43 @@ h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-deco
 .layer__d{font-size:13px;line-height:1.75;color:var(--on-soft)}
 .layer__d p+p{margin-top:6px}
 @media(max-width:720px){.layer{grid-template-columns:1fr;gap:7px}.layer__n{display:none}}
+/* layer minis */
+.layer__mini{margin-top:12px;padding:12px 14px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.03)}
+.mini__k{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8fa0b0;margin-bottom:9px}
+.mini__tasks,.mini__opts{display:flex;flex-wrap:wrap;gap:6px}
+.mini-btn{font:inherit;font-size:11px;line-height:1.35;color:#cfd6dd;background:transparent;border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:999px;cursor:pointer;text-align:left;transition:.25s var(--ease)}
+.mini-btn:hover{border-color:rgba(255,255,255,.42)}
+.mini-btn.is-on{background:rgba(0,113,227,.24);border-color:rgba(120,180,255,.62);color:#fff}
+.mini-btn span{display:block;font-size:9px;color:#8fa0b0;margin-top:2px}
+.mini-btn.is-on span{color:#cfe4ff}
+.mini__out{font-size:11.5px;line-height:1.72;color:#9aa7b3;margin-top:9px}
+.mini__out b{color:#e8eef4;font-weight:600}
+.mini__checks{display:flex;flex-direction:column;gap:7px;margin-bottom:10px}
+.mini__checks label{display:flex;gap:8px;align-items:flex-start;font-size:11.5px;line-height:1.5;color:#b9c3cd;cursor:pointer}
+.mini__checks input{accent-color:#0a84ff;margin-top:2px}
+.mini__reason{width:100%;background:transparent;border:1px solid rgba(255,255,255,.16);border-radius:8px;color:#fff;font:inherit;font-size:11.5px;padding:8px 10px;margin-bottom:8px}
+.mini__reason::placeholder{color:#6f7c88}
+.mini__sign{font:inherit;font-size:11.5px;font-weight:600;letter-spacing:.03em;color:#0a0a0c;background:#f5f5f7;border:0;padding:8px 16px;border-radius:999px;cursor:pointer;transition:.25s}
+.mini__sign:disabled{background:rgba(255,255,255,.08);color:#6f7c88;cursor:not-allowed}
+/* wall */
+.wall{margin-top:clamp(34px,5vw,52px);padding-top:clamp(24px,3.6vw,32px);border-top:1px solid rgba(255,255,255,.1)}
+.wall__head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
+.wall__state{font-size:10px;letter-spacing:.14em;color:#7f8a96;border:1px solid rgba(255,255,255,.14);padding:2px 8px;border-radius:999px}
+.wall__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,26px)}
+.wall__n{font-size:clamp(1.55rem,3vw,2.15rem);font-weight:600;letter-spacing:-.04em;color:#f5f5f7;line-height:1;font-variant-numeric:tabular-nums}
+.wall__t{font-size:10px;letter-spacing:.14em;color:#7f8a96;margin-top:6px}
+.wall__bars{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.wall__bar{display:grid;grid-template-columns:88px 1fr 40px;gap:10px;align-items:center;font-size:11px;color:#9aa7b3}
+.wall__bar i{display:block;height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.wall__bar i em{display:block;height:100%;background:#0a84ff;border-radius:2px;transition:width .5s var(--ease)}
+.wall__form{display:flex;gap:8px;margin-top:16px}
+.wall__form input{flex:1;min-width:0;background:transparent;border:1px solid rgba(255,255,255,.16);border-radius:8px;color:#fff;font:inherit;font-size:12px;padding:9px 11px}
+.wall__form input::placeholder{color:#6f7c88}
+.wall__form button{font:inherit;font-size:11.5px;font-weight:600;color:#0a0a0c;background:#f5f5f7;border:0;padding:0 16px;border-radius:8px;cursor:pointer}
+.wall__notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.wall__note{font-size:11px;color:#b9c3cd;border:1px solid rgba(255,255,255,.12);padding:5px 10px;border-radius:999px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wall__empty{font-size:11.5px;color:#6f7c88;line-height:1.7}
+@media(max-width:640px){.wall__grid{grid-template-columns:1fr 1fr}.wall__bar{grid-template-columns:72px 1fr 34px}}
 /* tabs device */
 .device{background:var(--night-2);color:var(--on);padding:clamp(60px,8vw,100px) 0;border-top:1px solid var(--on-line);border-bottom:1px solid var(--on-line);position:relative;overflow:hidden}
 .device::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 65% at 66% 12%,rgba(24,74,112,.26),transparent 72%);pointer-events:none}
@@ -572,7 +610,7 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <a href="#act2">数字赋能</a>
       <a href="#act3">未来之路</a>
     </div>
-    <button class="nav__ask" id="askOpen" type="button">问 AI</button>
+    <button class="nav__ask" id="askOpen" type="button">问河海</button>
     <div class="nav__meta">网页设计大赛 · 参赛作品</div>
   </div>
 </nav>
@@ -623,7 +661,7 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
     <div class="acts-head reveal">
       <div>
         <p class="eyebrow">00 · 三幕导览</p>
-        <h2 class="display" style="margin-top:22px;">三幕，<br>不是三个话题。</h2>
+        <h2 class="display" style="margin-top:22px;">河海的三幕，<br>不是三个话题。</h2>
       </div>
       <div>
         <p class="lede">它们是一条因果链：底蕴里的方法，决定了赋能时能激活什么；赋能后的系统，决定了未来人站在哪里。三幕彻底分开，点进哪一幕，就只看哪一幕。</p>
@@ -638,7 +676,7 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
           <p class="act-row__q">不是校史年表，是三次改写：概念、工具、工程。</p>
         </div>
         <div class="act-row__d"><b>主干</b>认知 · 工具 · 工程</div>
-        <div class="act-row__d"><b>证据</b>3 个主干 · 16 个子目录</div>
+        <div class="act-row__d"><b>证据</b>3 个主干 · 11 个子目录</div>
         <span class="act-row__a">→</span>
       </a>
       <a class="act-row" href="#act2">
@@ -686,32 +724,27 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
         <div class="cover__num">01</div>
         <h1 class="cover__title">河海底蕴</h1>
         <p class="cover__thesis">从一条 45 度线，到一套国家防汛系统。这一层不证明「河海有多老」，只回答一件事：河海在哪个时刻、用什么证据，改写了行业对水的理解。</p>
-        <p class="cover__meta">3 个主干 · 16 个子目录 · 1915—2026</p>
+        <p class="cover__meta">3 个主干 · 11 个子目录 · 1915—2026</p>
       </div>
       <nav class="cover__toc" aria-label="模块一目录">
         <div class="toc__head"><span>模块一目录</span><span>认知 · 工具 · 工程</span></div>
 
-        <div class="toc__g"><b>1.1</b><span>认知 · 从经验治水到模型治水<em>河海改写了哪些基本概念</em></span></div>
-        <a class="toc__row" href="#p1-1-1"><span class="toc__n">1.1.1</span><span class="toc__t">经验治水的极限</span><span class="toc__d">1950 淮河、1954 长江：人拉计算尺的年代</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-2"><span class="toc__n">1.1.2</span><span class="toc__t">一条 45 度线</span><span class="toc__d">1961—1963：蓄满产流对超渗产流的修正</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-3"><span class="toc__n">1.1.3</span><span class="toc__t">马斯京根分段连续演算</span><span class="toc__d">1962：把长河道切成段，逐段传递</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-4"><span class="toc__n">1.1.4</span><span class="toc__t">新安江模型</span><span class="toc__d">1973：中国第一个流域水文模型</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-5"><span class="toc__n">1.1.5</span><span class="toc__t">从方法到标准</span><span class="toc__d">1990：国家重大科技成果与 WMO 指南</span><span class="toc__a">↓</span></a>
+        <div class="toc__g"><b>1.1</b><span>河海在水利水文港航领域的学科实力与地位<em>一所大学在一个行业里的坐标</em></span></div>
+        <a class="toc__row" href="#p1-1-1"><span class="toc__n">1.1.1</span><span class="toc__t">一所因水而生的大学</span><span class="toc__d">1915 张謇创校 · 1952 华东水利学院 · 双一流</span><span class="toc__a">↓</span></a>
+        <a class="toc__row" href="#p1-1-2"><span class="toc__n">1.1.2</span><span class="toc__t">学科评估：水利工程 A+</span><span class="toc__d">2017 第四轮 · 土木与环境同为 A 类</span><span class="toc__a">↓</span></a>
+        <a class="toc__row" href="#p1-1-3"><span class="toc__n">1.1.3</span><span class="toc__t">一流学科与国家重点学科</span><span class="toc__d">水利 · 环境 · 港航，一条完整的学科链</span><span class="toc__a">↓</span></a>
+        <a class="toc__row" href="#p1-1-4"><span class="toc__n">1.1.4</span><span class="toc__t">方法底座：45 度线与新安江模型</span><span class="toc__d">1963 蓄满产流 · 1973 中国第一个流域模型</span><span class="toc__a">↓</span></a>
+        <a class="toc__row" href="#p1-1-5"><span class="toc__n">1.1.5</span><span class="toc__t">世界坐标：全球第一与 ESI 前 1‰</span><span class="toc__d">软科水资源工程 · WMO 指南 · 200+ 案例</span><span class="toc__a">↓</span></a>
 
-        <div class="toc__g"><b>1.2</b><span>工具 · 物理模型与实验体系<em>方法凭什么可信</em></span></div>
+        <div class="toc__g"><b>1.2</b><span>工具 · 物理模型与实验体系<em>三个代表性实验能力</em></span></div>
         <a class="toc__row" href="#p1-2-1"><span class="toc__n">1.2.1</span><span class="toc__t">观测与径流实验</span><span class="toc__d">长期、连续、可追溯的降雨—径流样本</span><span class="toc__a">↓</span></a>
         <a class="toc__row" href="#p1-2-2"><span class="toc__n">1.2.2</span><span class="toc__t">水工模型试验</span><span class="toc__d">坝、溢洪道、泄洪洞、消能工的缩尺验证</span><span class="toc__a">↓</span></a>
         <a class="toc__row" href="#p1-2-3"><span class="toc__n">1.2.3</span><span class="toc__t">港口海岸与近海工程实验</span><span class="toc__d">波浪、潮流、泥沙与港内泊稳</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-2-4"><span class="toc__n">1.2.4</span><span class="toc__t">物理模型与数值模型的双螺旋</span><span class="toc__d">机理与尺度互相校准</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-2-5"><span class="toc__n">1.2.5</span><span class="toc__t">国家级平台矩阵</span><span class="toc__d">观测—试验—计算—验证的全链条</span><span class="toc__a">↓</span></a>
 
-        <div class="toc__g"><b>1.3</b><span>工程 · 研究落到实际项目<em>方法有没有落地</em></span></div>
+        <div class="toc__g"><b>1.3</b><span>工程 · 研究落到实际项目<em>三个代表性工程</em></span></div>
         <a class="toc__row" href="#p1-3-1"><span class="toc__n">1.3.1</span><span class="toc__t">佛子岭连拱坝</span><span class="toc__d">1951—1954：新中国第一座自主设计施工的大型水库</span><span class="toc__a">↓</span></a>
         <a class="toc__row" href="#p1-3-2"><span class="toc__n">1.3.2</span><span class="toc__t">南水北调东线泵站</span><span class="toc__d">13 级泵站、约 40 米水位差、65 米总扬程</span><span class="toc__a">↓</span></a>
         <a class="toc__row" href="#p1-3-3"><span class="toc__n">1.3.3</span><span class="toc__t">三峡与流域决策支持</span><span class="toc__d">百余项重大工程、百余座大型水库</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-3-4"><span class="toc__n">1.3.4</span><span class="toc__t">广东核电站港口与取水口</span><span class="toc__d">一次布置优化，节省两亿多元</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-3-5"><span class="toc__n">1.3.5</span><span class="toc__t">海岸带与海涂资源综合调查</span><span class="toc__d">502 家单位、近 2 万人、8 年</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-3-6"><span class="toc__n">1.3.6</span><span class="toc__t">长江保护与绿色发展研究院</span><span class="toc__d">2019：岸线与深水航道治理</span><span class="toc__a">↓</span></a>
         <p class="cover__note">点击任意子目录，直达对应正文节点；左上角「← 三幕总览」可随时返回。</p>
       </nav>
     </div>
@@ -721,30 +754,34 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
   <div class="wrap">
 
     <div class="group reveal">
-      <p class="group__k">1.1 · 认知</p>
-      <h2 class="group__t">从经验治水，<br>到模型治水。</h2>
-      <p class="group__d">这一层选五次修正。每一次都对应一个可核查的年份、一篇原始论文、一批被验证的流域。它们共同说明：河海不是「学过水文」，而是改写过水文的基本概念。</p>
+      <p class="group__k">1.1 · 学科坐标</p>
+      <h2 class="group__t">河海在水利、水文、港航领域，<br>站在什么位置。</h2>
+      <p class="group__d">这一层不列校史年表，只给三类可核查的坐标：学科评估的等级、国家重点学科与一流学科的布局、以及国际排名与业务指南的接纳程度。它们共同回答：河海凭什么在这个行业里说话。</p>
     </div>
 
     <div class="node reveal" id="p1-1-1">
-      <div class="node__meta"><span class="n">1.1.1</span><span>1950 淮河 · 1954 长江</span></div>
-      <h3 class="node__title">经验治水的极限</h3>
+      <div class="node__meta"><span class="n">1.1.1</span><span>1915 — 2026 · 学校坐标</span></div>
+      <h3 class="node__title">一所因水而生的大学</h3>
       <div class="node__split">
         <div class="node__body">
-          <p>1950 年淮河大水之后，政务院发布《关于治理淮河的决定》，新中国第一场大规模治水战役从淮河开始；1954 年，长江又出现流域性特大洪水。要治水，先要认识水：水文站网要重建，预报方案要重编，教材也要从头写。</p>
-          <p>当时能用的工具只有三样：有限站点的雨量和水位观测、从苏联教材体系引进的<strong>超渗产流</strong>概念、以及一张张靠经验点绘的降雨径流相关图。一次流域预报，要靠人查图、插值、逐段推算，再用电报把结果送到防汛部门。</p>
-          <p>河海的命运与这条治水线几乎重合：<strong>1952 年院系调整组建华东水利学院，建立新中国第一个水文系；1954 年开办我国第一个陆地水文本科专业。</strong>学校不是先有学科再去找问题，而是先被问题推到了现场。</p>
-          <p class="quote-line">不是不想算准，是数据太少、手段太粗。预报的边界，就是观测的边界。</p>
-          <p class="cite">依据：1950 年 10 月政务院《关于治理淮河的决定》；1954 年长江流域性特大洪水；河海大学校史资料。</p>
+          <p>1915 年，张謇创办<strong>河海工程专门学校</strong>，这是中国第一所培养水利人才的高等学府，也开了中国水利高等教育的先河。校址在南京，课程表上第一次成体系地出现水力学、水文、河工。</p>
+          <p>1952 年院系调整，南京大学水利系与交通大学、同济大学、浙江大学等校的水利系科以及华东水利专科学校组建<strong>华东水利学院</strong>，钱正英任首任院长；1960 年被中共中央认定为全国重点高校；1985 年恢复「河海大学」校名。</p>
+          <p>今天的河海是教育部直属全国重点大学，国家「双一流」建设、「211 工程」重点建设、「985 工程优势学科创新平台」建设高校，设有研究生院；在南京设西康路、江宁两个校区，在常州设常州校区。</p>
+          <p class="quote-line">校名换过几次，问题没换：中国的水，怎么算准、怎么管好。</p>
+          <p class="cite">资料：河海大学《学校简介》（数据截至 2025 年 4 月）、河海大学本科生招生章程（2025 年）。</p>
         </div>
         <figure class="figure">
-          <div class="figure__frame" style="padding:clamp(20px,3.4vw,34px)">
-            <p class="k" style="color:var(--faint);margin-bottom:12px">1960s · 手工推求</p>
-            <p style="font-size:clamp(1.4rem,2.8vw,1.95rem);font-weight:600;letter-spacing:-.03em;line-height:1.4">一张相关图，<br>几十条手绘曲线。</p>
-            <p style="font-size:12.5px;line-height:1.75;color:var(--soft);margin-top:14px">数据点稀疏，经验占主导。一次预报靠人查图、插值、逐段推算，再用电报送到防汛部门。</p>
-            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:20px">
-              <div class="fact"><div class="fact__k">1950</div><div class="fact__v" style="font-size:1.25rem">淮河</div><div class="fact__s">新中国第一场大规模治水</div></div>
-              <div class="fact"><div class="fact__k">1952</div><div class="fact__v" style="font-size:1.25rem">水文系</div><div class="fact__s">新中国第一个</div></div>
+          <div class="figure__frame" style="padding:clamp(20px,3.4vw,32px)">
+            <p class="k" style="color:var(--faint);margin-bottom:12px">一条 110 年的线</p>
+            <div style="display:flex;flex-direction:column;gap:0">
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1915</b><span style="font-size:12.5px;color:var(--soft)">河海工程专门学校 · 中国第一所培养水利人才的高等学府</span></div>
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1952</b><span style="font-size:12.5px;color:var(--soft)">华东水利学院 · 钱正英任首任院长</span></div>
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1960</b><span style="font-size:12.5px;color:var(--soft)">被认定为全国重点高校</span></div>
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1985</b><span style="font-size:12.5px;color:var(--soft)">恢复「河海大学」校名，邓小平题写校名</span></div>
+            </div>
+            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:18px">
+              <div class="fact"><div class="fact__k">定位</div><div class="fact__v" style="font-size:1.2rem">双一流</div><div class="fact__s">211 · 985 优势学科平台</div></div>
+              <div class="fact"><div class="fact__k">校区</div><div class="fact__v" style="font-size:1.2rem">3 个</div><div class="fact__s">西康路 · 江宁 · 常州</div></div>
             </div>
           </div>
         </figure>
@@ -752,117 +789,81 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
     </div>
 
     <div class="node reveal" id="p1-1-2">
-      <div class="node__meta"><span class="n">1.1.2</span><span>1961 — 1963 · 蓄满产流</span></div>
-      <h3 class="node__title">一条 45 度线</h3>
+      <div class="node__meta"><span class="n">1.1.2</span><span>2017 · 第四轮学科评估</span></div>
+      <h3 class="node__title">学科评估：水利工程 A+</h3>
       <div class="node__split">
         <div class="node__body">
-          <p>1961 年，赵人俊带学生到浙江，在几十个流域上手工点绘降雨径流相关图。曲线的前段随降雨增加而变缓，上端却总是折成一条 <strong>45 度线</strong>。</p>
-          <p>他把这个异常带到江西、湖南，在百余个流域复核。1963 年，他与庄一鸰在《华东水利学院学报》发表《降雨径流关系的区域规律》，把这条线写成理论：湿润地区包气带先蓄满，蓄满之后，降雨几乎全部变成径流。</p>
-          <p>这与教科书里的「超渗产流」不是一回事：超渗产流看雨强是否超过下渗能力，蓄满产流看包气带是否蓄满。前者适合干旱区，后者适合中国湿润地区。<strong>这不是一个参数的微调，而是对产流机制的重新分类。</strong></p>
-          <p>它直接决定了后面新安江模型的结构：先蓄满，再产流。</p>
-          <p class="cite">论文：赵人俊、庄一鸰《降雨径流关系的区域规律》，《华东水利学院学报》1963 年增刊。部分综述写作「1964 年」，本页以原始论文为准。</p>
+          <p>2017 年 12 月，教育部学位与研究生教育发展中心公布全国第四轮学科评估结果：<strong>河海大学水利工程获评 A+</strong>，这是同一学科里的最高一档。</p>
+          <p>同一轮里，土木工程、环境科学与工程位列 A 类，跻身全国前 10%；马克思主义理论、管理科学与工程、工商管理获评 B+，位列全国前 20%。</p>
+          <p>评估不按学校名气排队，而是按师资、成果、人才培养、社会服务等一套公开指标打分。<strong>A+ 的含义不是「有名」，而是在全国同一学科里，排在最前的那一档。</strong></p>
+          <p>对考生来说，这是最硬的一条参考：如果要读水利，河海的水利工程在全国处于第一梯队；如果要读土木或环境，它同样在全国前 10%。</p>
+          <p class="cite">资料：河海大学《我校水利工程学科在第四轮学科评估中获评A+》（2017-12-29）；河海大学学科建设公示。</p>
         </div>
         <figure class="figure">
-          <div class="figure__frame">
-            <svg class="chart" id="rainChart" viewBox="0 0 820 520" role="img" aria-label="降雨径流关系示意：曲线前段随降雨增加而变缓，达到蓄满后转为 45 度线">
-              <defs><linearGradient id="bandG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0071e3" stop-opacity="0"/><stop offset="1" stop-color="#0071e3" stop-opacity=".09"/></linearGradient></defs>
-              <rect x="222" y="70" width="252" height="370" fill="url(#bandG)"/>
-              <line class="axis" x1="90" y1="440" x2="474" y2="440"/>
-              <line class="axis" x1="90" y1="440" x2="90" y2="70"/>
-              <line class="tick" x1="90" y1="320" x2="474" y2="320"/>
-              <line class="tick" x1="90" y1="200" x2="474" y2="200"/>
-              <line class="tick" x1="90" y1="80" x2="474" y2="80"/>
-              <line class="tick" x1="222" y1="80" x2="222" y2="440"/>
-              <line class="tick" x1="354" y1="80" x2="354" y2="440"/>
-              <line class="tick" x1="474" y1="80" x2="474" y2="440"/>
-              <text class="lbl" x="78" y="324" text-anchor="end">100</text>
-              <text class="lbl" x="78" y="204" text-anchor="end">200</text>
-              <text class="lbl" x="78" y="84" text-anchor="end">300</text>
-              <text class="lbl" x="222" y="460" text-anchor="middle">110</text>
-              <text class="lbl" x="354" y="460" text-anchor="middle">220</text>
-              <text class="lbl" x="474" y="460" text-anchor="middle">320</text>
-              <path class="ghost" d="M 222 404 L 474 258"/>
-              <text class="lbl" x="480" y="252" fill="#9a9aa0">教科书预期 · 超渗产流</text>
-              <path class="curve draw" pathLength="1" d="M 90 440 C 130 428 180 406 222 380.6 L 474 128.6"/>
-              <circle class="pt" cx="222" cy="380.6" r="4.5"/>
-              <text class="lbl--accent" x="232" y="364">蓄满点 P ≈ 110</text>
-              <text class="lbl--strong" x="104" y="414">前期：经验相关</text>
-              <text class="lbl--accent" x="320" y="268" transform="rotate(-45 320 268)">上端 45°</text>
-              <text class="lbl" x="474" y="482" text-anchor="end">降雨量 P</text>
-              <text class="lbl" x="58" y="70" text-anchor="end" transform="rotate(-90 58 70)">径流量 R</text>
-              <line x1="500" y1="70" x2="500" y2="440" stroke="#ececf0"/>
-              <text class="lbl--strong" x="522" y="118">一条 45 度线</text>
-              <text class="lbl" x="522" y="146">蓄满之后，</text>
-              <text class="lbl" x="522" y="168">每多 1 mm 雨，</text>
-              <text class="lbl" x="522" y="190">多产 1 mm 流。</text>
-              <text class="lbl--accent" x="522" y="238">P* ≈ 110 mm</text>
-              <text class="lbl" x="522" y="262">湿润地区包气带先蓄满</text>
-              <text class="lbl" x="522" y="284">蓄满前仍是经验相关</text>
-              <g id="rainCursor" aria-hidden="true">
-                <line id="rainV" class="cursor-line" x1="294" y1="308.6" x2="294" y2="440"/>
-                <line id="rainH" class="cursor-line" x1="90" y1="308.6" x2="294" y2="308.6"/>
-                <circle id="rainDot" class="cursor-dot" cx="294" cy="308.6" r="4.5"/>
-              </g>
-            </svg>
-            <div class="chart-ctl">
-              <div class="chart-ctl__head"><span>拖动滑杆 · 降雨量 P</span><span class="chart-ctl__out" id="rainOut">P <b>170</b> mm → R <b>109.5</b> mm</span></div>
-              <input class="rain-range" id="rainRange" type="range" min="10" max="320" step="5" value="170" aria-label="降雨量，单位毫米">
-              <div class="chart-ctl__head" style="margin-top:6px"><span>蓄满点 P ≈ 110 mm</span><span id="rainState">已蓄满 · 每多 1 mm 雨，多产 1 mm 流</span></div>
+          <div class="figure__frame" style="padding:clamp(20px,3.4vw,30px)">
+            <p class="k" style="color:var(--faint);margin-bottom:14px">第四轮学科评估 · 河海位次</p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid rgba(0,113,227,.3);border-radius:12px;background:rgba(0,113,227,.05)">
+                <b style="font-size:20px;color:var(--accent);letter-spacing:-.02em">A+</b>
+                <span style="font-size:13px;color:var(--ink);font-weight:500">水利工程</span>
+                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">全国前 2%</span>
+              </div>
+              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px">
+                <b style="font-size:17px;color:var(--ink)">A-</b>
+                <span style="font-size:13px;color:var(--ink2)">土木工程 · 环境科学与工程</span>
+                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">全国前 10%</span>
+              </div>
+              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line-2);border-radius:12px">
+                <b style="font-size:15px;color:var(--soft)">B+</b>
+                <span style="font-size:12.5px;color:var(--soft)">马克思主义理论 · 管理科学与工程 · 工商管理</span>
+                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">前 20%</span>
+              </div>
             </div>
+            <p style="font-size:10.5px;color:var(--faint);margin-top:14px;line-height:1.7">A 类 = 全国前 10%。第四轮评估中，河海共有 33 个学科参评。</p>
           </div>
-          <p class="figure__cap"><span class="dot"></span>自绘 SVG · 横轴为降雨量，纵轴为径流量；蓄满后每多下 1 mm 雨，就多产 1 mm 流。</p>
+          <p class="figure__cap"><span class="dot"></span>自绘 · 等级越高，说明在同一学科里站得越靠前；A+ 是最高一档。</p>
         </figure>
       </div>
     </div>
 
     <div class="node reveal" id="p1-1-3">
-      <div class="node__meta"><span class="n">1.1.3</span><span>1962 · 河道洪水演算</span></div>
-      <h3 class="node__title">马斯京根分段连续演算</h3>
+      <div class="node__meta"><span class="n">1.1.3</span><span>学科布局 · 一流学科与国家重点学科</span></div>
+      <h3 class="node__title">一条从水利，到环境、港航的学科链</h3>
       <div class="node__split">
         <div class="node__body">
-          <p>1938 年，美国 McCarthy 提出单段马斯京根法。1962 年，赵人俊把它推广为<strong>多河段连续演算</strong>：把长河道切成若干段，逐段演算、连续传递。</p>
-          <p>这一步解决的是河道洪水演算的两个老问题：参数的物理意义说不清，长河道无法一次算准。分段之后，每段只承担局部调蓄，误差不会在整条河上放大。</p>
-          <p>1970 年代起，这套方法写入《水文预报》教材，成为我国河道实时洪水预报的常用方法。它既不同于美国马斯京根法，也不同于前苏联的特征河长法。</p>
-          <p class="quote-line">把一条长河切成段，误差就不会在整条河上放大。</p>
-          <p class="cite">表述口径：1962 年多河段连续演算。不使用「非线性解」这一未经核实的说法。</p>
+          <p><strong>两个学科进入国家「双一流」建设名单：水利工程、环境科学与工程</strong>（2017 年首轮、2022 年第二轮均在列）。这不是学院自封的称号，而是国家按学科水平选定的建设对象。</p>
+          <p>国家重点学科层面，河海有 <strong>1 个一级学科国家重点学科——水利工程</strong>，覆盖 5 个二级学科：水文学及水资源、水力学及河流动力学、水工结构工程、水利水电工程、港口海岸及近海工程；另有 7 个二级学科国家重点学科。</p>
+          <p>港航不是水利的附属方向：<strong>港口、海岸及近海工程是国家重点建设学科</strong>，1957 年河海设立我国第一个海洋工程水文专业；今天港口航道与海岸工程是国家级一流本科专业建设点。</p>
+          <p>本科层面，学校共有 72 个本科专业，其中 37 个入选国家级一流本科专业建设点。<strong>从水文、水工到港航、环境，河海在「水」的整条链条上都有布点。</strong></p>
+          <p class="cite">资料：河海大学《学校简介》（2025）；河海大学港口海岸与近海工程学院《学院概况》；国家重点学科建设公告。</p>
         </div>
         <figure class="figure">
-          <div class="figure__frame">
-            <svg class="chart" viewBox="0 0 800 420" role="img" aria-label="长河道被切成五段，洪水过程线逐段变形">
-              <g stroke="#e3e3e8" stroke-width="1">
-                <line x1="60" y1="150" x2="740" y2="150"/>
-              </g>
-              <g font-size="11" fill="#86868b" text-anchor="middle">
-                <text x="100" y="138">段 1</text><text x="240" y="138">段 2</text><text x="380" y="138">段 3</text><text x="520" y="138">段 4</text><text x="660" y="138">段 5</text>
-              </g>
-              <g stroke="#c9c9d0" stroke-width="1">
-                <line x1="170" y1="128" x2="170" y2="172"/><line x1="310" y1="128" x2="310" y2="172"/><line x1="450" y1="128" x2="450" y2="172"/><line x1="590" y1="128" x2="590" y2="172"/>
-              </g>
-              <g stroke="#0071e3" stroke-width="1.6" fill="none" stroke-linecap="round">
-                <path d="M60 230 C 110 228 120 196 140 190 C 158 186 168 208 176 222 C 190 240 210 250 240 252"/>
-                <path d="M240 252 C 290 250 300 210 320 204 C 338 200 348 226 356 238 C 372 254 392 262 420 264"/>
-                <path d="M420 264 C 470 262 480 224 500 218 C 518 214 528 240 536 250 C 552 266 572 272 600 274"/>
-                <path d="M600 274 C 650 272 660 236 680 230 C 698 226 708 252 716 260 C 730 272 748 278 760 280"/>
-              </g>
-              <g stroke="#d2d2d7" stroke-width="1" fill="none">
-                <path d="M60 300 C 110 298 120 250 140 244 C 160 238 170 262 180 276 C 200 300 230 312 260 314" stroke-dasharray="6 6"/>
-                <path d="M60 350 C 110 348 120 290 140 284 C 160 278 170 302 180 316 C 200 340 230 352 260 354" stroke-dasharray="6 6"/>
-              </g>
-              <text class="lbl--strong" x="62" y="196">上游入流</text>
-              <text class="lbl" x="700" y="322" text-anchor="end">下游出流 · 峰值降低、历时拉长</text>
-              <text class="lbl" x="62" y="390" style="font-size:10.5px;letter-spacing:.06em">K · 蓄量时间常数　x · 流量比重因子</text>
-            </svg>
+          <div class="figure__frame" style="padding:clamp(20px,3.4vw,30px)">
+            <p class="k" style="color:var(--faint);margin-bottom:14px">水利工程一级学科 · 5 个二级学科</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水文学及水资源</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水力学及河流动力学</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水工结构工程</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水利水电工程</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">港口海岸及近海工程</div>
+            </div>
+            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:18px">
+              <div class="fact"><div class="fact__k">一流学科</div><div class="fact__v" style="font-size:1.25rem">2 个</div><div class="fact__s">水利 · 环境</div></div>
+              <div class="fact"><div class="fact__k">国家级一流专业</div><div class="fact__v" style="font-size:1.25rem">37<em>个</em></div><div class="fact__s">共 72 个本科专业</div></div>
+            </div>
           </div>
-          <p class="figure__cap"><span class="dot"></span>自绘 SVG · 同一场洪水，沿河逐段演算：峰值被削平，历时被拉长。</p>
+          <p class="figure__cap"><span class="dot"></span>自绘 · 水利工程是一级学科国家重点学科，港航在其中占有独立位置。</p>
         </figure>
       </div>
     </div>
 
     <div class="node reveal" id="p1-1-4">
-      <div class="node__meta"><span class="n">1.1.4</span><span>1973 · 新安江模型</span></div>
-      <h3 class="node__title">中国第一个流域水文模型</h3>
+      <div class="node__meta"><span class="n">1.1.4</span><span>1963 — 1973 · 方法底座</span></div>
+      <h3 class="node__title">45 度线，与新安江模型</h3>
       <div class="node__split">
         <div class="node__body">
+          <p>1961 年，赵人俊带学生到浙江，在几十个流域上手工点绘降雨径流相关图。曲线前段随降雨增加而变缓，上端却总折成一条 <strong>45 度线</strong>。1963 年，他与庄一鸰在《华东水利学院学报》发表《降雨径流关系的区域规律》，把这条线写成理论：湿润地区包气带先蓄满，蓄满之后，降雨几乎全部变成径流。</p>
+          <p>这与教科书里的「超渗产流」不是一回事。前者看包气带是否蓄满，后者看雨强是否超过下渗能力。<strong>这不是参数微调，而是对产流机制的重新分类</strong>，也直接决定了后面新安江模型的结构。</p>
           <p>新安江电站 1957 年动工，1960 年首台机组发电，1965 年竣工。为编制入库径流预报方案，1973 年，赵人俊把蒸散发、产流、水源划分、汇流整合成一个完整系统。</p>
           <p><strong>这是中国第一个完整的集总式流域水文模型，具有完全自主知识产权。</strong>当时国际上习惯用发明者或首先使用的河流命名，他选了「新安江」。</p>
           <p>结构上是「三分」：流域计算分单元、坡面汇流分水源、流域汇流分阶段。不计河道演算，模型共 15 个参数，其中 7 个敏感——<strong>参数少，才敢在缺资料的流域用。</strong></p>
@@ -914,24 +915,26 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
     </div>
 
     <div class="node reveal" id="p1-1-5">
-      <div class="node__meta"><span class="n">1.1.5</span><span>1990 · 从方法到标准</span></div>
-      <h3 class="node__title">进入国家成果与国际业务指南</h3>
+      <div class="node__meta"><span class="n">1.1.5</span><span>国际坐标 · 全球第一与 ESI 前 1‰</span></div>
+      <h3 class="node__title">世界坐标：全球第一，与 200+ 个真实案例</h3>
       <div class="node__body">
-        <p>1990 年，相关成果载入《中华人民共和国重大科技成果》，为建国 40 年 100 项之一，也是水文学领域唯一入选；列入世界气象组织（WMO）洪水预报业务系统指南；赵人俊曾担任联合国教科文组织在中国举办的国际水文预报培训班主讲；国内 20 多个省、流域应用，成功案例 200 例以上。</p>
-        <p>这组事实说明的不是「国内自嗨」，而是<strong>被国际业务体系接纳</strong>。方法只有进入别人的业务系统，才算真正完成验证。</p>
+        <p><strong>水资源工程蝉联软科世界一流学科排名全球第一</strong>；工程学、环境/生态学进入 ESI 全球前 1‰，学校共有 10 个学科进入 ESI 前 1%。这不是宣传口径，而是可查的第三方排名数据。</p>
+        <p>方法也进入国际业务：1990 年成果载入《中华人民共和国重大科技成果》，为建国 40 年 100 项之一，水文学领域唯一入选；列入世界气象组织（WMO）洪水预报业务系统指南；赵人俊曾担任联合国教科文组织在华国际水文预报培训班主讲；国内 20 多个省与流域应用，成功案例 200 例以上。</p>
+        <p>这三组坐标合起来说明：河海的位置不是「省内名校」，而是<strong>行业标准、国际业务体系与全球学科排名里的一个节点</strong>。这也是它谈 AI 的底气——AI 需要的数据、模型与验证场，这里都有。</p>
       </div>
       <div class="facts">
-        <div class="fact"><div class="fact__k">1990 · 国家成果</div><div class="fact__v">100<em>项之一</em></div><div class="fact__s">建国 40 年重大科技成果，水文学唯一入选</div></div>
-        <div class="fact"><div class="fact__k">国际业务</div><div class="fact__v" style="font-size:1.45rem">WMO 指南</div><div class="fact__s">列入洪水预报业务系统指南</div></div>
+        <div class="fact"><div class="fact__k">软科世界一流学科</div><div class="fact__v" style="font-size:1.45rem">全球第一</div><div class="fact__s">水资源工程 · 蝉联</div></div>
+        <div class="fact"><div class="fact__k">ESI</div><div class="fact__v">10<em>个前 1%</em></div><div class="fact__s">工程学、环境/生态学前 1‰</div></div>
+        <div class="fact"><div class="fact__k">国际业务</div><div class="fact__v" style="font-size:1.45rem">WMO 指南</div><div class="fact__s">洪水预报业务系统</div></div>
         <div class="fact"><div class="fact__k">国内应用</div><div class="fact__v">200<em>+ 案例</em></div><div class="fact__s">20 多个省与流域</div></div>
       </div>
-      <p class="cite">口径说明：不使用「联合国向数十个国家推荐」这一二手说法；已核实表述为赵人俊任 UNESCO 在华国际水文预报培训班主讲。</p>
+      <p class="cite">资料：河海大学《学校简介》（2025）；软科世界一流学科排名；1990 年国家重大科技成果名录；WMO 洪水预报业务系统指南。口径：不采用「联合国向数十个国家推荐」这一二手说法。</p>
     </div>
 
     <div class="group reveal">
       <p class="group__k">1.2 · 工具</p>
       <h2 class="group__t">方法凭什么可信？</h2>
-      <p class="group__d">河海的工具不是一张软件清单，而是物理模型 + 实验体系 + 数值模型的三件套。AI 需要的训练数据、物理约束与验证场景，全部来自这一层。这也是本幕把「水利工程」与「港航」的实验能力写进底蕴的原因。</p>
+      <p class="group__d">河海的工具不是一张软件清单，而是观测、物理模型与港航实验三套能力：一套提供长期数据，一套验证水工结构，一套回答河口海岸的复杂问题。AI 需要的训练数据、物理约束与验证场景，全部来自这一层。</p>
     </div>
 
     <div class="node reveal" id="p1-2-1">
@@ -1011,8 +1014,8 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
         </figure>
       </div>
       <figure class="shot">
-        <img src="assets/lab.jpg" alt="水工模型试验大厅：缩尺坝体与量测设备" loading="lazy" width="2560" height="1440">
-        <figcaption><span><b>水工模型试验大厅</b>　缩尺坝体 · 量测断面 · 受控放水</span><span>示意图 · AI 生成</span></figcaption>
+        <img src="assets/lab.jpg" alt="水工模型试验大厅：缩尺坝体与水工建筑物模型" loading="lazy" width="1264" height="656">
+        <figcaption><span><b>水工模型试验大厅</b>　缩尺坝体 · 量测断面 · 受控放水</span><span>图源：河海大学水利水电学院</span></figcaption>
       </figure>
     </div>
 
@@ -1050,75 +1053,22 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       </div>
     </div>
 
-    <div class="node reveal" id="p1-2-4">
-      <div class="node__meta"><span class="n">1.2.4</span><span>双螺旋 · 机理与尺度</span></div>
-      <h3 class="node__title">物理模型与数值模型的双螺旋</h3>
-      <div class="node__split">
-        <div class="node__body">
-          <p>物理模型给「机理与验证」，数值模型给「尺度与速度」，两者互相校准，形成双螺旋。新安江模型是概念性水文模型，风暴潮模型是水动力数值模型，泥沙模型是工程泥沙数值模型。</p>
-          <p>AI 进来后，不是替代其中任何一端，而是在<strong>参数率定、残差修正、集成预报</strong>三个环节加速。物理模型提供约束，数据提供细节——这句话是模块二「算」的总纲。</p>
-          <p>这条边界是整站的措辞红线，也是专业评委最在意的地方：<strong>AI 不能替代物理模型，只能约束它、加速它、修正它。</strong></p>
-          <p class="cite">说明：耦合方式的具体实现与精度指标属未公开细节，本节点只讲机制，不给数字。</p>
-        </div>
-        <figure class="figure">
-          <div class="figure__frame">
-            <svg class="chart" viewBox="0 0 680 400" role="img" aria-label="物理模型与数值模型双螺旋，三个 AI 介入点">
-              <g stroke="#d2d2d7" stroke-width="2.4" fill="none">
-                <path d="M120 60 C 260 60 300 140 340 200 C 380 260 420 340 560 340"/>
-              </g>
-              <g stroke="#0071e3" stroke-width="2.4" fill="none" opacity=".8">
-                <path d="M120 340 C 260 340 300 260 340 200 C 380 140 420 60 560 60"/>
-              </g>
-              <g font-size="10.5" fill="#6e6e73">
-                <text x="120" y="48">物理模型 · 机理</text><text x="120" y="366">数值模型 · 尺度</text>
-              </g>
-              <g font-size="10" fill="#0071e3" font-weight="600">
-                <text x="352" y="132">① 参数率定</text><text x="352" y="204">② 残差修正</text><text x="352" y="276">③ 集成预报</text>
-              </g>
-              <g stroke="#0071e3" stroke-width="1" stroke-dasharray="4 4" opacity=".45">
-                <line x1="348" y1="120" x2="348" y2="290"/>
-              </g>
-              <circle cx="340" cy="200" r="4" fill="#0071e3"/>
-              <g font-size="10" fill="#86868b"><text x="60" y="392">三个介入点，都不推翻物理结构。</text></g>
-            </svg>
-          </div>
-          <p class="figure__cap"><span class="dot"></span>自绘 SVG · 两条曲线互相缠绕；AI 只出现在三个接口上，不出现在机理内部。</p>
-        </figure>
-      </div>
-    </div>
-
-    <div class="node reveal" id="p1-2-5">
-      <div class="node__meta"><span class="n">1.2.5</span><span>平台 · 全链条验证</span></div>
-      <h3 class="node__title">国家级平台矩阵</h3>
-      <div class="node__body">
-        <p>平台包括<strong>水文水资源与水利工程科学国家重点实验室</strong>（依托河海大学、南京水利科学研究院）、<strong>水资源高效利用与工程安全国家工程研究中心</strong>、<strong>海岸灾害及防护教育部重点实验室</strong>，以及长江保护与绿色发展研究院等新型平台。</p>
-        <p>平台不是头衔，而是「能同时做观测、试验、计算、验证」的组织能力。AI 需要的正是这种全链条验证环境：一个模型在实验室成立，不等于在流域成立；在流域成立，不等于在国家系统成立。</p>
-        <p>这也解释了为什么河海的 AI 成果往往不是「一篇论文」，而是「一套能进业务的系统」：它背后有从实验室到流域、再到国家平台的验证链条。</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><div class="fact__k">观测</div><div class="fact__v" style="font-size:1.4rem">站网与实验流域</div><div class="fact__s">长期序列 · 可追溯</div></div>
-        <div class="fact"><div class="fact__k">试验</div><div class="fact__v" style="font-size:1.4rem">水工与港航</div><div class="fact__s">缩尺模型 · 受控测量</div></div>
-        <div class="fact"><div class="fact__k">验证</div><div class="fact__v" style="font-size:1.4rem">国家平台</div><div class="fact__s">实验室 → 流域 → 国家系统</div></div>
-      </div>
-      <p class="cite">口径：各平台只使用已核实的名称，不写未核实的批复时间与设施清单。</p>
-    </div>
-
     <div class="group reveal">
       <p class="group__k">1.3 · 工程</p>
       <h2 class="group__t">研究落到实际项目。</h2>
-      <p class="group__d">工程层的标准不是「参与过」，而是「在关键节点上给出了方案」。六个项目覆盖水利工程、港航与海岸带，构成河海的工程证据链。</p>
+      <p class="group__d">工程层的标准不是「参与过」，而是「在关键节点上给出了方案」。这里只留三个代表性项目：新中国第一座自主设计施工的大型水库、世界级的调水泵站群、以及流域级实时调度系统。</p>
       <div class="photo-row reveal">
         <figure class="shot">
-          <img src="assets/dam.jpg" alt="山间混凝土连拱坝与泄洪" width="2560" height="1440" loading="lazy">
-          <figcaption><b>佛子岭 · 连拱坝</b><span>示意图 · AI 生成</span></figcaption>
+          <img src="assets/dam.jpg" alt="佛子岭连拱坝与水库航拍" width="1000" height="563" loading="lazy">
+          <figcaption><b>佛子岭 · 连拱坝</b><span>图源：搜狐 ·「70 岁的新中国第一坝」</span></figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/pump.jpg" alt="大型调水泵站内部机组与管道" width="2560" height="1440" loading="lazy">
-          <figcaption><b>南水北调 · 泵站群</b><span>示意图 · AI 生成</span></figcaption>
+          <img src="assets/pump.jpg" alt="江都水利枢纽航拍：南水北调东线源头" width="930" height="620" loading="lazy">
+          <figcaption><b>南水北调 · 泵站群</b><span>图源：中新网</span></figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/portcoast.jpg" alt="河口深水航道与疏浚船" width="2560" height="1440" loading="lazy">
-          <figcaption><b>河口 · 航道与疏浚</b><span>示意图 · AI 生成</span></figcaption>
+          <img src="assets/three.jpg" alt="三峡大坝与泄洪航拍" width="1000" height="670" loading="lazy">
+          <figcaption><b>三峡 · 流域级调度</b><span>图源：新华网</span></figcaption>
         </figure>
       </div>
     </div>
@@ -1225,88 +1175,13 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <p class="cite">资料：河海大学关于流域决策支持系统的公开介绍。</p>
     </div>
 
-    <div class="node reveal" id="p1-3-4">
-      <div class="node__meta"><span class="n">1.3.4</span><span>广东核电站 · 港口与取水口</span></div>
-      <h3 class="node__title">一次布置优化，省下两亿多元</h3>
-      <div class="node__split">
-        <div class="node__body">
-          <p>左东启主持广东核电站港口与取水口布置方案，为工程<strong>节省两亿多元</strong>。港航工程的关键在于：取水口位置决定温排水与泥沙淤积，港口布置决定船舶进出与波浪掩护，一个方案改动就是巨额投资。</p>
-          <p>这个案例把「港航」从附属话题变成了工程证据：<strong>河海不只会算水，也会算港。</strong></p>
-          <p>它也说明了工程判断的性质：不是算出一个最优解，而是在安全、投资、施工条件之间做一个可被论证的选择。</p>
-          <p class="cite">资料：河海大学校史资料。</p>
-        </div>
-        <figure class="figure">
-          <div class="figure__frame">
-            <svg class="chart" viewBox="0 0 700 380" role="img" aria-label="核电站港口与取水口布置优化示意">
-              <rect x="40" y="40" width="620" height="280" fill="#fafbfc" stroke="#e3e3e8"/>
-              <path d="M40 250 C 160 236 260 268 380 258 C 500 248 580 276 660 262" stroke="#cfe2f5" stroke-width="1.2" fill="none"/>
-              <g fill="#fff" stroke="#d2d2d7">
-                <rect x="250" y="130" width="180" height="76" rx="4"/>
-              </g>
-              <g font-size="10.5" fill="#6e6e73" text-anchor="middle"><text x="340" y="172">核电站厂址</text></g>
-              <circle cx="220" cy="250" r="7" fill="none" stroke="#b9b9c0" stroke-width="1.4" stroke-dasharray="4 3"/>
-              <circle cx="290" cy="252" r="7" fill="none" stroke="#0071e3" stroke-width="1.8"/>
-              <g font-size="10" fill="#86868b"><text x="186" y="290">原取水口</text></g>
-              <g font-size="10" fill="#0071e3"><text x="256" y="290">优化后取水口</text></g>
-              <path d="M220 250 C 246 236 262 240 290 252" stroke="#0071e3" stroke-width="1.2" fill="none" stroke-dasharray="5 4"/>
-              <g font-size="10" fill="#86868b"><text x="480" y="120">港口 · 波浪掩护</text><text x="480" y="138">船舶进出 · 泊位</text></g>
-              <g font-size="11" fill="#1d1d1f" font-weight="600"><text x="60" y="352">节省 2 亿多元</text></g>
-              <g font-size="10" fill="#86868b"><text x="180" y="352">一次布置优化，改变的是整个工程的投资结构</text></g>
-            </svg>
-          </div>
-          <p class="figure__cap"><span class="dot"></span>自绘示意 · 取水口位置一动，温排水、泥沙与投资随之改变。</p>
-        </figure>
-      </div>
-    </div>
-
-    <div class="node reveal" id="p1-3-5">
-      <div class="node__meta"><span class="n">1.3.5</span><span>海岸带 · 国家底图</span></div>
-      <h3 class="node__title">海岸带与海涂资源综合调查</h3>
-      <div class="node__body">
-        <p>严恺主持全国海岸带与海涂资源综合调查，<strong>502 家单位、近 2 万人、历时 8 年</strong>。这是国家尺度的基础调查，为海岸带开发、港口选址、海涂利用提供了第一套系统底图。</p>
-        <p>它的价值不在某一个工程，而在「把全国海岸线变成可用的数据」。今天港航与海岸带 AI 应用的数据底座，可以追溯到这次调查。</p>
-        <p>这也是「老学科是 AI 基础设施」的另一个注脚：没有这次调查，后来的模型、选址与治理都缺少统一的底图。</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><div class="fact__k">参与单位</div><div class="fact__v">502<em>家</em></div><div class="fact__s">跨部门协作</div></div>
-        <div class="fact"><div class="fact__k">参与人员</div><div class="fact__v">2<em>万人</em></div><div class="fact__s">近 2 万人</div></div>
-        <div class="fact"><div class="fact__k">历时</div><div class="fact__v">8<em>年</em></div><div class="fact__s">全国海岸带与海涂资源</div></div>
-      </div>
-      <p class="cite">资料：河海大学校史资料（严恺主持全国海岸带与海涂资源综合调查）。</p>
-    </div>
-
-    <div class="node reveal" id="p1-3-6">
-      <div class="node__meta"><span class="n">1.3.6</span><span>2019.6.29 · 长江院</span></div>
-      <h3 class="node__title">长江保护与绿色发展研究院</h3>
-      <div class="node__split">
-        <div class="node__body">
-          <p>2019 年 6 月 29 日，河海大学、南京水利科学研究院、江苏省发改委发起成立长江保护与绿色发展研究院，是<strong>国内首个</strong>该类研究院。</p>
-          <p>它聚焦水文预报、山洪防御、岸线与深水航道治理，把「水文 + 港航 + 生态」放在同一张桌子上。</p>
-          <p>这个组织形态本身就说明：未来的水利问题不再是单学科问题，而是流域治理问题。它也是模块三「从单点流域到全局流域」的组织准备。</p>
-          <p class="cite">资料：河海大学公开资料、媒体公开报道。</p>
-        </div>
-        <figure class="figure">
-          <div class="figure__frame" style="padding:clamp(20px,3.4vw,32px)">
-            <p class="k" style="color:var(--faint);margin-bottom:14px">三个研究方向 · 一张桌子</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-              <div style="padding:14px 12px;border:1px solid var(--line);border-radius:10px"><div style="font-size:9.5px;letter-spacing:.14em;color:var(--faint)">01</div><div style="font-size:13px;font-weight:600;margin-top:6px">水文预报</div><div style="font-size:11px;color:var(--soft);margin-top:4px">洪水 · 山洪</div></div>
-              <div style="padding:14px 12px;border:1px solid var(--line);border-radius:10px"><div style="font-size:9.5px;letter-spacing:.14em;color:var(--faint)">02</div><div style="font-size:13px;font-weight:600;margin-top:6px">山洪防御</div><div style="font-size:11px;color:var(--soft);margin-top:4px">预警 · 转移</div></div>
-              <div style="padding:14px 12px;border:1px solid var(--line);border-radius:10px"><div style="font-size:9.5px;letter-spacing:.14em;color:var(--faint)">03</div><div style="font-size:13px;font-weight:600;margin-top:6px">岸线与航道</div><div style="font-size:11px;color:var(--soft);margin-top:4px">深水航道治理</div></div>
-            </div>
-            <p style="font-size:11.5px;line-height:1.7;color:var(--soft);margin-top:16px">2019.6.29 成立 · 河海大学 + 南京水利科学研究院 + 江苏省发改委 · 国内首个</p>
-          </div>
-          <p class="figure__cap"><span class="dot"></span>三块方向并列，不是三份报告；它们共享同一条流域的数据与责任。</p>
-        </figure>
-      </div>
-    </div>
-
     <div class="statbar reveal">
       <div class="stat"><div class="stat__n">1915</div><div class="stat__t">建校 · 中国第一所培养水利人才的高等学府</div></div>
       <div class="stat"><div class="stat__n">1952</div><div class="stat__t">新中国第一个水文系</div></div>
       <div class="stat"><div class="stat__n">1973</div><div class="stat__t">中国第一个流域水文模型</div></div>
-      <div class="stat"><div class="stat__n">16</div><div class="stat__t">本幕子目录 · 每项都有年份或数字</div></div>
+      <div class="stat"><div class="stat__n">11</div><div class="stat__t">本幕子目录 · 每个都有年份或数字</div></div>
     </div>
-    <p class="cite" style="max-width:60em">模块一收束：认知给出「方法从哪来」，工具给出「方法凭什么可信」，工程给出「方法有没有用」。这三层留下的方法、数据与验证能力，正是下一幕可以被 AI 激活的资产。</p>
+    <p class="cite" style="max-width:60em">模块一收束：学科坐标给出「河海在这个行业的位置」，工具给出「方法凭什么可信」，工程给出「方法有没有用」。这三层留下的方法、数据与验证能力，正是下一幕可以被 AI 激活的资产。</p>
   </div>
 </section>
 
@@ -1405,8 +1280,8 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
         <div class="fact"><div class="fact__k">培养</div><div class="fact__v" style="font-size:1.4rem">本硕博贯通</div><div class="fact__s">国家级师资与课程</div></div>
       </div>
       <figure class="shot shot--43">
-        <img src="assets/dayu.jpg" alt="大禹学院学生在水力学实验槽前观察水流" width="2240" height="1680" loading="lazy">
-        <figcaption><span><b>育在实验里：</b>从一条水槽开始，把「看懂流动」变成可训练的能力。</span><span>示意图 · AI 生成</span></figcaption>
+        <img src="assets/dayu.jpg" alt="大禹学院 2021 届本科生毕业典礼" width="1269" height="846" loading="lazy">
+        <figcaption><span><b>从选拔到毕业：</b>大禹学院的培养链是贯通的，拔尖不是一次考试的结果。</span><span>图源：大禹学院官网</span></figcaption>
       </figure>
     </div>
 
@@ -1930,8 +1805,8 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
         <div class="fact"><div class="fact__k">可追责</div><div class="fact__v" style="font-size:1.45rem">签发</div><div class="fact__s">谁按下那个按钮</div></div>
       </div>
       <figure class="shot">
-        <img src="assets/control.jpg" alt="流域防汛调度会商室的大屏与值守人员" width="2560" height="1440" loading="lazy">
-        <figcaption><span><b>会商室里：</b>屏幕上是同一场雨，桌上是同一份责任。AI 可以把方案算到秒级，签字仍然要人。</span><span>示意图 · AI 生成</span></figcaption>
+        <img src="assets/control.jpg" alt="气象与防汛会商室的大屏与值守人员" width="800" height="462" loading="lazy">
+        <figcaption><span><b>会商室里：</b>屏幕上是同一场雨，桌上是同一份责任。AI 可以把方案算到秒级，签字仍然要人。</span><span>图源：河北新闻网</span></figcaption>
       </figure>
     </div>
   </div>
@@ -1992,7 +1867,7 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <p class="lede" style="margin-top:20px">先别急着往下读。假设你是那条河的调度负责人：上游暴雨，下游是一座城。系统给出三套方案，也给出每套方案的代价。现在，你愿意把最后那一下，交给谁？</p>
 
       <div class="panel--night">
-        <p class="k">你的选择 · 会保存在这台设备上</p>
+        <p class="k">你的选择 · 汇入下方现场记录</p>
         <div class="rank" style="margin-top:12px">
           <p class="rank__t">如果只能选一种，你选哪一种？</p>
         </div>
@@ -2002,7 +1877,7 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
           <button class="vote__opt" type="button" data-vote="human">人说了算：AI 只能提参考</button>
         </div>
         <div class="vote__result" id="voteResult" aria-live="polite"></div>
-        <p class="vote__note" id="voteNote">投票后可以看到当前分布。若本地后端未启动，数字来自本机记录，仅作演示。</p>
+        <p class="vote__note" id="voteNote">投票后可以看到当前分布，并汇入页面底部的「现场记录」。本地服务未启动时，数字只来自本机记录。</p>
       </div>
 
       <p class="cite" style="max-width:56em;margin-top:20px">这个选择没有标准答案。但它在真实世界里对应三种完全不同的制度：算法自动执行、人机共决、人工最终裁决。下面 3.1 的四层，就是这三种制度背后的分工逻辑。</p>
@@ -2022,17 +1897,50 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <div class="layer" id="p3-1-1">
         <div class="layer__n">L1</div>
         <div class="layer__t"><small>执行层</small>AI 做重复劳动，人保留体力</div>
-        <div class="layer__d"><p>查历史资料、整理报表、批量生成方案、逐条比对规程。这些工作过去消耗预报员大量时间，现在由系统完成。</p><p><strong>人得到的是时间</strong>——把注意力从「翻资料」转到「看趋势」。</p></div>
+        <div class="layer__d"><p>查历史资料、整理报表、批量生成方案、逐条比对规程。这些工作过去消耗预报员大量时间，现在由系统完成。</p><p><strong>人得到的是时间</strong>——把注意力从「翻资料」转到「看趋势」。</p>
+          <div class="layer__mini" data-mini="l1">
+            <p class="mini__k">小互动 1 · 先把一件活交给 AI</p>
+            <div class="mini__tasks" id="l1Tasks">
+              <button class="mini-btn" type="button" data-min="35">查历史相似洪水<span>35 分钟</span></button>
+              <button class="mini-btn" type="button" data-min="20">整理雨情报表<span>20 分钟</span></button>
+              <button class="mini-btn" type="button" data-min="45">批量生成方案<span>45 分钟</span></button>
+              <button class="mini-btn" type="button" data-min="25">逐条比对规程<span>25 分钟</span></button>
+            </div>
+            <p class="mini__out" id="l1Out">还没派活。点一项，看 AI 省下多少时间。</p>
+          </div>
+        </div>
       </div>
       <div class="layer" id="p3-1-2">
         <div class="layer__n">L2</div>
         <div class="layer__t"><small>认知层</small>AI 给候选，人做判断</div>
-        <div class="layer__d"><p>宁波的智能体在秒级给出多个候选方案，但选哪一个、改哪一处，仍由预报员决定。AI 扩大了可选范围，人也承担了选择的重量。</p><p><strong>人得到的是视野</strong>，同时失去「只看一个方案」的轻松。</p></div>
+        <div class="layer__d"><p>宁波的智能体在秒级给出多个候选方案，但选哪一个、改哪一处，仍由预报员决定。AI 扩大了可选范围，人也承担了选择的重量。</p><p><strong>人得到的是视野</strong>，同时失去「只看一个方案」的轻松。</p>
+          <div class="layer__mini" data-mini="l2">
+            <p class="mini__k">小互动 2 · 三个候选，你选一个</p>
+            <div class="mini__opts" id="l2Opts">
+              <button class="mini-btn" type="button" data-pick="A">A · 提前预泄 320 m³/s<span>置信度 91%</span></button>
+              <button class="mini-btn" type="button" data-pick="B">B · 控泄 180 m³/s<span>置信度 62%</span></button>
+              <button class="mini-btn" type="button" data-pick="C">C · 启用蓄滞洪区<span>置信度 88%</span></button>
+            </div>
+            <p class="mini__out" id="l2Out">先选一个。AI 只给候选，不替你选。</p>
+          </div>
+        </div>
       </div>
       <div class="layer" id="p3-1-3">
         <div class="layer__n">L3</div>
         <div class="layer__t"><small>责任层</small>AI 留痕，人签字</div>
-        <div class="layer__d"><p>系统记录每一步：初算是什么、人改了什么、理由是什么。签字的人不是形式上的最后一步，而是对整条链路负责的人。</p><p><strong>人得到的是权力，也是唯一无法外包的东西。</strong></p></div>
+        <div class="layer__d"><p>系统记录每一步：初算是什么、人改了什么、理由是什么。签字的人不是形式上的最后一步，而是对整条链路负责的人。</p><p><strong>人得到的是权力，也是唯一无法外包的东西。</strong></p>
+          <div class="layer__mini" data-mini="l3">
+            <p class="mini__k">小互动 3 · 签字前核对三件事</p>
+            <div class="mini__checks" id="l3Checks">
+              <label><input type="checkbox"> 初始水位与当前库容已核对</label>
+              <label><input type="checkbox"> 未来 24 小时降雨预报已确认</label>
+              <label><input type="checkbox"> 下游影响与转移通知已落实</label>
+            </div>
+            <input class="mini__reason" id="l3Reason" type="text" maxlength="40" placeholder="一句话理由（可留空）">
+            <button class="mini__sign" id="l3Sign" type="button" disabled>签字确认</button>
+            <p class="mini__out" id="l3Out">三项未全部勾选，签字按钮保持禁用。</p>
+          </div>
+        </div>
       </div>
       <div class="layer" id="p3-1-4">
         <div class="layer__n">L4</div>
@@ -2080,8 +1988,8 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <div class="scenario__meta"><span class="n">3.2</span><span>调度 · 从辅助到自主</span></div>
       <h3 class="scenario__title">辅助决策 → 自主调度</h3>
       <figure class="scene__shot">
-        <img src="assets/reservoir.jpg" alt="台风暴雨中的水库与泄洪" width="2560" height="1440" loading="lazy">
-        <figcaption><span>同一场洪水，先算、再核对、最后签字。</span><span>示意图 · AI 生成</span></figcaption>
+        <img src="assets/reservoir.jpg" alt="水库泄洪与下游河道航拍" width="2000" height="1334" loading="lazy">
+        <figcaption><span>同一场洪水，先算、再核对、最后签字。</span><span>图源：航拍四川 SCOL</span></figcaption>
       </figure>
       <div class="scenario__grid">
         <div class="sc">
@@ -2109,8 +2017,8 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <div class="scenario__meta"><span class="n">3.3</span><span>尺度 · 从单点到全局</span></div>
       <h3 class="scenario__title">单点流域 → 全局流域</h3>
       <figure class="scene__shot">
-        <img src="assets/network.jpg" alt="山间梯级水库与河道水系" width="2560" height="1440" loading="lazy">
-        <figcaption><span>从一座库到一张水网：先蓄谁、后放谁，要一起算。</span><span>示意图 · AI 生成</span></figcaption>
+        <img src="assets/network.jpg" alt="金沙江梯级水电工程与水库群航拍" width="2048" height="1535" loading="lazy">
+        <figcaption><span>从一座库到一张水网：先蓄谁、后放谁，要一起算。</span><span>图源：网易新闻</span></figcaption>
       </figure>
       <div class="scenario__grid">
         <div class="sc">
@@ -2138,8 +2046,8 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       <div class="scenario__meta"><span class="n">3.4</span><span>港航 · 从人工到自主协商</span></div>
       <h3 class="scenario__title">人工管港 → 港自己说话</h3>
       <figure class="scene__shot">
-        <img src="assets/smartport.jpg" alt="自动化集装箱码头与自动导引运输车" width="2560" height="1440" loading="lazy">
-        <figcaption><span>潮位、船期、回淤实时协商，港口开始「自己说话」。</span><span>示意图 · AI 生成</span></figcaption>
+        <img src="assets/smartport.jpg" alt="洋山四期自动化集装箱码头" width="900" height="600" loading="lazy">
+        <figcaption><span>潮位、船期、回淤实时协商，港口开始「自己说话」。</span><span>图源：新华网</span></figcaption>
       </figure>
       <div class="scenario__grid">
         <div class="sc">
@@ -2189,6 +2097,24 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
       </div>
     </div>
 
+    <div class="wall reveal" id="wall">
+      <div class="wall__head">
+        <p class="k" style="color:#7f8a96">现场记录 · 实时汇总</p>
+        <span class="wall__state" id="wallState">本机模式</span>
+      </div>
+      <div class="wall__grid">
+        <div><p class="wall__n" id="wallVotes">0</p><p class="wall__t">张投票</p></div>
+        <div><p class="wall__n" id="wallLayers">0</p><p class="wall__t">次分层互动</p></div>
+        <div><p class="wall__n" id="wallAsks">0</p><p class="wall__t">个提问</p></div>
+      </div>
+      <div class="wall__bars" id="wallBars"></div>
+      <form class="wall__form" id="wallForm">
+        <input id="wallInput" type="text" maxlength="60" placeholder="留一句话：你会把哪一步交给 AI？">
+        <button type="submit">留下</button>
+      </form>
+      <div class="wall__notes" id="wallNotes"><p class="wall__empty">还没有留言。你的这句话会和其他人的排在一起。</p></div>
+    </div>
+
     <div style="margin-top:clamp(40px,6vw,64px);padding-top:clamp(24px,3.6vw,34px);border-top:1px solid rgba(255,255,255,.1);display:flex;gap:22px;flex-wrap:wrap;align-items:center">
       <a class="btn" href="#acts">回到三幕 <span class="arr">↑</span></a>
       <a href="#act2" style="font-size:12.5px;color:#9aa2ae;border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px">重看「数字赋能」</a>
@@ -2217,31 +2143,31 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
 </div><!-- /act3 -->
 
 <div class="ask-backdrop" id="askBackdrop"></div>
-<aside class="ask-panel" id="askPanel" aria-hidden="true" aria-label="问 AI">
+<aside class="ask-panel" id="askPanel" aria-hidden="true" aria-label="你有什么想问河海的">
   <div class="ask-head">
     <div>
-      <p class="k" style="color:#6f7884">本地知识库</p>
-      <div class="ask-title">问 AI</div>
+      <p class="k" style="color:#6f7884">学科底蕴 · 招生问答</p>
+      <div class="ask-title">你有什么想问河海的</div>
     </div>
     <button class="ask-close" id="askClose" type="button" aria-label="关闭">×</button>
   </div>
-  <p class="ask-intro">只检索本站知识库，不接外部大模型。回答附来源，查不到就说查不到。</p>
+  <p class="ask-intro">关于河海的学科实力、专业选择与招生录取，先在这里问。只检索本站知识库、附出处；查不到就直说，不编数字。</p>
   <div class="ask-chips" id="askChips">
-    <button class="ask-chip" type="button">新安江模型</button>
-    <button class="ask-chip" type="button">45 度线</button>
-    <button class="ask-chip" type="button">宁波智能体</button>
-    <button class="ask-chip" type="button">蓄滞洪区</button>
-    <button class="ask-chip" type="button">港航</button>
-    <button class="ask-chip" type="button">人机共决</button>
+    <button class="ask-chip" type="button">水利工程有多强</button>
+    <button class="ask-chip" type="button">大禹学院</button>
+    <button class="ask-chip" type="button">转专业</button>
+    <button class="ask-chip" type="button">录取规则</button>
+    <button class="ask-chip" type="button">港航专业</button>
+    <button class="ask-chip" type="button">学费多少</button>
   </div>
   <div class="ask-thread" id="askThread">
-    <div class="msg msg--bot">你好。这里能回答关于河海底蕴、数字赋能与未来之路的问题。试试点上面的关键词，或直接输入。<div class="msg__src">范围：本站 16 个知识块 · 不生成任何水位数字</div></div>
+    <div class="msg msg--bot">你好。这里能回答河海的学科实力、水利水文港航专业、大禹学院与招生录取问题。试试点上面的关键词，或直接输入。<div class="msg__src">范围：本站 26 个知识块 · 只检索、不生成数字</div></div>
   </div>
   <form class="ask-form" id="askForm">
-    <input class="ask-input" id="askInput" type="text" maxlength="120" placeholder="例如：新安江模型有几个参数？" autocomplete="off">
+    <input class="ask-input" id="askInput" type="text" maxlength="120" placeholder="例如：河海的水利工程有多强？" autocomplete="off">
     <button class="ask-send" type="submit" aria-label="发送">↑</button>
   </form>
-  <p class="ask-foot">离线可用 · 回答来自本页内置知识块；接入本地服务后可统计提问次数，但不改变答案来源。</p>
+  <p class="ask-foot">离线可用 · 回答来自本页内置知识块，按关键词、标题与语义片段加权检索；不生成任何分数线或水位数字。</p>
 </aside>
 
 <script>
@@ -2504,6 +2430,7 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
           return r.json();
         }).then(function(d){
           renderVotes(d.votes, d.votes_total, choice);
+          refreshWall();
         }).catch(function(){
           if(voteNote) voteNote.textContent = '离线模式：已记录你的选择（' + voteLabels[choice] + '）。启动本地服务后可看到实时分布。';
         });
@@ -2514,43 +2441,235 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
     }).catch(function(){});
   }
 
+  /* ---------- layer minis ---------- */
+  var l1Out = document.getElementById('l1Out');
+  var l2Out = document.getElementById('l2Out');
+  var l3Out = document.getElementById('l3Out');
+  var wallState = document.getElementById('wallState');
+  var layerCount = 0;
+  try { layerCount = (JSON.parse(localStorage.getItem('hhu_layers') || '{}').n) || 0; } catch(e){}
+
+  function postLayer(layer, action, value){
+    layerCount++;
+    try { localStorage.setItem('hhu_layers', JSON.stringify({n:layerCount})); } catch(e){}
+    fetch('/api/layer', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({layer:layer, action:action, value:String(value || '').slice(0, 40)})
+    }).then(refreshWall).catch(refreshWall);
+  }
+
+  var l1Tasks = document.getElementById('l1Tasks');
+  if(l1Tasks){
+    var savedMinutes = 0;
+    Array.prototype.forEach.call(l1Tasks.querySelectorAll('.mini-btn'), function(b){
+      b.addEventListener('click', function(){
+        var min = parseInt(b.getAttribute('data-min'), 10) || 0;
+        b.classList.toggle('is-on');
+        savedMinutes += b.classList.contains('is-on') ? min : -min;
+        var n = l1Tasks.querySelectorAll('.mini-btn.is-on').length;
+        if(l1Out){
+          l1Out.innerHTML = '已交给 AI <b>' + n + ' 项</b>，人省下约 <b>' + savedMinutes + ' 分钟</b>。' +
+            (n >= 4 ? '但「哪一场历史洪水最像」这件事，仍要人来判断。' : 'AI 出手是秒级，省下的是整段时间。');
+        }
+        postLayer('l1', 'task', b.getAttribute('data-min'));
+      });
+    });
+  }
+
+  var l2Opts = document.getElementById('l2Opts');
+  if(l2Opts){
+    var L2_TEXT = {
+      A:'AI 最推荐：置信度 91%。但它只算到未来 24 小时，降雨预报一变，这个「最优」就要重算。',
+      B:'置信度只有 62%，低于 70% 的自动上报门槛——系统会标红，要求人工复核。你愿意为一个自己也没把握的方案签字吗？',
+      C:'置信度 88%。代价是下游 18 万亩耕地与数千人的转移。AI 算得出代价，算不出值不值。'
+    };
+    Array.prototype.forEach.call(l2Opts.querySelectorAll('.mini-btn'), function(b){
+      b.addEventListener('click', function(){
+        Array.prototype.forEach.call(l2Opts.querySelectorAll('.mini-btn'), function(x){ x.classList.remove('is-on'); });
+        b.classList.add('is-on');
+        var pick = b.getAttribute('data-pick');
+        if(l2Out) l2Out.textContent = L2_TEXT[pick] || '';
+        postLayer('l2', 'pick', pick);
+      });
+    });
+  }
+
+  var l3Checks = document.getElementById('l3Checks');
+  if(l3Checks){
+    var l3Sign = document.getElementById('l3Sign');
+    var signed = false;
+    var syncChecks = function(){
+      var n = 0;
+      Array.prototype.forEach.call(l3Checks.querySelectorAll('input'), function(i){ if(i.checked) n++; });
+      if(!signed){
+        l3Sign.disabled = n < 3;
+        if(l3Out) l3Out.textContent = n < 3 ? ('三项核对 ' + n + '/3 · 签字按钮保持禁用。') : '三项已核对。现在可以签字。';
+      }
+    };
+    Array.prototype.forEach.call(l3Checks.querySelectorAll('input'), function(i){
+      i.addEventListener('change', syncChecks);
+    });
+    if(l3Sign){
+      l3Sign.addEventListener('click', function(){
+        var reasonEl = document.getElementById('l3Reason');
+        var reason = reasonEl ? reasonEl.value.trim() : '';
+        var t = new Date();
+        var hh = ('0' + t.getHours()).slice(-2), mm = ('0' + t.getMinutes()).slice(-2);
+        signed = true;
+        l3Sign.disabled = true;
+        l3Sign.textContent = '已签字';
+        if(l3Out){
+          l3Out.innerHTML = '已留痕：<b>' + hh + ':' + mm + '</b> · 核对 3/3 · 理由：' +
+            (reason ? reason : '未填写') + '。<br>这条记录会随方案一起归档；签字的人，就是负责的人。';
+        }
+        postLayer('l3', 'sign', reason);
+      });
+    }
+  }
+
+  /* ---------- wall ---------- */
+  var wallVotes = document.getElementById('wallVotes');
+  var wallLayers = document.getElementById('wallLayers');
+  var wallAsks = document.getElementById('wallAsks');
+  var wallBars = document.getElementById('wallBars');
+  var wallNotes = document.getElementById('wallNotes');
+  var wallForm = document.getElementById('wallForm');
+  var wallInput = document.getElementById('wallInput');
+  var WNOTE = 'hhu_notes';
+
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+  function paintNotes(list){
+    if(!wallNotes) return;
+    wallNotes.innerHTML = list && list.length
+      ? list.map(function(x){ return '<span class="wall__note">' + esc(x) + '</span>'; }).join('')
+      : '<p class="wall__empty">还没有留言。你的这句话会和其他人的排在一起。</p>';
+  }
+  function paintBars(v){
+    if(!wallBars) return;
+    var total = (v.ai || 0) + (v.joint || 0) + (v.human || 0) || 1;
+    wallBars.innerHTML = [['ai','全部交给 AI'],['joint','人机共决'],['human','人说了算']].map(function(x){
+      var p = Math.round((v[x[0]] || 0) / total * 100);
+      return '<div class="wall__bar"><span>' + x[1] + '</span><i><em style="width:' + p + '%"></em></i><span>' + p + '%</span></div>';
+    }).join('');
+  }
+  function renderWall(d){
+    if(wallVotes) wallVotes.textContent = d.votes_total || 0;
+    if(wallLayers) wallLayers.textContent = d.layers_total || 0;
+    if(wallAsks) wallAsks.textContent = d.questions || 0;
+    paintBars(d.votes || {});
+    if(d.recent_notes) paintNotes(d.recent_notes);
+  }
+  function refreshWall(){
+    fetch('/api/stats').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+      if(d){
+        if(wallState) wallState.textContent = '本地服务 · 实时';
+        renderWall(d);
+      }
+    }).catch(function(){
+      if(wallState) wallState.textContent = '本机模式';
+      if(wallLayers) wallLayers.textContent = layerCount;
+      var arr = [];
+      try { arr = JSON.parse(localStorage.getItem(WNOTE) || '[]'); } catch(e){}
+      paintNotes(arr.slice(0, 6));
+    });
+  }
+  if(document.getElementById('wall')){ refreshWall(); }
+  if(wallForm && wallInput){
+    wallForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = wallInput.value.trim();
+      if(v.length < 2) return;
+      fetch('/api/note', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({content:v})
+      }).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(){
+        wallInput.value = '';
+        refreshWall();
+      }).catch(function(){
+        var arr = [];
+        try { arr = JSON.parse(localStorage.getItem(WNOTE) || '[]'); } catch(e){}
+        arr.unshift(v);
+        try { localStorage.setItem(WNOTE, JSON.stringify(arr.slice(0, 6))); } catch(e){}
+        paintNotes(arr.slice(0, 6));
+        wallInput.value = '';
+        if(wallState) wallState.textContent = '本机模式';
+      });
+    });
+  }
+
   /* ---------- ask panel ---------- */
   var KB = [
-    {k:['45度','45 度','蓄满','产流','1963','赵人俊','庄一鸰'], t:'1961—1963 年，赵人俊在浙江、江西、湖南的百余个流域复核降雨径流关系，发现曲线高端折成一条 45 度线：湿润地区包气带蓄满后，降雨几乎全部变成径流。1963 年，他与庄一鸰在《华东水利学院学报》发表《降雨径流关系的区域规律》。', s:'来源：1963 年《华东水利学院学报》增刊'},
-    {k:['新安江','模型','1973','参数','15','7'], t:'新安江模型 1973 年提出，是中国第一个完整的集总式流域水文模型。不计河道演算，共 15 个参数，其中 7 个敏感。结构上是「三分」：分单元、分水源、分阶段。', s:'来源：河海大学校史与水文水资源学院'},
-    {k:['马斯京根','1962','河道','演算','分段'], t:'1962 年，赵人俊把单段马斯京根法推广为多河段连续演算：把长河道切成若干段，逐段演算、连续传递。它解决了参数物理意义与长河道精度两个问题，后来写入《水文预报》教材。', s:'来源：河海大学校史资料'},
-    {k:['佛子岭','连拱坝','1954','汪胡桢'], t:'佛子岭连拱坝 1951 年 10 月成立工程指挥部，汪胡桢主持；1952 年动工，1954 年竣工。坝长 510 米，净高 74.4 米，是新中国第一座自主设计、自主施工的大型水库。', s:'来源：河海大学校史与佛子岭工程公开资料'},
-    {k:['南水北调','东线','泵站','13','65'], t:'南水北调东线一期共 13 级泵站，水位差约 40 米，总扬程约 65 米。河海徐辉团队主持的「大型泵站水力系统高效运行与安全保障关键技术及应用」获 2020 年度国家科技进步二等奖。', s:'来源：南水北调东线工程公开资料、国家科技奖励公告'},
-    {k:['三峡','dss','决策支持','水库','流域'], t:'流域决策支持系统应用于三峡、南水北调等百余项重大工程的实时调度管理，覆盖百余座大型水库，并接入国家防汛会商和「四预」平台。', s:'来源：河海大学公开介绍'},
-    {k:['核电','广东','取水口','港口','两亿'], t:'左东启主持广东核电站港口与取水口布置方案，为工程节省两亿多元。取水口位置会影响温排水、泥沙淤积与港口布置，一次优化就改变整个工程的投资结构。', s:'来源：河海大学校史资料'},
-    {k:['海岸带','海涂','调查','502','严恺'], t:'严恺主持全国海岸带与海涂资源综合调查，502 家单位、近 2 万人、历时 8 年。它是国家尺度的基础调查，为海岸带开发、港口选址与海涂利用提供了第一套系统底图。', s:'来源：河海大学校史资料'},
-    {k:['大禹学院','2009','荣誉学院','育','培养'], t:'2009 年 7 月，河海大学在水利类基地强化班基础上成立大禹学院，作为培养本科拔尖创新人才的荣誉学院。高考招生、滚动淘汰、二次选拔，本硕博贯通培养，目标是「懂水、懂数、懂责」的人，而不是只会调包的水文人。', s:'来源：河海大学大禹学院官网《学院简介》、河海大学招生信息网'},
-    {k:['长江院','长江保护','2019','绿色发展'], t:'2019 年 6 月 29 日，河海大学、南京水利科学研究院、江苏省发改委发起成立长江保护与绿色发展研究院，是国内首个该类研究院，聚焦水文预报、山洪防御、岸线与深水航道治理。', s:'来源：河海大学与媒体公开报道'},
-    {k:['风暴潮','潮位','浙江','87','分钟'], t:'河海的风暴潮预报把精细化作业时效从小时级压缩到分钟级；在浙江 11 个站的最大潮位预报中，精度达到 87%，服务广东、上海、浙江等沿海防汛部门。', s:'来源：河海大学港航学院公开资料'},
-    {k:['宁波','智能体','周公宅','皎口','秒级'], t:'宁波周公宅—皎口水库的 AI 预报调度智能体，把人工需要十几到二十分钟的方案编制压到秒级，生成多个候选方案。流程是「AI 初算—人工校核—正式上报」，人仍然定稿。', s:'来源：中国水利报 2026-10-24'},
-    {k:['蓄滞洪区','蒙洼','海河','2020','2023','东淀','3.75','25.3'], t:'2020 年淮河蒙洼蓄洪 3.75 亿立方米，转移 2017 人，18 万亩耕地被淹；2023 年海河 8 个蓄滞洪区最大蓄洪 25.3 亿立方米，河北转移 84.74 万人；东淀最大蓄洪 8 亿立方米，过水面积 322.5 平方公里。', s:'来源：水利部与流域机构公开报道'},
-    {k:['四预','预报','预警','预演','预控'], t:'「四预」是预报、预警、预演、预控四个环节的闭环。预报给出来水，预警把信息传到人，预演在数字孪生场景里把方案跑一遍，预控才落到闸门、泵站与蓄滞洪区。', s:'来源：水利部「四预」系统公开报道'},
-    {k:['港航','港口','潮位','回淤','航道'], t:'港航调度面对每天的潮位窗口、波浪条件与航道回淤。分钟级风暴潮预报可以支撑靠泊窗口判断。公开资料中未查到河海直接参与的具体智慧港口调度案例，本站只讲机制，不编项目。', s:'来源：河海大学港航学院公开资料'},
-    {k:['大模型','语言模型','ai','边界','责任'], t:'大语言模型擅长语言理解、知识检索与解释生成，但不能替代水动力模型计算水位。正确分工是：大模型做「翻译与调用」，专业模型做「计算与验证」，人做「判断与签字」。本站问答只做本地检索，不生成水位数字。', s:'来源：本站技术边界声明'},
-    {k:['人机','共决','责任','签字','四层'], t:'人机协作分四层：执行层让 AI 做重复劳动；认知层 AI 给候选、人做判断；责任层 AI 留痕、人签字；价值层由人决定防洪、供水、生态、投资哪个更重要。算法能提供证据，不能提供立场。', s:'来源：本站第三幕 3.1'}
+    {h:'学校定位', k:['河海大学','学校介绍','简介','双一流','211','985','教育部直属','几个校区','常州','江宁','西康路','历史','强不强','怎么样'], t:'河海大学是教育部直属全国重点大学，国家「双一流」建设、「211工程」重点建设、「985工程优势学科创新平台」建设高校，设有研究生院。学校源于1915年张謇创办的河海工程专门学校，是中国第一所培养水利人才的高等学府；1952年组建华东水利学院，1985年恢复「河海大学」校名。现有南京西康路、江宁和常州三个校区。', s:'来源：河海大学《学校简介》（2025-04）、2025年本科招生章程'},
+    {h:'学科评估', k:['学科评估','A+','第四轮','水利工程','土木','环境','排名','最强','实力','水平'], t:'全国第四轮学科评估（2017年公布）：河海大学水利工程获评 A+，为全国前 2% 的最高一档；土木工程、环境科学与工程为 A-，跻身全国前 10%；马克思主义理论、管理科学与工程、工商管理为 B+，位列前 20%。', s:'来源：河海大学《我校水利工程学科在第四轮学科评估中获评A+》（2017-12-29）'},
+    {h:'一流学科与国家重点学科', k:['一流学科','双一流学科','国家重点学科','港航','港口海岸','近海工程','博士点','学科链'], t:'水利工程、环境科学与工程 2 个学科入围国家「双一流」建设名单，2017、2022 两轮均在列。水利工程是 1 个一级学科国家重点学科，覆盖水文学及水资源、水力学及河流动力学、水工结构工程、水利水电工程、港口海岸及近海工程 5 个二级学科；另有 7 个二级学科国家重点学科。', s:'来源：河海大学《学校简介》、港口海岸与近海工程学院《学院概况》'},
+    {h:'水文与水资源', k:['水文','水文学及水资源','水文与水资源工程','1952','第一个水文系','陆地水文','水资源'], t:'1952 年组建华东水利学院时，建立新中国第一个水文系；1954 年开办我国第一个陆地水文本科专业。水文与水资源工程是国家级一流本科专业建设点，也是大禹学院水利类第二学期分流的三专业之一。', s:'来源：河海大学校史、大禹学院与招生信息网'},
+    {h:'港航专业', k:['港航','港口航道与海岸工程','港口海岸','近海','1957','海洋工程水文','航道'], t:'港口、海岸及近海工程是国家重点建设学科；1957 年河海设立我国第一个海洋工程水文专业。港口航道与海岸工程为国家级一流本科专业建设点，也是大禹学院水利类分流专业之一，方向包括河口海岸水沙演变、港航与近海工程结构、海岸带资源利用。', s:'来源：河海大学港航院《学院概况》、2025年招生章程'},
+    {h:'环境学科', k:['环境','环境科学','环境工程','生态','水环境'], t:'环境科学与工程是河海 2 个国家「双一流」建设学科之一，第四轮学科评估为 A-（全国前 10%）。它和水文、水工共同支撑水环境治理、河湖生态修复与水生态监测。', s:'来源：河海大学《学校简介》、第四轮学科评估结果'},
+    {h:'水利类专业与课程', k:['学什么','课程','水利类','水利水电工程','专业','就业方向','土木'], t:'水利类核心在「水—土—结构」：水力学、水文、土力学、水工结构、水电站、施工与管理。河海的水文与水资源工程、水利水电工程、港口航道与海岸工程均为国家级一流本科专业建设点；毕业去向包括流域机构、设计院、水利局、电站与继续深造。', s:'来源：河海大学招生信息网专业目录、2025年招生章程'},
+    {h:'大禹学院', k:['大禹','大禹学院','拔尖','强化班','本硕博','贯通','水利类','分流','荣誉学院','保研'], t:'大禹学院是河海的拔尖创新人才培养学院，2025 年按水利类（大禹学院）、工程力学（大禹学院）、计算机类（大禹学院）3 个专业（类）招生。水利类第二学期结束后分流到水文与水资源工程、水利水电工程、港口航道与海岸工程；实施本硕博贯通培养，2025 届升学率约 80%。', s:'来源：河海大学2025年招生章程、大禹学院《学院简介》'},
+    {h:'招生规模与专业', k:['招生','计划','5770','64个','31个省','招生专业','招多少人','名额'], t:'2025 年学校面向全国 31 个省（区、市）招收普通本科生 5770 名，招生专业 64 个。学校共有 72 个本科专业，其中 37 个为国家级一流本科专业建设点。', s:'来源：河海大学2025年本科招生章程 第三章'},
+    {h:'录取规则', k:['录取','规则','分数线','投档','调剂','级差','加分','同分','退档','填报','志愿'], t:'普通类平行志愿批次调档比例原则上不超过 105%，服从专业调剂且体检合格者不退档；顺序志愿批次原则上不超过 120%。专业志愿之间不设级差；同分依次比较语文数学总分、数学成绩。认可省级加分，不超过 20 分，加分不适用于不做分省计划的类型。', s:'来源：河海大学2025年本科招生章程 第四章'},
+    {h:'转专业', k:['转专业','换专业','转系','转出','转入','大类招生','专业分流'], t:'集中转专业在一年级下学期申请并参加学校考核，二年级上学期进入新专业；二、三年级可每学期初（前 3 周）或学期末（后 3 周）申请个别转专业。所有学生均可提出申请（不允许转专业的招生类型除外），对大一成绩没有硬性要求，转出比例不限，不受高考科类、选考、校区限制。', s:'来源：河海大学《普通全日制本科生转专业管理及实施细则（试行）》、招办答考生问'},
+    {h:'校区与就读', k:['校区','在哪','常州校区','江宁校区','西康路','南京','大一在哪','住宿'], t:'学校在南京设西康路校区（鼓楼区西康路 1 号）和江宁校区（佛城西路 8 号），在常州设常州校区（河海大道 1915 号）。本科标准学制 4 年，学生按录取专业分年级在相应校区就读。', s:'来源：河海大学2025年本科招生章程 第一章'},
+    {h:'学费与住宿费', k:['学费','多少钱','费用','住宿费','6380','5800','中外合作','河海里尔','一年'], t:'普通类专业学费为 5200—6380 元/生·年（水利类等多为 6380 元）；河海里尔学院中外合作办学专业学费为 58000 元/生·年；住宿费 900—1500 元/生·年。', s:'来源：河海大学2025年本科招生章程 第五章'},
+    {h:'奖助学金', k:['奖学金','助学金','资助','绿色通道','贷款','勤工助学','困难'], t:'学校设有 40 余项奖助学金，覆盖超过 70% 的学生；家庭经济困难学生可通过绿色通道入学，并申请国家助学贷款、勤工助学与临时困难补助。', s:'来源：河海大学2025年本科招生章程'},
+    {h:'升学与就业', k:['保研','保研率','推免','考研','升学','升学率','读研','就业','去向','落实率','95%','毕业'], t:'近年来学校毕业生去向落实率保持在 95% 以上；大禹学院 2025 届升学率约 80%。水利类毕业生主要去向为流域管理机构、水利设计院、省市水利局、水电与新能源企业，以及继续攻读硕士、博士。', s:'来源：河海大学《学校简介》、大禹学院《学院简介》'},
+    {h:'招生咨询', k:['咨询','电话','招生办','官网','联系','400-025-1915','怎么问'], t:'河海大学本科生招生办公室咨询电话：400-025-1915；招生信息网：zsw.hhu.edu.cn；学校官网：www.hhu.edu.cn。分省分专业计划以各省级招生考试机构公布为准。', s:'来源：河海大学2025年本科招生章程'},
+    {h:'45度线与蓄满产流', k:['45度','45 度','蓄满','产流','超渗','1963','赵人俊','庄一鸰','降雨径流'], t:'1961—1963 年，赵人俊在浙江、江西、湖南的百余个流域复核降雨径流关系，发现曲线高端折成一条 45 度线：湿润地区包气带蓄满后，降雨几乎全部变成径流，即「蓄满产流」。1963 年，他与庄一鸰在《华东水利学院学报》发表《降雨径流关系的区域规律》。', s:'来源：1963 年《华东水利学院学报》增刊'},
+    {h:'新安江模型', k:['新安江','模型','1973','参数','15个','7个','三分','汇流'], t:'1973 年，为编制新安江水库入库径流预报方案，赵人俊把蒸散发、产流、水源划分、汇流整合成中国第一个完整的集总式流域水文模型。不计河道演算共 15 个参数，其中 7 个敏感；结构为「三分」：分单元、分水源、分阶段。', s:'来源：河海大学校史、水文水资源学院'},
+    {h:'佛子岭连拱坝', k:['佛子岭','连拱坝','1954','汪胡桢','第一坝','水库','大坝'], t:'佛子岭水库 1952 年 1 月动工、1954 年建成，汪胡桢主持，是新中国第一座自主设计、自主施工的大型水库，也是我国第一座钢筋混凝土连拱坝：坝长 510 米，最大坝高 74.4 米（后加高至 75.9 米）。', s:'来源：安徽省水利厅《「新中国第一坝」建成70周年》、河海大学校史'},
+    {h:'南水北调泵站', k:['南水北调','东线','泵站','13级','65米','徐辉','调水'], t:'南水北调东线一期共 13 级泵站，水位差约 40 米、总扬程约 65 米。河海徐辉团队主持的「大型泵站水力系统高效运行与安全保障关键技术及应用」获 2020 年度国家科技进步二等奖。', s:'来源：南水北调东线工程公开资料、国家科技奖励公告'},
+    {h:'三峡与流域决策', k:['三峡','决策支持','调度','百座水库','实时','重大工程'], t:'流域决策支持系统应用于三峡、南水北调等百余项重大工程的实时调度管理，覆盖百余座大型水库，并接入国家防汛会商与「四预」平台。关键词是「实时」：它不是事后分析工具，而是在运行的工程上做决策支撑。', s:'来源：河海大学公开介绍'},
+    {h:'四预', k:['四预','预报','预警','预演','预控','数字孪生'], t:'「四预」是预报、预警、预演、预控的闭环：预报给出来水，预警把信息传到人，预演在数字孪生场景里把方案跑一遍，预控才落到闸门、泵站与蓄滞洪区。', s:'来源：水利部「四预」系统公开报道'},
+    {h:'人机共决', k:['人机','共决','责任','签字','四层','执行层','认知层','价值层'], t:'人机协作分四层：执行层让 AI 做重复劳动；认知层 AI 给候选、人做判断；责任层 AI 留痕、人签字；价值层由人决定防洪、供水、生态、投资哪个更重要。算法能提供证据，不能提供立场。', s:'来源：本站第三幕 3.1'},
+    {h:'宁波智能体', k:['宁波','智能体','周公宅','皎口','秒级','候选方案'], t:'宁波周公宅—皎口水库的 AI 预报调度智能体，把人工需要十几到二十分钟的方案编制压到秒级，一次生成多个候选方案。流程是「AI 初算—人工校核—正式上报」，人仍然定稿。', s:'来源：中国水利报 2026-10-24'},
+    {h:'蓄滞洪区', k:['蓄滞洪区','蒙洼','海河','东淀','转移','蓄洪'], t:'2020 年淮河蒙洼蓄洪 3.75 亿立方米，转移 2017 人，18 万亩耕地被淹；2023 年海河 8 个蓄滞洪区最大蓄洪 25.3 亿立方米，河北转移 84.74 万人；东淀最大蓄洪 8 亿立方米，过水面积 322.5 平方公里。', s:'来源：水利部与流域机构公开报道'},
+    {h:'风暴潮', k:['风暴潮','潮位','浙江','分钟级','沿海','预报'], t:'河海的风暴潮预报把精细化作业预报时效从小时级压缩到分钟级；在浙江 11 个站的最大潮位预报中，精度达到 87%，服务广东、上海、浙江等沿海防汛部门。', s:'来源：河海大学港航学院公开资料'}
   ];
 
   function norm(s){
-    return String(s).toLowerCase().replace(/[\s，。、？！,.?!:：；;"'“”‘’（）()【】\[\]]/g, '');
+    return String(s).toLowerCase().replace(/[\s，。、？！,.?!:：；;"'“”‘’（）()【】\[\]·]/g, '');
+  }
+  function grams(s){
+    var g = {}, i;
+    for(i = 0; i < s.length - 1; i++){ g[s.substr(i, 2)] = 1; }
+    return g;
+  }
+  function scoreEntry(n, e){
+    var sc = 0, hit = 0, nlen = n.length;
+    e.k.forEach(function(k){
+      var kk = norm(k);
+      if(!kk) return;
+      if(n.indexOf(kk) >= 0){ sc += 8 + kk.length * 1.7; hit++; }
+      else if(nlen >= 2 && kk.indexOf(n) >= 0){ sc += 5; hit++; }
+    });
+    var hn = norm(e.h), tn = norm(e.t), g = grams(n), key;
+    for(key in g){
+      if(hn.indexOf(key) >= 0) sc += 3.2;
+      else if(tn.indexOf(key) >= 0) sc += 0.8;
+    }
+    if(hit >= 2) sc += 5;
+    if(hn && n.indexOf(hn) >= 0) sc += 12;
+    return sc;
   }
   function answerOf(q){
     var n = norm(q);
     if(!n) return null;
-    var best = null, bestScore = 0;
+    var best = null, bestScore = 0, second = null;
     KB.forEach(function(e){
-      var sc = 0;
-      e.k.forEach(function(k){
-        var kk = norm(k);
-        if(n.indexOf(kk) >= 0) sc += kk.length * 2;
-      });
-      if(sc > bestScore){ bestScore = sc; best = e; }
+      var sc = scoreEntry(n, e);
+      if(sc > bestScore){ second = best; bestScore = sc; best = e; }
+      else if(!second || sc > scoreEntry(n, second)){ second = e; }
     });
-    if(best && bestScore >= 4) return best;
+    if(best && bestScore >= 14){
+      return {e:best, rel: second && scoreEntry(n, second) >= 8 ? second : null};
+    }
     return null;
   }
 
@@ -2602,10 +2721,28 @@ body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0
     if(!q) return;
     addMsg(q, null, 'user');
     var found = answerOf(q);
-    setTimeout(function(){
-      if(found) addMsg(found.t, found.s, 'bot');
-      else addMsg('这个点本站没有展开。可以试试问：45 度线、新安江模型、宁波智能体、蓄滞洪区、港航，或者「人机共决」。', '范围：本站 16 个知识块', 'bot');
-    }, 260);
+    var local = function(){
+      if(found){
+        var src = found.e.s + (found.rel ? ' · 相关：' + found.rel.h : '');
+        addMsg(found.e.t, src, 'bot');
+      } else {
+        addMsg('这个问题本站知识库里没有。可以试试问：水利工程 A+、大禹学院、转专业、录取规则、学费、港航专业，或者「人机共决」。', '范围：本站 26 个知识块 · 只覆盖学科与招生', 'bot');
+      }
+    };
+    fetch('/api/ask', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({q:q})
+    }).then(function(r){
+      if(!r.ok) throw new Error('bad');
+      return r.json();
+    }).then(function(d){
+      if(!d || !d.answer){ local(); return; }
+      var src = (d.source || '本站知识库') +
+        (d.related && d.related.length ? ' · 相关：' + d.related[0].title : '');
+      addMsg(d.answer, src, 'bot');
+      refreshWall();
+    }).catch(local);
   }
 
   if(askForm){
