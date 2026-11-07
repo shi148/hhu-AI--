@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>河海底蕴 · 数字赋能 · 未来之路｜河海大学 AI 赋能</title>
-<meta name="description" content="河海大学网页设计大赛作品：从 1963 年的一条 45 度线，到 2026 年秒级生成的调度方案。三幕，回答河海凭什么讲 AI、AI 激活了什么、人往哪里去。">
+<title>河海的深厚学科底蕴 · AI时代下的传承与革新 · 未来之路由谁决定｜河海大学 AI 赋能</title>
+<meta name="description" content="河海大学网页设计大赛作品：从 1963 年的一条 45 度线，到 2026 年秒级生成的调度方案。三幕构成一条因果链：底蕴提供方法，传承与革新让方法跑起来，未来之路由人承担最后的判断。">
 <style>
 :root{
   --ink:#1d1d1f;--ink2:#424245;--soft:#6e6e73;--faint:#86868b;
@@ -27,26 +27,35 @@ h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-deco
 .hr{height:1px;background:var(--line);border:0;margin:0}
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:90}
 /* nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:80;height:52px;display:flex;align-items:center;background:rgba(8,9,12,.3);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.06);color:#f5f5f7;transition:background .45s var(--ease),color .45s}
-.nav.is-solid,body.is-light-view .nav{background:rgba(255,255,255,.74);border-color:rgba(0,0,0,.1);color:var(--ink);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;height:52px;display:flex;align-items:center;background:rgba(255,255,255,.7);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,40,80,.08);color:var(--ink);transition:background .45s var(--ease),color .45s}
+.nav.is-solid,body.is-light-view .nav{background:rgba(255,255,255,.82);border-color:rgba(0,0,0,.1);color:var(--ink);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px)}
 .nav__inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.06em;font-weight:600;white-space:nowrap}
 .brand svg{width:20px;height:20px;opacity:.92}
 .nav__links{display:flex;align-items:center;gap:clamp(12px,2.2vw,30px);font-size:12px;letter-spacing:.06em;opacity:.84}
 .nav__links a{padding:4px 0;transition:opacity .25s}.nav__links a:hover{opacity:.55}
 .nav__meta{font-size:11px;letter-spacing:.14em;opacity:.6;white-space:nowrap}
-.nav__ask{background:transparent;border:1px solid rgba(255,255,255,.24);color:inherit;font-family:inherit;font-size:11px;letter-spacing:.1em;padding:6px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.3s}
-.nav__ask:hover{background:rgba(255,255,255,.12)}
-.nav.is-solid .nav__ask,body.is-light-view .nav__ask{border-color:rgba(0,0,0,.2)}
-.nav.is-solid .nav__ask:hover,body.is-light-view .nav__ask:hover{background:rgba(0,0,0,.06)}
 @media(max-width:820px){.nav__links{display:none}.nav__meta{font-size:10px;letter-spacing:.1em}}
 @media(max-width:520px){.nav__meta{display:none}}
 /* router */
 .view--landing,.act-view{display:none}
 .view--landing.is-active,.act-view.is-active{display:block}
-.view-back{position:fixed;z-index:75;top:58px;left:max(18px,calc((100vw - var(--maxw))/2 + 22px));display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:11.5px;font-weight:500;color:var(--ink);background:rgba(255,255,255,.78);border:1px solid rgba(0,0,0,.12);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transform:translateY(-4px);transition:.3s var(--ease)}
-.view-back.is-on{opacity:1;pointer-events:auto;transform:none}.view-back:hover{background:#fff}
-@media(max-width:560px){.view-back{top:56px;left:14px;font-size:11px;padding:6px 10px}}
+/* 左上角返回键：悬挂水滴 */
+.back-float{position:fixed;z-index:76;top:calc(52px + 13px);left:max(14px,calc((100vw - var(--maxw))/2 + 22px));display:inline-flex;align-items:center;gap:10px;padding:11px 18px 11px 12px;border-radius:16px;color:#fff;background:linear-gradient(135deg,#0a5c9e 0%,#0071e3 52%,#10a9d6 100%);box-shadow:0 12px 30px rgba(0,80,160,.30),0 1px 0 rgba(255,255,255,.26) inset;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .4s var(--ease),transform .45s var(--ease-out),box-shadow .3s}
+.back-float.is-on{opacity:1;pointer-events:auto;transform:none}
+.back-float:hover{box-shadow:0 16px 38px rgba(0,90,180,.4),0 1px 0 rgba(255,255,255,.3) inset}
+.back-float__ic{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.17);font-size:14px;line-height:1;flex:none}
+.back-float__txt{font-size:12.5px;letter-spacing:.08em;font-weight:600;white-space:nowrap}
+.back-float__drop{position:absolute;left:-9px;top:calc(100% - 1px);width:16px;height:78px;pointer-events:none;transform-origin:top center;animation:bfSwing 4.4s ease-in-out infinite}
+.back-float__thread{width:1px;height:26px;margin:0 auto;background:linear-gradient(180deg,rgba(0,113,227,.5),rgba(0,113,227,.06))}
+.back-float__bead{display:block;width:17px;height:22px;margin:0 auto;filter:drop-shadow(0 8px 10px rgba(0,90,160,.4)) drop-shadow(0 0 9px rgba(80,190,255,.55))}
+.back-float__bead path{fill:#67c9f6}
+.back-float__fall{position:absolute;top:46px;left:4px;width:7px;height:10px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:rgba(100,199,246,.85);opacity:0;animation:bfFall 4.4s ease-in infinite}
+.back-float__ripple{position:absolute;top:76px;left:0;width:17px;height:5px;border-radius:50%;border:1px solid rgba(0,113,227,.34);opacity:0;animation:bfRipple 4.4s ease-out infinite}
+@keyframes bfSwing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes bfFall{0%,55%{opacity:0;transform:translateY(0) scale(.75)}64%{opacity:.9}86%{opacity:.55;transform:translateY(20px) scale(1)}100%{opacity:0;transform:translateY(25px) scale(.7)}}
+@keyframes bfRipple{0%,62%{opacity:0;transform:scale(.5)}72%{opacity:.75}100%{opacity:0;transform:scale(1.7)}}
+@media(max-width:560px){.back-float{top:calc(52px + 9px);left:11px;padding:10px 14px 10px 10px;border-radius:14px;gap:8px}.back-float__ic{width:22px;height:22px}.back-float__txt{font-size:11.5px}.back-float__drop{left:-12px;height:70px}.back-float__bead{width:14px;height:19px}.back-float__fall{top:38px}.back-float__ripple{top:61px}}
 /* motion */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
 .reveal.in{opacity:1;transform:none}
@@ -68,38 +77,38 @@ h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-deco
 .lede{font-size:clamp(1.02rem,1.35vw,1.22rem);line-height:1.66;color:var(--soft);max-width:40em}
 .section--night .lede{color:var(--on-soft)}
 /* hero */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:#04060a;color:#f5f5f7;padding:118px 0 96px}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:#f7fbfe;color:#0b2b44;padding:118px 0 96px}
 .hero__river{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
-.hero__glow{position:absolute;inset:-22% -16% auto -8%;height:96%;z-index:1;background:radial-gradient(46% 42% at 64% 31%,rgba(36,104,148,.42) 0%,rgba(15,43,64,.18) 48%,transparent 76%);filter:blur(8px);pointer-events:none}
-.hero__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(3,5,8,.94) 0%,rgba(3,5,8,.76) 28%,rgba(3,5,8,.22) 54%,rgba(3,5,8,.02) 76%),linear-gradient(180deg,rgba(3,5,8,.68) 0%,transparent 22%,transparent 58%,rgba(3,5,8,.74) 100%)}
+.hero__glow{position:absolute;inset:-22% -16% auto -8%;height:96%;z-index:1;background:radial-gradient(46% 42% at 64% 31%,rgba(126,196,232,.24) 0%,rgba(196,230,247,.12) 48%,transparent 76%);filter:blur(8px);pointer-events:none}
+.hero__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 26%,rgba(255,255,255,.54) 46%,rgba(255,255,255,.02) 72%),linear-gradient(180deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.12) 20%,transparent 46%,rgba(247,251,254,.18) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%}
-.hero__eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8b96a3;font-weight:600;display:flex;gap:16px;align-items:center;margin-bottom:clamp(24px,4vh,42px);opacity:0;animation:fadeUp .9s var(--ease-out) .32s forwards}
-.hero__eyebrow::before{content:"";width:34px;height:1px;background:#8b96a3;opacity:.6;flex:0 0 auto}
-.hero__eyebrow-tag{padding-left:14px;border-left:1px solid rgba(139,150,163,.4)}
+.hero__eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#5f7e95;font-weight:600;display:flex;gap:16px;align-items:center;margin-bottom:clamp(24px,4vh,42px);opacity:0;animation:fadeUp .9s var(--ease-out) .32s forwards}
+.hero__eyebrow::before{content:"";width:34px;height:1px;background:#5f7e95;opacity:.6;flex:0 0 auto}
+.hero__eyebrow-tag{padding-left:14px;border-left:1px solid rgba(95,126,149,.4)}
 @media(max-width:560px){
   .hero__eyebrow{display:block;line-height:1.85}
   .hero__eyebrow::before{display:none}
-  .hero__eyebrow-tag{display:block;padding-left:0;border-left:0;font-size:10px;letter-spacing:.3em;color:#6f7a86}
+  .hero__eyebrow-tag{display:block;padding-left:0;border-left:0;font-size:10px;letter-spacing:.3em;color:#5f7e95}
 }
-.hero h1{font-size:clamp(2.5rem,6.4vw,5.4rem);line-height:1.08;letter-spacing:-.05em;font-weight:600;color:#fbfbfd;max-width:13em}
+.hero h1{font-size:clamp(2.5rem,6.4vw,5.4rem);line-height:1.08;letter-spacing:-.05em;font-weight:600;color:#08263c;max-width:13em}
 .hero h1 .hl{display:block;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ch{display:inline-block;opacity:0;transform:translateY(.42em);filter:blur(7px);animation:chIn 1.05s var(--ease-out) forwards;animation-delay:calc(.3s + var(--ci,0)*.085s)}
 .hero h1 .ch--en{font-size:.9em;letter-spacing:-.03em;padding:0 .06em}
 @keyframes chIn{to{opacity:1;transform:none;filter:blur(0)}}
-.hero__sub{margin-top:clamp(24px,3.6vh,40px);max-width:36em;font-size:clamp(.95rem,1.2vw,1.1rem);line-height:1.85;color:#a3adb9}
+.hero__sub{margin-top:clamp(24px,3.6vh,40px);max-width:36em;font-size:clamp(.95rem,1.2vw,1.1rem);line-height:1.85;color:#365a73}
 .hero__line{display:block;opacity:0;transform:translateY(16px);animation:fadeUp 1s var(--ease-out) forwards;animation-delay:calc(1.1s + var(--d,0)*.16s)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero__quote{margin-top:clamp(26px,3.8vh,42px);padding:2px 0 2px 16px;border-left:1px solid rgba(255,255,255,.18);max-width:31em;font-size:clamp(.84rem,1.02vw,.94rem);line-height:1.9;color:#8a95a2;opacity:0;animation:fadeUp 1s var(--ease-out) 1.5s forwards}
+.hero__quote{margin-top:clamp(26px,3.8vh,42px);padding:2px 0 2px 16px;border-left:1px solid rgba(0,113,227,.24);max-width:31em;font-size:clamp(.84rem,1.02vw,.94rem);line-height:1.9;color:#527086;opacity:0;animation:fadeUp 1s var(--ease-out) 1.5s forwards}
 .hero__cta{margin-top:clamp(28px,4.2vh,48px);display:flex;align-items:center;gap:26px;flex-wrap:wrap;opacity:0;animation:fadeUp 1s var(--ease-out) 1.68s forwards}
-.hero__link{font-size:13px;color:#9aa2ae;border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px;transition:color .3s,border-color .3s}
-.hero__link:hover{color:#fff;border-color:rgba(255,255,255,.7)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#0a0a0c;background:#f5f5f7;padding:13px 26px;border-radius:999px;transition:.35s var(--ease)}
-.btn:hover{background:#fff;transform:translateY(-1px)}.btn .arr{transition:transform .35s var(--ease)}.btn:hover .arr{transform:translateX(4px)}
-.hero__meta{display:flex;gap:clamp(16px,2.6vw,30px);flex-wrap:wrap;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#77818d;margin-top:clamp(38px,6vh,64px);opacity:0;animation:fadeUp 1s var(--ease-out) 1.86s forwards}
+.hero__link{font-size:13px;color:#4d6f88;border-bottom:1px solid rgba(8,60,100,.22);padding-bottom:2px;transition:color .3s,border-color .3s}
+.hero__link:hover{color:#0071e3;border-color:rgba(0,113,227,.55)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#fff;background:linear-gradient(135deg,#0a5c9e,#0071e3);padding:13px 26px;border-radius:999px;transition:.35s var(--ease);box-shadow:0 10px 24px rgba(0,95,180,.22)}
+.btn:hover{background:linear-gradient(135deg,#0a6cb8,#1a8bf0);transform:translateY(-1px);box-shadow:0 14px 30px rgba(0,95,180,.3)}.btn .arr{transition:transform .35s var(--ease)}.btn:hover .arr{transform:translateX(4px)}
+.hero__meta{display:flex;gap:clamp(16px,2.6vw,30px);flex-wrap:wrap;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6f8aa0;margin-top:clamp(38px,6vh,64px);opacity:0;animation:fadeUp 1s var(--ease-out) 1.86s forwards}
 .hero__meta span{display:flex;align-items:center;gap:8px}
-.hero__meta b{font-weight:600;color:#ccd4dc;font-variant-numeric:tabular-nums}
-.hero__scroll{position:absolute;bottom:clamp(22px,3.6vh,36px);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;color:#5c6672;text-transform:uppercase;z-index:2;opacity:0;animation:fadeUp 1s var(--ease-out) 2.05s forwards}
-.hero__scroll .rail{width:1px;height:38px;background:linear-gradient(180deg,#5c6672,transparent);animation:railPulse 2.6s ease-in-out infinite}
+.hero__meta b{font-weight:600;color:#0d3a5b;font-variant-numeric:tabular-nums}
+.hero__scroll{position:absolute;bottom:clamp(22px,3.6vh,36px);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;color:#6f8aa0;text-transform:uppercase;z-index:2;opacity:0;animation:fadeUp 1s var(--ease-out) 2.05s forwards}
+.hero__scroll .rail{width:1px;height:38px;background:linear-gradient(180deg,#6f8aa0,transparent);animation:railPulse 2.6s ease-in-out infinite}
 @keyframes railPulse{0%,100%{opacity:.35;transform:scaleY(.7);transform-origin:top}50%{opacity:.9;transform:scaleY(1)}}
 /* landing acts */
 .acts-head{display:grid;grid-template-columns:1fr minmax(0,1.05fr);gap:clamp(24px,6vw,90px);align-items:end;margin-bottom:clamp(48px,7vw,80px)}
@@ -116,6 +125,24 @@ h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-deco
 .act-row__d b{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:8px;font-weight:600}
 .act-row__a{font-size:18px;color:var(--faint);text-align:right;transition:.35s}
 .act-row:hover .act-row__a{transform:translateX(5px);color:var(--accent)}
+/* 三幕：蓝底 */
+#acts{background:radial-gradient(90% 130% at 82% 8%,rgba(66,168,222,.34) 0%,transparent 58%),linear-gradient(158deg,#062b4f 0%,#0a4a78 54%,#0b6394 100%);color:#eaf6ff}
+#acts .eyebrow{color:#a6cbe3}
+#acts .eyebrow::before{background:#a6cbe3}
+#acts .display{color:#f5fbff}
+#acts .lede{color:#b7d6e9}
+#acts .acts{border-top-color:rgba(255,255,255,.18)}
+#acts .act-row{border-bottom-color:rgba(255,255,255,.15)}
+#acts .act-row:hover{background:rgba(255,255,255,.07)}
+#acts .act-row__n{color:#f7fcff}
+#acts .act-row__n small{color:#9fc4dd}
+#acts .act-row__t{color:#f4fbff}
+#acts .act-row__q{color:#b4d4e7}
+#acts .act-row__d{color:#c1dcec}
+#acts .act-row__d b{color:#92bdd8}
+#acts .act-row__a{color:#a9cde3}
+#acts .act-row:hover .act-row__a{color:#8fe1ff}
+#acts .cite{color:#a9cde3}
 @media(max-width:900px){.act-row{grid-template-columns:64px 1fr 30px;gap:16px}.act-row__d{display:none}.act-row__a{grid-column:3;grid-row:1/span 2}}
 /* cover */
 .act-cover{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(52px + clamp(30px,6vh,64px)) 0 clamp(40px,5vh,60px);overflow:hidden}
@@ -398,30 +425,6 @@ h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-deco
 .footer__meta{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase}
 .footer__src{max-width:66em;color:#5c646e}
 .footer__rule{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
-/* ask */
-.ask-backdrop{position:fixed;inset:0;z-index:95;background:rgba(5,7,10,.52);opacity:0;pointer-events:none;transition:opacity .4s var(--ease);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
-.ask-backdrop.in{opacity:1;pointer-events:auto}
-.ask-panel{position:fixed;top:0;right:0;bottom:0;z-index:96;width:min(420px,100%);display:flex;flex-direction:column;background:rgba(13,16,20,.95);color:#f5f5f7;border-left:1px solid rgba(255,255,255,.12);-webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);transform:translateX(101%);transition:transform .5s var(--ease-out)}
-.ask-panel.is-open{transform:none}
-.ask-head{display:flex;justify-content:space-between;align-items:flex-start;padding:24px 22px 14px}
-.ask-title{margin-top:8px;font-size:20px;font-weight:600;letter-spacing:-.025em}
-.ask-close{background:none;border:0;color:#868f99;font-size:24px;line-height:1;cursor:pointer;padding:2px 4px}
-.ask-close:hover{color:#f5f5f7}
-.ask-intro{padding:0 22px;font-size:12px;line-height:1.7;color:#868f99}
-.ask-chips{display:flex;flex-wrap:wrap;gap:7px;padding:14px 22px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
-.ask-chip{background:transparent;border:1px solid rgba(255,255,255,.16);color:#9aa2ab;font-family:inherit;font-size:11.5px;line-height:1.4;padding:7px 11px;border-radius:999px;cursor:pointer;transition:.3s}
-.ask-chip:hover{border-color:rgba(255,255,255,.38);color:#f5f5f7}
-.ask-thread{flex:1;overflow-y:auto;padding:16px 22px 10px;display:flex;flex-direction:column;gap:11px}
-.msg{max-width:92%;font-size:12.5px;line-height:1.75;padding:11px 13px;border-radius:13px}
-.msg--bot{align-self:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#d7dce2;border-top-left-radius:4px}
-.msg--user{align-self:flex-end;background:#f5f5f7;color:#1d1d1f;border-top-right-radius:4px}
-.msg__src{margin-top:7px;font-size:10px;line-height:1.6;color:#6f7884}
-.ask-form{display:flex;gap:8px;padding:12px 22px 8px;border-top:1px solid rgba(255,255,255,.08)}
-.ask-input{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:11px;padding:10px 13px;color:#f5f5f7;font-family:inherit;font-size:12.5px;outline:none}
-.ask-input::placeholder{color:#6f7884}.ask-input:focus{border-color:rgba(41,151,255,.55)}
-.ask-send{width:42px;flex:none;border:0;border-radius:11px;background:#2997ff;color:#fff;font-size:16px;cursor:pointer}
-.ask-foot{padding:0 22px 16px;font-size:9.5px;line-height:1.6;color:#5f6872}
-body.is-locked{overflow:hidden}
 /* group */
 .group{margin-top:clamp(64px,9vw,110px);padding-top:clamp(28px,4vw,44px);border-top:1px solid var(--line)}
 .group:first-of-type{margin-top:0;padding-top:0;border-top:0}
@@ -500,6 +503,11 @@ body.q-lock{overflow:hidden}
 #act2 .toc__d,#act2 .cover__thesis{color:var(--soft)}
 #act2 .cover__meta{color:var(--faint)}
 #act2 .toc__row:hover .toc__t{color:var(--accent)}
+#act2 .hub-card{background:linear-gradient(158deg,#ffffff 0%,#f7fafd 52%,#eaf3fc 100%);border-color:rgba(0,74,140,.17);box-shadow:0 1px 0 rgba(255,255,255,.95) inset,0 14px 34px rgba(15,45,80,.08)}
+#act2 .hub-card:hover{border-color:rgba(0,113,227,.3);box-shadow:0 20px 46px rgba(15,50,90,.11),0 1px 0 rgba(255,255,255,.95) inset}
+#act2 .hub-card__t{color:var(--ink)}
+#act2 .hub-card__d,#act2 .hub-card__meta b{color:var(--soft)}
+#act2 .hub-card__go{color:var(--accent);border-color:rgba(0,0,0,.1)}
 #act2-body .section--night .group__k,#act2-body .section--night .node__meta .n{color:var(--accent)}
 #act2-body .section--night .cite{color:rgba(0,0,0,.4)}
 #act2-body .device::before{background:radial-gradient(62% 52% at 50% 0%,rgba(0,113,227,.08) 0%,transparent 72%)}
@@ -544,6 +552,66 @@ body.q-lock{overflow:hidden}
 .scene__shot img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;border-radius:18px;filter:saturate(.88) contrast(1.02)}
 .scene__shot figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:10.5px;color:var(--faint)}
 @media(max-width:640px){.scene__shot img{aspect-ratio:16/9}}
+
+/* ---------- 模块入口：介绍 + 圆角卡片主目录 ---------- */
+.act-view .bridge,.act-view .band{display:none}
+.act-view .part-page{display:none}
+.act-view.is-part .act-cover{display:none}
+.act-view.is-part .part-page.is-current{display:block}
+.act-view.is-hub .act-body-host{display:none}
+.act-view.is-hub .part-page{display:none}
+.act-view.is-part .act-body-host{padding-top:0;padding-bottom:0}
+.part-page{padding-top:clamp(172px,19vh,204px)!important;padding-bottom:clamp(64px,9vw,110px)}
+.part-page .group:first-of-type{margin-top:0;padding-top:0;border-top:0}
+.act-view.is-part #vote,.act-view.is-part .node[id],.act-view.is-part .layer[id],.act-view.is-part .panel[id],.act-view.is-part .vote[id],.act-view.is-part .scenario[id],.act-view.is-part .ending[id],.act-view.is-part .part-page[id]{scroll-margin-top:clamp(118px,16vh,166px)}
+.hub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.2vw,16px)}
+.cover__inner--hub{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:start;gap:clamp(30px,4.4vw,64px)}
+.cover__inner--hub .cover__thesis{max-width:30em}
+.cover__inside{max-width:34em}
+.hub-note{margin-top:clamp(18px,3vh,26px);display:flex;align-items:flex-start;gap:9px;font-size:10.5px;line-height:1.8;letter-spacing:.02em;color:var(--faint);max-width:27em}
+.hub-note__dot{width:6px;height:6px;margin-top:4px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px rgba(0,113,227,.09)}
+.hold-note{color:var(--faint)}
+.hub-card{position:relative;display:flex;flex-direction:column;gap:9px;min-height:clamp(154px,16vw,186px);padding:clamp(19px,2.1vw,27px);border-radius:26px;background:linear-gradient(158deg,#ffffff 0%,#f7fafd 52%,#eaf3fc 100%);border:1px solid rgba(0,74,140,.17);box-shadow:0 1px 0 rgba(255,255,255,.95) inset,0 14px 34px rgba(15,45,80,.08);overflow:hidden;transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out),border-color .3s;isolation:isolate}
+.hub-card::before{content:"";position:absolute;right:-34px;bottom:-46px;width:148px;height:148px;border-radius:50%;background:radial-gradient(circle,rgba(0,113,227,.16) 0%,rgba(0,113,227,.04) 46%,transparent 70%);transition:transform .55s var(--ease-out),opacity .4s;z-index:-1}
+.hub-card::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-58%;height:76%;border-radius:50% 50% 0 0/70% 70% 0 0;background:radial-gradient(60% 80% at 50% 100%,rgba(0,113,227,.10),transparent 72%);pointer-events:none;z-index:-1}
+.hub-card:hover{transform:translateY(-4px);border-color:rgba(0,113,227,.3);box-shadow:0 20px 46px rgba(15,50,90,.11),0 1px 0 rgba(255,255,255,.95) inset}
+.hub-card:hover::before{transform:scale(1.16)}
+.hub-card--wide{grid-column:1/-1}
+.hub-card__n{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.hub-card__t{display:block;font-size:clamp(1.06rem,1.55vw,1.34rem);line-height:1.32;letter-spacing:-.018em;font-weight:600;color:var(--ink);max-width:22em}
+.hub-card__d{display:block;font-size:12px;line-height:1.72;color:var(--soft);max-width:26em}
+.hub-card__list{display:grid;grid-template-columns:1fr;gap:5px 16px;margin-top:4px;padding-top:12px;border-top:1px solid rgba(0,74,140,.13)}
+.hub-card__list>span{position:relative;padding-left:11px;font-size:11.5px;line-height:1.55;color:var(--faint)}
+.hub-card__list>span::before{content:"";position:absolute;left:0;top:.6em;width:4px;height:4px;border-radius:50%;background:rgba(0,113,227,.42)}
+.hub-card--wide .hub-card__list{grid-template-columns:repeat(3,minmax(0,1fr))}
+.act-cover--night .hub-card__list{border-top-color:rgba(255,255,255,.11)}
+.act-cover--night .hub-card__list>span{color:var(--on-soft)}
+.act-cover--night .hub-card__list>span::before{background:rgba(111,194,255,.5)}
+.hub-card__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:13px;font-size:10.5px;letter-spacing:.04em;color:var(--faint)}
+.hub-card__meta b{font-weight:500;color:var(--soft)}
+.hub-card__go{width:29px;height:29px;flex:none;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(0,0,0,.1);color:var(--accent);font-size:13px;transition:.35s var(--ease)}
+.hub-card:hover .hub-card__go{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateX(3px)}
+.act-cover--night .hub-card{background:linear-gradient(158deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border-color:rgba(255,255,255,.16);box-shadow:none}
+.act-cover--night .hub-card__t{color:var(--on)}
+.act-cover--night .hub-card__d,.act-cover--night .hub-card__meta b{color:var(--on-soft)}
+.act-cover--night .hub-card__go{color:#6fc2ff;border-color:rgba(255,255,255,.2)}
+@media(max-width:880px){
+  .cover__inner--hub{grid-template-columns:1fr;gap:clamp(22px,4vh,34px)}
+  .cover__inner--hub .cover__main{max-width:none}
+  .hub-card--wide .hub-card__list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .act-cover{padding-top:calc(52px + 76px)}
+  .act-view.is-hub .act-cover{align-items:flex-start}
+  .hub-grid{grid-template-columns:1fr}
+  .hub-card{min-height:auto;border-radius:22px}
+  .hub-card--wide{grid-column:auto}
+  .hub-card__list,.hub-card--wide .hub-card__list{grid-template-columns:1fr;gap:4px}
+}
+@media(prefers-reduced-motion:reduce){
+  .back-float__drop,.back-float__fall,.back-float__ripple{animation:none}
+  .back-float__fall,.back-float__ripple{opacity:0}
+}
 </style>
 </head>
 <body>
@@ -558,17 +626,26 @@ body.q-lock{overflow:hidden}
       河海大学
     </a>
     <div class="nav__links">
-      <a href="#acts">三幕</a>
-      <a href="#act1">河海底蕴</a>
-      <a href="#act2">数字赋能</a>
-      <a href="#act3">未来之路</a>
+      <a href="#top">首页</a>
+      <a href="#act1">河海的深厚学科底蕴</a>
+      <a href="#act2">AI时代下的传承与革新</a>
+      <a href="#act3">未来之路由谁决定</a>
     </div>
-    <button class="nav__ask" id="askOpen" type="button">问河海</button>
+
     <div class="nav__meta">网页设计大赛 · 参赛作品</div>
   </div>
 </nav>
 
-<a class="view-back" id="viewBack" href="#acts">← 三幕总览</a>
+<a class="back-float" id="viewBack" href="#acts" aria-label="返回三幕总览">
+  <span class="back-float__ic" aria-hidden="true">←</span>
+  <span class="back-float__txt" id="backLabel">返回三幕总览</span>
+  <span class="back-float__drop" aria-hidden="true">
+    <span class="back-float__thread"></span>
+    <svg class="back-float__bead" viewBox="0 0 13 17"><path d="M6.5 0C6.5 0 0 8.4 0 11.6a6.5 6.5 0 0 0 13 0C13 8.4 6.5 0 6.5 0Z"/></svg>
+    <span class="back-float__fall"></span>
+    <span class="back-float__ripple"></span>
+  </span>
+</a>
 
 <button class="quicknav" id="quicknav" type="button" aria-expanded="false" aria-controls="qsheet" aria-label="打开快捷目录（Alt+M）">
   <span class="quicknav__ic" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -598,14 +675,15 @@ body.q-lock{overflow:hidden}
       <span class="hl" aria-hidden="true"><span class="ch" style="--ci:5">拥</span><span class="ch" style="--ci:6">抱</span><span class="ch ch--en" style="--ci:7">AI</span><span class="ch" style="--ci:8">。</span></span>
     </h1>
     <p class="hero__sub">
-      <span class="hero__line" style="--d:0">百十一年，我们把一条河的脾气，记成数据。</span>
-      <span class="hero__line" style="--d:1">如今，把这份记忆交给懂得计算的潮汐。</span>
-      <span class="hero__line" style="--d:2">不求更快，只求更懂。</span>
+      <span class="hero__line" style="--d:0">一百一十一年，河海以观测记录江河的性情，以方程推演洪水的去向。</span>
+      <span class="hero__line" style="--d:1">今天，我们让这套方法学会呼吸。</span>
+      <span class="hero__line" style="--d:2">数据成为感官，算力成为脉搏，物理仍为骨架。</span>
+      <span class="hero__line" style="--d:3">技术向前一步，判断仍留在人这一侧。</span>
     </p>
-    <p class="hero__quote">「让懂水的去教机器，让机器算的，仍由人拍板。」</p>
+    <p class="hero__quote">「以水为师，以数为器；算力所至，责任所系。」</p>
     <div class="hero__cta">
       <a class="btn" href="#acts">顺流而下 <span class="arr">↓</span></a>
-      <a href="#act3" class="hero__link">直接看「未来之路」</a>
+      <a href="#act3" class="hero__link">直接看「未来之路由谁决定」</a>
     </div>
     <div class="hero__meta">
       <span><b>1915</b> 建校</span>
@@ -622,46 +700,46 @@ body.q-lock{overflow:hidden}
     <div class="acts-head reveal">
       <div>
         <p class="eyebrow">00 · 三幕导览</p>
-        <h2 class="display" style="margin-top:22px;">三幕之间，<br>是一条因果链。</h2>
+        <h2 class="display" style="margin-top:22px;">三幕相承，<br>互为因果。</h2>
       </div>
       <div>
-        <p class="lede">底蕴里的方法，决定了赋能时能激活什么；赋能后的系统，决定了未来人站在哪里。</p>
+        <p class="lede">三幕不是并列，而是一条因果链。第一幕给出「凭什么」：学科、方法、工程三组坐标，构成可被调用的方法资产。第二幕回答「怎么变」：以育人为传承，让测、报、算、管四环完成革新；没有第一幕的底座，数字化便无据可依。第三幕追问「谁来担」：场景一旦真实发生，责任就必须重新分配；没有第二幕的系统，这个问题也无从提起。</p>
       </div>
     </div>
 
     <div class="acts reveal" data-delay="1">
       <a class="act-row" href="#act1">
-        <div class="act-row__n">01<small>河海底蕴</small></div>
+        <div class="act-row__n">01<small>第一幕</small></div>
         <div>
-          <div class="act-row__t">河海讲 AI 的底气</div>
-          <p class="act-row__q">三次改写：概念、工具、工程。</p>
+          <div class="act-row__t">河海的深厚学科底蕴</div>
+          <p class="act-row__q">河海何以言 AI：学科、方法、工程，三组可复核的坐标。</p>
         </div>
-        <div class="act-row__d"><b>主干</b>认知 · 工具 · 工程</div>
-        <div class="act-row__d"><b>坐标</b>A+ · 1973 · 200+ 案例</div>
+        <div class="act-row__d"><b>因</b>学科 · 方法 · 工程</div>
+        <div class="act-row__d"><b>据</b>A+ · 1963/1973 · 200+ 案例</div>
         <span class="act-row__a">→</span>
       </a>
       <a class="act-row" href="#act2">
-        <div class="act-row__n">02<small>数字赋能</small></div>
+        <div class="act-row__n">02<small>第二幕</small></div>
         <div>
-          <div class="act-row__t">模型没被换掉，换掉的是速度</div>
-          <p class="act-row__q">让模型更快、更稳、更细。</p>
+          <div class="act-row__t">AI时代下的传承与革新</div>
+          <p class="act-row__q">模型未被替换，被替换的是速度：先传承，再让测、报、算、管四环提速。</p>
         </div>
-        <div class="act-row__d"><b>闭环</b>育 · 测 · 报 · 算 · 管</div>
-        <div class="act-row__d"><b>证据</b>87% · 24 亿 m³ · 秒级</div>
+        <div class="act-row__d"><b>承</b>传承 · 测 · 报 · 算 · 管</div>
+        <div class="act-row__d"><b>果</b>87% · 24 亿 m³ · 秒级</div>
         <span class="act-row__a">→</span>
       </a>
       <a class="act-row" href="#act3">
-        <div class="act-row__n">03<small>未来之路</small></div>
+        <div class="act-row__n">03<small>第三幕</small></div>
         <div>
-          <div class="act-row__t">人往哪里去？</div>
-          <p class="act-row__q">先由你决定「谁来拍板」，再谈人机共决。</p>
+          <div class="act-row__t">未来之路由谁决定</div>
+          <p class="act-row__q">人将立于何处：先决定谁来裁定，再谈人机共决。</p>
         </div>
-        <div class="act-row__d"><b>结构</b>引入 · 四层 · 三场景</div>
-        <div class="act-row__d"><b>证据</b>宁波秒级 · 流域群 · 港自己说话</div>
+        <div class="act-row__d"><b>问</b>分责 · 场景 · 现场选择</div>
+        <div class="act-row__d"><b>答</b>按钮最终回到人手中</div>
         <span class="act-row__a">→</span>
       </a>
     </div>
-    <p class="cite" style="max-width:52em;margin-top:22px">每个节点都挂一个真实年份、真实项目或真实数字；查不到的不编。</p>
+    <p class="cite" style="max-width:52em;margin-top:22px">因果链：底蕴提供方法，方法支撑系统，系统把责任推回人。每一节点均对应可核查的年份、项目或公开数据；查无实据者，宁缺不编。</p>
   </div>
 </section>
 
@@ -669,7 +747,7 @@ body.q-lock{overflow:hidden}
   <div class="wrap reveal">
     <p class="k" style="color:#6f7884;margin-bottom:18px">一条暗线</p>
     <p class="band__q">尺子时代，人补信息的缺口；<br>传感器时代，人补理解的缺口；<br><span class="dim">共决时代，人补价值的缺口。</span></p>
-    <p class="band__meta">三次技术跃迁，都没有把人挤出去，只是把人推向「更要负责的那一端」。</p>
+    <p class="band__meta">三次技术跃迁，都没有把人挤出决策链，而是把人推向更需要承担的一端。</p>
   </div>
 </section>
 </div><!-- /landing -->
@@ -679,150 +757,66 @@ body.q-lock{overflow:hidden}
 
 <section class="act-cover act-cover--light" id="act1">
   <div class="wrap">
-    <div class="cover__inner">
+    <div class="cover__inner cover__inner--hub">
       <div class="cover__main">
-        <p class="chapter"><span class="num">01</span><span class="tot">/ 03 · 河海底蕴</span></p>
+        <p class="chapter"><span class="num">01</span><span class="tot">/ 03 · 河海的深厚学科底蕴</span></p>
         <div class="cover__num">01</div>
-        <h1 class="cover__title">河海底蕴</h1>
-        <p class="cover__thesis">从一条 45 度线，到一套国家防汛系统。这里只放三个可核查的坐标：学科评估、方法底座、工程落地。</p>
-        <p class="cover__meta">3 个主干 · 11 个子目录 · 1915—2026</p>
+        <h1 class="cover__title">河海的深厚<br>学科底蕴</h1>
+        <p class="cover__thesis">自一九一五年张謇创校，至一九六三年「蓄满产流」的四十五度线，再至今日的流域数字孪生——河海的底气，不在一句口号，而在三组可复核的坐标：学科评估之等级、方法底座之纵深、工程落地之实效。这三组坐标之所以重要，是因为它们决定了下一幕 AI 能接住什么、不能接住什么。</p>
+        <p class="cover__meta">3 个主干 · 11 个子目 · 1915—2026</p>
+        <p class="hub-note"><span class="hub-note__dot"></span>目录以卡片呈现：每一张对应一个分部，点击即入；左上角的水滴返回键，可随时回到此处。</p>
       </div>
-      <nav class="cover__toc" aria-label="模块一目录">
-        <div class="toc__head"><span>模块一目录</span><span>认知 · 工具 · 工程</span></div>
+      <nav class="hub-grid" aria-label="模块一主目录">
 
-        <div class="toc__g"><b>1.1</b><span>河海在水利水文港航领域的学科实力与地位<em>一所大学在一个行业里的坐标</em></span></div>
-        <a class="toc__row" href="#p1-1-1"><span class="toc__n">1.1.1</span><span class="toc__t">一所因水而生的大学</span><span class="toc__d">1915 张謇创校 · 1952 华东水利学院 · 双一流</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-2"><span class="toc__n">1.1.2</span><span class="toc__t">学科评估：水利工程 A+</span><span class="toc__d">2017 第四轮 · 土木与环境同为 A 类</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-3"><span class="toc__n">1.1.3</span><span class="toc__t">一流学科与国家重点学科</span><span class="toc__d">水利 · 环境 · 港航，一条完整的学科链</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-4"><span class="toc__n">1.1.4</span><span class="toc__t">方法底座：45 度线与新安江模型</span><span class="toc__d">1963 蓄满产流 · 1973 中国第一个流域模型</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-1-5"><span class="toc__n">1.1.5</span><span class="toc__t">世界坐标：全球第一与 ESI 前 1‰</span><span class="toc__d">软科水资源工程 · WMO 指南 · 200+ 案例</span><span class="toc__a">↓</span></a>
+        <a class="hub-card hub-card--wide" href="#part-p1-1">
+          <span class="hub-card__n">1.1 · 学科坐标</span>
+          <span class="hub-card__t">一所大学，在一个行业里的坐标</span>
+          <span class="hub-card__d">先从 1963 年的一条 45 度线讲起，再回到 1915 年创校、学科评估、学科链与世界坐标：五组证据，回答河海凭何在这一行业中拥有发言权。</span>
+          <span class="hub-card__list">
+            <span>45 度线，与新安江模型</span><span>一所因水而生的大学</span><span>水利工程：A+</span><span>水利 → 环境 → 港航</span><span>全球第一 · 200+ 案例</span>
+          </span>
+          <span class="hub-card__meta"><b>5 个子目</b><span>1915 — 全球第一</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>1.2</b><span>工具 · 物理模型与实验体系<em>三个代表性实验能力</em></span></div>
-        <a class="toc__row" href="#p1-2-1"><span class="toc__n">1.2.1</span><span class="toc__t">观测与径流实验</span><span class="toc__d">长期、连续、可追溯的降雨—径流样本</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-2-2"><span class="toc__n">1.2.2</span><span class="toc__t">水工模型试验</span><span class="toc__d">坝、溢洪道、泄洪洞、消能工的缩尺验证</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-2-3"><span class="toc__n">1.2.3</span><span class="toc__t">港口海岸与近海工程实验</span><span class="toc__d">波浪、潮流、泥沙与港内泊稳</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p1-2">
+          <span class="hub-card__n">1.2 · 工具</span>
+          <span class="hub-card__t">物理模型与实验体系</span>
+          <span class="hub-card__d">径流观测、水工试验、港航实验——三套能力，共同为模型提供数据、约束与验证。</span>
+          <span class="hub-card__list">
+            <span>观测与径流实验</span><span>水工模型试验</span><span>港口海岸与近海工程实验</span>
+          </span>
+          <span class="hub-card__meta"><b>3 个子目</b><span>可观 · 可算 · 可验</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>1.3</b><span>工程 · 研究落到实际项目<em>三个代表性工程</em></span></div>
-        <a class="toc__row" href="#p1-3-1"><span class="toc__n">1.3.1</span><span class="toc__t">佛子岭连拱坝</span><span class="toc__d">1951—1954：新中国第一座自主设计施工的大型水库</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-3-2"><span class="toc__n">1.3.2</span><span class="toc__t">南水北调东线泵站</span><span class="toc__d">13 级泵站、约 40 米水位差、65 米总扬程</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p1-3-3"><span class="toc__n">1.3.3</span><span class="toc__t">三峡与流域决策支持</span><span class="toc__d">百余项重大工程、百余座大型水库</span><span class="toc__a">↓</span></a>
-        <p class="cover__note">点击任意子目录，直达对应正文节点；左上角「← 三幕总览」可随时返回。</p>
+        <a class="hub-card" href="#part-p1-3">
+          <span class="hub-card__n">1.3 · 工程</span>
+          <span class="hub-card__t">研究落到工程现场</span>
+          <span class="hub-card__d">佛子岭、南水北调东线、三峡与流域决策支持：三个工程，检验方法是否真正可用。</span>
+          <span class="hub-card__list">
+            <span>佛子岭连拱坝</span><span>13 级泵站：将水抬升 65 米</span><span>从单库，到流域系统</span>
+          </span>
+          <span class="hub-card__meta"><b>3 个子目</b><span>1951 — 2026</span><span class="hub-card__go">→</span></span>
+        </a>
+
       </nav>
     </div>
   </div>
 </section>
-<section class="section" id="act1-body">
+<section class="section act-body-host" id="act1-body">
   <div class="wrap">
 
     <div class="group reveal">
       <p class="group__k">1.1 · 学科坐标</p>
-      <h2 class="group__t">河海在水利、水文、港航领域，<br>站在什么位置。</h2>
-      <p class="group__d">三类可核查的坐标：学科评估的等级、国家重点学科与一流学科的布局、国际排名与业务指南的接纳程度。它们回答同一个问题：河海凭什么在这个行业里说话。</p>
+      <h2 class="group__t">河海在水利、水文与港航领域，<br>居于何种位置。</h2>
+      <p class="group__d">先从一九六三年的一条 45 度线讲起：它把「蓄满产流」写成理论，也标出了河海水文方法的起点。再依次回到 1915 年创校、2017 年学科评估、学科链布局与世界坐标——五组可核查的坐标，共同回答河海凭何在这一行业中拥有发言权。</p>
     </div>
 
     <div class="node reveal" id="p1-1-1">
-      <div class="node__meta"><span class="n">1.1.1</span><span>1915 — 2026 · 学校坐标</span></div>
-      <h3 class="node__title">一所因水而生的大学</h3>
-      <div class="node__split">
-        <div class="node__body">
-          <p>1915 年，张謇创办<strong>河海工程专门学校</strong>，这是中国第一所培养水利人才的高等学府，也开了中国水利高等教育的先河。校址在南京，课程表上第一次成体系地出现水力学、水文、河工。</p>
-          <p>1952 年院系调整，南京大学水利系与交通大学、同济大学、浙江大学等校的水利系科以及华东水利专科学校组建<strong>华东水利学院</strong>，钱正英任首任院长；1960 年被中共中央认定为全国重点高校；1985 年恢复「河海大学」校名。</p>
-          <p>今天的河海是教育部直属全国重点大学，国家「双一流」建设、「211 工程」重点建设、「985 工程优势学科创新平台」建设高校，设有研究生院；在南京设西康路、江宁两个校区，在常州设常州校区。</p>
-          <p class="quote-line">校名换过几次，问题没换：中国的水，怎么算准、怎么管好。</p>
-          <p class="cite">资料：河海大学《学校简介》（数据截至 2025 年 4 月）、河海大学本科生招生章程（2025 年）。</p>
-        </div>
-        <figure class="figure">
-          <div class="figure__frame" style="padding:clamp(20px,3.4vw,32px)">
-            <p class="k" style="color:var(--faint);margin-bottom:12px">一条 110 年的线</p>
-            <div style="display:flex;flex-direction:column;gap:0">
-              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1915</b><span style="font-size:12.5px;color:var(--soft)">河海工程专门学校 · 中国第一所培养水利人才的高等学府</span></div>
-              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1952</b><span style="font-size:12.5px;color:var(--soft)">华东水利学院 · 钱正英任首任院长</span></div>
-              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1960</b><span style="font-size:12.5px;color:var(--soft)">被认定为全国重点高校</span></div>
-              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1985</b><span style="font-size:12.5px;color:var(--soft)">恢复「河海大学」校名，邓小平题写校名</span></div>
-            </div>
-            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:18px">
-              <div class="fact"><div class="fact__k">定位</div><div class="fact__v" style="font-size:1.2rem">双一流</div><div class="fact__s">211 · 985 优势学科平台</div></div>
-              <div class="fact"><div class="fact__k">校区</div><div class="fact__v" style="font-size:1.2rem">3 个</div><div class="fact__s">西康路 · 江宁 · 常州</div></div>
-            </div>
-          </div>
-        </figure>
-      </div>
-    </div>
-
-    <div class="node reveal" id="p1-1-2">
-      <div class="node__meta"><span class="n">1.1.2</span><span>2017 · 第四轮学科评估</span></div>
-      <h3 class="node__title">学科评估：水利工程 A+</h3>
-      <div class="node__split">
-        <div class="node__body">
-          <p>2017 年 12 月，教育部学位与研究生教育发展中心公布全国第四轮学科评估结果：<strong>河海大学水利工程获评 A+</strong>，这是同一学科里的最高一档。</p>
-          <p>同一轮里，土木工程、环境科学与工程位列 A 类，跻身全国前 10%；马克思主义理论、管理科学与工程、工商管理获评 B+，位列全国前 20%。</p>
-          <p>评估不看学校名气。师资、成果、人才培养、社会服务，一套公开指标，逐项打分。A+ 是同一学科里的最高一档。</p>
-          <p>对考生来说，这是最硬的一条参考：如果要读水利，河海的水利工程在全国处于第一梯队；如果要读土木或环境，它同样在全国前 10%。</p>
-          <p class="cite">资料：河海大学《我校水利工程学科在第四轮学科评估中获评A+》（2017-12-29）；河海大学学科建设公示。</p>
-        </div>
-        <figure class="figure">
-          <div class="figure__frame" style="padding:clamp(20px,3.4vw,30px)">
-            <p class="k" style="color:var(--faint);margin-bottom:14px">第四轮学科评估 · 河海位次</p>
-            <div style="display:flex;flex-direction:column;gap:10px">
-              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid rgba(0,113,227,.3);border-radius:12px;background:rgba(0,113,227,.05)">
-                <b style="font-size:20px;color:var(--accent);letter-spacing:-.02em">A+</b>
-                <span style="font-size:13px;color:var(--ink);font-weight:500">水利工程</span>
-                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">全国前 2%</span>
-              </div>
-              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px">
-                <b style="font-size:17px;color:var(--ink)">A-</b>
-                <span style="font-size:13px;color:var(--ink2)">土木工程 · 环境科学与工程</span>
-                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">全国前 10%</span>
-              </div>
-              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line-2);border-radius:12px">
-                <b style="font-size:15px;color:var(--soft)">B+</b>
-                <span style="font-size:12.5px;color:var(--soft)">马克思主义理论 · 管理科学与工程 · 工商管理</span>
-                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">前 20%</span>
-              </div>
-            </div>
-            <p style="font-size:10.5px;color:var(--faint);margin-top:14px;line-height:1.7">A 类 = 全国前 10%。第四轮评估中，河海共有 33 个学科参评。</p>
-          </div>
-          <p class="figure__cap"><span class="dot"></span>自绘 · 等级越高，说明在同一学科里站得越靠前；A+ 是最高一档。</p>
-        </figure>
-      </div>
-    </div>
-
-    <div class="node reveal" id="p1-1-3">
-      <div class="node__meta"><span class="n">1.1.3</span><span>学科布局 · 一流学科与国家重点学科</span></div>
-      <h3 class="node__title">一条从水利，到环境、港航的学科链</h3>
-      <div class="node__split">
-        <div class="node__body">
-          <p><strong>两个学科进入国家「双一流」建设名单：水利工程、环境科学与工程</strong>（2017 年首轮、2022 年第二轮均在列）。名单由国家按学科水平选定。</p>
-          <p>国家重点学科层面，河海有 <strong>1 个一级学科国家重点学科——水利工程</strong>，覆盖 5 个二级学科：水文学及水资源、水力学及河流动力学、水工结构工程、水利水电工程、港口海岸及近海工程；另有 7 个二级学科国家重点学科。</p>
-          <p>港航不是水利的附属方向：<strong>港口、海岸及近海工程是国家重点建设学科</strong>，1957 年河海设立我国第一个海洋工程水文专业；今天港口航道与海岸工程是国家级一流本科专业建设点。</p>
-          <p>本科层面，学校共有 72 个本科专业，其中 37 个入选国家级一流本科专业建设点。<strong>从水文、水工到港航、环境，河海在「水」的整条链条上都有布点。</strong></p>
-          <p class="cite">资料：河海大学《学校简介》（2025）；河海大学港口海岸与近海工程学院《学院概况》；国家重点学科建设公告。</p>
-        </div>
-        <figure class="figure">
-          <div class="figure__frame" style="padding:clamp(20px,3.4vw,30px)">
-            <p class="k" style="color:var(--faint);margin-bottom:14px">水利工程一级学科 · 5 个二级学科</p>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水文学及水资源</div>
-              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水力学及河流动力学</div>
-              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水工结构工程</div>
-              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水利水电工程</div>
-              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">港口海岸及近海工程</div>
-            </div>
-            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:18px">
-              <div class="fact"><div class="fact__k">一流学科</div><div class="fact__v" style="font-size:1.25rem">2 个</div><div class="fact__s">水利 · 环境</div></div>
-              <div class="fact"><div class="fact__k">国家级一流专业</div><div class="fact__v" style="font-size:1.25rem">37<em>个</em></div><div class="fact__s">共 72 个本科专业</div></div>
-            </div>
-          </div>
-          <p class="figure__cap"><span class="dot"></span>自绘 · 水利工程是一级学科国家重点学科，港航在其中占有独立位置。</p>
-        </figure>
-      </div>
-    </div>
-
-    <div class="node reveal" id="p1-1-4">
-      <div class="node__meta"><span class="n">1.1.4</span><span>1963 — 1973 · 方法底座</span></div>
+      <div class="node__meta"><span class="n">1.1.1</span><span>1963 — 1973 · 方法起点</span></div>
       <h3 class="node__title">45 度线，与新安江模型</h3>
       <div class="node__split">
         <div class="node__body">
+          <p>河海的水利传统，既要看校史，也要看方法。先从一九六三年的一条 <strong>45 度线</strong>讲起：它解释了湿润地区的水为什么这样流，也解释了这所大学为何能在水文模型上先走一步。</p>
           <p>1961 年，赵人俊带学生到浙江，在几十个流域上手工点绘降雨径流相关图。曲线前段随降雨增加而变缓，上端却总折成一条 <strong>45 度线</strong>。1963 年，他与庄一鸰在《华东水利学院学报》发表《降雨径流关系的区域规律》，把这条线写成理论：湿润地区包气带先蓄满，蓄满之后，降雨几乎全部变成径流。</p>
           <p>这与教科书里的「超渗产流」不是一回事。前者看包气带是否蓄满，后者看雨强是否超过下渗能力。<strong>这不是参数微调，而是对产流机制的重新分类</strong>，也直接决定了后面新安江模型的结构。</p>
           <p>新安江电站 1957 年动工，1960 年首台机组发电，1965 年竣工。为编制入库径流预报方案，1973 年，赵人俊把蒸散发、产流、水源划分、汇流整合成一个完整系统。</p>
@@ -875,6 +869,104 @@ body.q-lock{overflow:hidden}
       </div>
     </div>
 
+    <div class="node reveal" id="p1-1-2">
+      <div class="node__meta"><span class="n">1.1.2</span><span>1915 — 2026 · 学校坐标</span></div>
+      <h3 class="node__title">一所因水而生的大学</h3>
+      <div class="node__split">
+        <div class="node__body">
+          <p>1915 年，张謇创办<strong>河海工程专门学校</strong>，这是中国第一所培养水利人才的高等学府，也开了中国水利高等教育的先河。校址在南京，课程表上第一次成体系地出现水力学、水文、河工。</p>
+          <p>1952 年院系调整，南京大学水利系与交通大学、同济大学、浙江大学等校的水利系科以及华东水利专科学校组建<strong>华东水利学院</strong>，钱正英任首任院长；1960 年被中共中央认定为全国重点高校；1985 年恢复「河海大学」校名。</p>
+          <p>今天的河海是教育部直属全国重点大学，国家「双一流」建设、「211 工程」重点建设、「985 工程优势学科创新平台」建设高校，设有研究生院；在南京设西康路、江宁两个校区，在常州设常州校区。</p>
+          <p class="quote-line">校名换过几次，问题没换：中国的水，怎么算准、怎么管好。</p>
+          <p class="cite">资料：河海大学《学校简介》（数据截至 2025 年 4 月）、河海大学本科生招生章程（2025 年）。</p>
+        </div>
+        <figure class="figure">
+          <div class="figure__frame" style="padding:clamp(20px,3.4vw,32px)">
+            <p class="k" style="color:var(--faint);margin-bottom:12px">一条 110 年的线</p>
+            <div style="display:flex;flex-direction:column;gap:0">
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1915</b><span style="font-size:12.5px;color:var(--soft)">河海工程专门学校 · 中国第一所培养水利人才的高等学府</span></div>
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1952</b><span style="font-size:12.5px;color:var(--soft)">华东水利学院 · 钱正英任首任院长</span></div>
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-2)"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1960</b><span style="font-size:12.5px;color:var(--soft)">被认定为全国重点高校</span></div>
+              <div style="display:flex;gap:14px;align-items:baseline;padding:10px 0"><b style="font-size:13px;color:var(--accent);min-width:42px;font-variant-numeric:tabular-nums">1985</b><span style="font-size:12.5px;color:var(--soft)">恢复「河海大学」校名，邓小平题写校名</span></div>
+            </div>
+            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:18px">
+              <div class="fact"><div class="fact__k">定位</div><div class="fact__v" style="font-size:1.2rem">双一流</div><div class="fact__s">211 · 985 优势学科平台</div></div>
+              <div class="fact"><div class="fact__k">校区</div><div class="fact__v" style="font-size:1.2rem">3 个</div><div class="fact__s">西康路 · 江宁 · 常州</div></div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+
+    <div class="node reveal" id="p1-1-3">
+      <div class="node__meta"><span class="n">1.1.3</span><span>2017 · 第四轮学科评估</span></div>
+      <h3 class="node__title">学科评估：水利工程 A+</h3>
+      <div class="node__split">
+        <div class="node__body">
+          <p>2017 年 12 月，教育部学位与研究生教育发展中心公布全国第四轮学科评估结果：<strong>河海大学水利工程获评 A+</strong>，这是同一学科里的最高一档。</p>
+          <p>同一轮里，土木工程、环境科学与工程位列 A 类，跻身全国前 10%；马克思主义理论、管理科学与工程、工商管理获评 B+，位列全国前 20%。</p>
+          <p>评估不看学校名气。师资、成果、人才培养、社会服务，一套公开指标，逐项打分。A+ 是同一学科里的最高一档。</p>
+          <p>对考生来说，这是最硬的一条参考：如果要读水利，河海的水利工程在全国处于第一梯队；如果要读土木或环境，它同样在全国前 10%。</p>
+          <p class="cite">资料：河海大学《我校水利工程学科在第四轮学科评估中获评A+》（2017-12-29）；河海大学学科建设公示。</p>
+        </div>
+        <figure class="figure">
+          <div class="figure__frame" style="padding:clamp(20px,3.4vw,30px)">
+            <p class="k" style="color:var(--faint);margin-bottom:14px">第四轮学科评估 · 河海位次</p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid rgba(0,113,227,.3);border-radius:12px;background:rgba(0,113,227,.05)">
+                <b style="font-size:20px;color:var(--accent);letter-spacing:-.02em">A+</b>
+                <span style="font-size:13px;color:var(--ink);font-weight:500">水利工程</span>
+                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">全国前 2%</span>
+              </div>
+              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px">
+                <b style="font-size:17px;color:var(--ink)">A-</b>
+                <span style="font-size:13px;color:var(--ink2)">土木工程 · 环境科学与工程</span>
+                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">全国前 10%</span>
+              </div>
+              <div style="display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line-2);border-radius:12px">
+                <b style="font-size:15px;color:var(--soft)">B+</b>
+                <span style="font-size:12.5px;color:var(--soft)">马克思主义理论 · 管理科学与工程 · 工商管理</span>
+                <span style="font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap">前 20%</span>
+              </div>
+            </div>
+            <p style="font-size:10.5px;color:var(--faint);margin-top:14px;line-height:1.7">A 类 = 全国前 10%。第四轮评估中，河海共有 33 个学科参评。</p>
+          </div>
+          <p class="figure__cap"><span class="dot"></span>自绘 · 等级越高，说明在同一学科里站得越靠前；A+ 是最高一档。</p>
+        </figure>
+      </div>
+    </div>
+
+    <div class="node reveal" id="p1-1-4">
+      <div class="node__meta"><span class="n">1.1.4</span><span>学科布局 · 一流学科与国家重点学科</span></div>
+      <h3 class="node__title">一条从水利，到环境、港航的学科链</h3>
+      <div class="node__split">
+        <div class="node__body">
+          <p><strong>两个学科进入国家「双一流」建设名单：水利工程、环境科学与工程</strong>（2017 年首轮、2022 年第二轮均在列）。名单由国家按学科水平选定。</p>
+          <p>国家重点学科层面，河海有 <strong>1 个一级学科国家重点学科——水利工程</strong>，覆盖 5 个二级学科：水文学及水资源、水力学及河流动力学、水工结构工程、水利水电工程、港口海岸及近海工程；另有 7 个二级学科国家重点学科。</p>
+          <p>港航不是水利的附属方向：<strong>港口、海岸及近海工程是国家重点建设学科</strong>，1957 年河海设立我国第一个海洋工程水文专业；今天港口航道与海岸工程是国家级一流本科专业建设点。</p>
+          <p>本科层面，学校共有 72 个本科专业，其中 37 个入选国家级一流本科专业建设点。<strong>从水文、水工到港航、环境，河海在「水」的整条链条上都有布点。</strong></p>
+          <p class="cite">资料：河海大学《学校简介》（2025）；河海大学港口海岸与近海工程学院《学院概况》；国家重点学科建设公告。</p>
+        </div>
+        <figure class="figure">
+          <div class="figure__frame" style="padding:clamp(20px,3.4vw,30px)">
+            <p class="k" style="color:var(--faint);margin-bottom:14px">水利工程一级学科 · 5 个二级学科</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水文学及水资源</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水力学及河流动力学</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水工结构工程</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">水利水电工程</div>
+              <div style="padding:10px 14px;border-radius:10px;background:rgba(0,113,227,.06);border:1px solid rgba(0,113,227,.25);font-size:12.5px;color:var(--ink);font-weight:500">港口海岸及近海工程</div>
+            </div>
+            <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:18px">
+              <div class="fact"><div class="fact__k">一流学科</div><div class="fact__v" style="font-size:1.25rem">2 个</div><div class="fact__s">水利 · 环境</div></div>
+              <div class="fact"><div class="fact__k">国家级一流专业</div><div class="fact__v" style="font-size:1.25rem">37<em>个</em></div><div class="fact__s">共 72 个本科专业</div></div>
+            </div>
+          </div>
+          <p class="figure__cap"><span class="dot"></span>自绘 · 水利工程是一级学科国家重点学科，港航在其中占有独立位置。</p>
+        </figure>
+      </div>
+    </div>
+
     <div class="node reveal" id="p1-1-5">
       <div class="node__meta"><span class="n">1.1.5</span><span>国际坐标 · 全球第一与 ESI 前 1‰</span></div>
       <h3 class="node__title">世界坐标：全球第一，与 200+ 个真实案例</h3>
@@ -894,8 +986,8 @@ body.q-lock{overflow:hidden}
 
     <div class="group reveal">
       <p class="group__k">1.2 · 工具</p>
-      <h2 class="group__t">方法凭什么可信？</h2>
-      <p class="group__d">观测、物理模型、港航实验，三套能力。一套提供长期数据，一套验证水工结构，一套回答河口海岸的复杂问题。AI 需要的训练数据、物理约束与验证场景，全部来自这一层。</p>
+      <h2 class="group__t">方法何以可信？</h2>
+      <p class="group__d">观测、物理模型与港航实验，构成三套互为支撑的能力：一套提供长期数据，一套验证水工结构，一套回答河口海岸的复杂问题。AI 所需的训练数据、物理约束与验证场景，皆源于此。</p>
     </div>
 
     <div class="node reveal" id="p1-2-1">
@@ -985,9 +1077,9 @@ body.q-lock{overflow:hidden}
       <h3 class="node__title">港口海岸与近海工程实验</h3>
       <div class="node__split">
         <div class="node__body">
-          <p>波浪水槽、港池、潮流与泥沙试验，模拟波浪传播、港内泊稳、航道回淤与岸线演变。<strong>港航不是水文的附属</strong>：它处理的是波浪、潮流、泥沙与结构相互作用，是河海三大传统优势之一。</p>
-          <p>河海 1957 年设立我国第一个海洋工程水文专业，这条学科线比多数人想象的更早。</p>
-          <p>代表工作包括全国海岸带与海涂资源综合调查、广东核电站港口与取水口布置、岸线与深水航道治理研究。这一层直接支撑模块二的「风暴潮预报」与「港航管理」，也支撑模块三的「港自己说话」。</p>
+          <p>波浪水槽、港池、潮流与泥沙试验，模拟波浪传播、港内泊稳、航道回淤与岸线演变。<strong>港航并非水文的附属</strong>：它处理的是波浪、潮流、泥沙与结构相互作用，是河海三大传统优势之一。</p>
+          <p>河海于 1957 年设立我国第一个海洋工程水文专业，这一学科布局早于多数同类院校。</p>
+          <p>代表工作包括全国海岸带与海涂资源综合调查、广东核电站港口与取水口布置、岸线与深水航道治理研究。这一层直接支撑模块二的「风暴潮预报」与「港航管理」，也支撑模块三的「港口自主协商」。</p>
           <p class="cite">资料：河海大学港口海岸与近海工程学院公开资料；校史资料（1957 年海洋工程水文专业）。</p>
         </div>
         <figure class="figure">
@@ -1016,8 +1108,8 @@ body.q-lock{overflow:hidden}
 
     <div class="group reveal">
       <p class="group__k">1.3 · 工程</p>
-      <h2 class="group__t">研究落到实际项目。</h2>
-      <p class="group__d">工程层看的是在关键节点上有没有给出方案。这里只留三个项目：新中国第一座自主设计施工的大型水库、世界级的调水泵站群、流域级实时调度系统。</p>
+      <h2 class="group__t">研究落到工程现场。</h2>
+      <p class="group__d">工程层检验的是：在关键节点上，是否给出了可实施的方案。此处只保留三个项目：新中国第一座自主设计施工的大型水库、世界级调水泵站群、流域级实时调度系统。</p>
       <div class="photo-row reveal">
         <figure class="shot">
           <img src="assets/dam.jpg" alt="佛子岭连拱坝与水库航拍" width="1000" height="563" loading="lazy">
@@ -1075,7 +1167,7 @@ body.q-lock{overflow:hidden}
 
     <div class="node reveal" id="p1-3-2">
       <div class="node__meta"><span class="n">1.3.2</span><span>南水北调东线 · 泵站</span></div>
-      <h3 class="node__title">13 级泵站，把水抬起来</h3>
+      <h3 class="node__title">13 级泵站：将水抬升 65 米</h3>
       <div class="node__split">
         <div class="node__body">
           <p>东线一期工程共 <strong>13 级泵站</strong>，水位差约 <strong>40 米</strong>，总扬程约 <strong>65 米</strong>。河海徐辉团队主持的「大型泵站水力系统高效运行与安全保障关键技术及应用」获 2020 年度国家科技进步二等奖。</p>
@@ -1150,7 +1242,7 @@ body.q-lock{overflow:hidden}
   <div class="wrap reveal">
     <p class="bridge__k">接口 · 通向模块二</p>
     <p class="bridge__q">底蕴不是陈列，<br>是可以被调用的资产。</p>
-    <p class="bridge__s">模型、经验、数据——这三样东西在河海已经积累了六十年。下一幕要回答的，是 AI 把它们接上了什么。</p>
+    <p class="bridge__s">河海积累了六十年的模型、经验与数据，不是用来展示的，而是下一幕数字化的输入。没有这三类资产，测、报、算、管只能是无源之水；有了它们，AI 才有一个可以被检验的起点。</p>
   </div>
 </section>
 </div><!-- /act1 -->
@@ -1160,61 +1252,84 @@ body.q-lock{overflow:hidden}
 
 <section class="act-cover act-cover--night" id="act2">
   <div class="wrap">
-    <div class="cover__inner">
+    <div class="cover__inner cover__inner--hub">
       <div class="cover__main">
-        <p class="chapter"><span class="num">02</span><span class="tot">/ 03 · 数字赋能</span></p>
+        <p class="chapter"><span class="num">02</span><span class="tot">/ 03 · AI时代下的传承与革新</span></p>
         <div class="cover__num">02</div>
-        <h1 class="cover__title">数字赋能</h1>
-        <p class="cover__thesis">新安江模型还在。AI 把模型、经验与数据接成一条链。先看人，再看测、报、算、管。</p>
-        <p class="cover__meta">5 个主干 · 18 个场景 · 育 → 测 → 报 → 算 → 管</p>
+        <h1 class="cover__title">AI时代下的<br>传承与革新</h1>
+        <p class="cover__thesis">先把一个词说清楚：数字化不是把纸面搬到屏幕上，而是让物理世界变成可测量、可计算、可调度的数据流——先感知（测），再预测（报），再计算（算），最后落到控制（管）。这四个方面构成一条完整链路；AI 的作用，是让其中每一环更快、更准、更可核查。本幕主要回答：河海在这四个方面，培养了什么人、做出了什么贡献。结论先行——模型没有被替换，被替换的是速度与协同方式；而支撑这一切的，是上一幕沉淀下来的方法资产。</p>
+        <p class="cover__meta">1 个传承 · 4 个方面 · 18 个子目 · 2009—2026</p>
+        <p class="hub-note"><span class="hub-note__dot"></span>先读「传承」，再读「测、报、算、管」四环。每一节先讲清这一环的数字逻辑，再落到河海的教育与工程贡献。</p>
       </div>
-      <nav class="cover__toc" aria-label="模块二目录">
-        <div class="toc__head"><span>模块二目录</span><span>先看人 · 再看系统</span></div>
+      <nav class="hub-grid" aria-label="模块二主目录">
 
-        <div class="toc__g"><b>2.1</b><span>育 · 谁把系统传下去<em>宣传位 · 放在最前</em></span></div>
-        <a class="toc__row" href="#p2-1-1"><span class="toc__n">2.1.1</span><span class="toc__t">大禹学院</span><span class="toc__d">2009.7 · 荣誉学院 · 本硕博贯通</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-1-2"><span class="toc__n">2.1.2</span><span class="toc__t">长江保护与绿色发展研究院</span><span class="toc__d">2019.6.29 · 国内首个</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-1-3"><span class="toc__n">2.1.3</span><span class="toc__t">以流域为单位的科研组织</span><span class="toc__d">把论文放到一条河上</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-1-4"><span class="toc__n">2.1.4</span><span class="toc__t">三种能力：懂水 · 懂数 · 懂责</span><span class="toc__d">三种能力同时成立</span><span class="toc__a">↓</span></a>
+        <a class="hub-card hub-card--wide" href="#part-p2-1">
+          <span class="hub-card__n">2.1 · 传承</span>
+          <span class="hub-card__t">谁让系统得以传承</span>
+          <span class="hub-card__d">系统可以采购，能同时懂水、懂数、懂责的人只能自己培养。大禹学院、长江院与流域化科研组织，构成这一层的答案。</span>
+          <span class="hub-card__list">
+            <span>大禹学院：流域课堂</span><span>让培养发生在真流域里</span><span>以流域为单元组织科研</span><span>三种能力：懂水·懂数·懂责</span>
+          </span>
+          <span class="hub-card__meta"><b>4 个子目</b><span>2009 — 2019</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>2.2</b><span>测 · 让数据先到位<em>没有观测，就没有智能</em></span></div>
-        <a class="toc__row" href="#p2-2-1"><span class="toc__n">2.2.1</span><span class="toc__t">全国首个水利云平台</span><span class="toc__d">一次建成，江苏、福建、黄委复用</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-2-2"><span class="toc__n">2.2.2</span><span class="toc__t">空天地水一体化监测</span><span class="toc__d">卫星、雷达、站网、无人机</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-2-3"><span class="toc__n">2.2.3</span><span class="toc__t">数字孪生的数据底板</span><span class="toc__d">统一时空基准与对象编码</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p2-2">
+          <span class="hub-card__n">2.2 · 测（感知）</span>
+          <span class="hub-card__t">让数据先行到位</span>
+          <span class="hub-card__d">从全国首个水利云，到空天地水一体化监测，再到统一时空基准的数据底板。</span>
+          <span class="hub-card__list">
+            <span>统一平台：全国首个水利云</span><span>空天地水一体化监测</span><span>统一时空基准的底板</span>
+          </span>
+          <span class="hub-card__meta"><b>3 个子目</b><span>云 · 网 · 底板</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>2.3</b><span>报 · 把来水说清楚<em>从「算得慢」到「报得准」</em></span></div>
-        <a class="toc__row" href="#p2-3-1"><span class="toc__n">2.3.1</span><span class="toc__t">首套大数据驱动的洪水预报</span><span class="toc__d">物理模型给约束，数据给细节</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-3-2"><span class="toc__n">2.3.2</span><span class="toc__t">风暴潮：小时级 → 分钟级</span><span class="toc__d">浙江 11 站最大潮位精度 87%</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-3-3"><span class="toc__n">2.3.3</span><span class="toc__t">宁波智能体：秒级出方案</span><span class="toc__d">人工十几到二十分钟 → 秒级初算</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p2-3">
+          <span class="hub-card__n">2.3 · 报（预报）</span>
+          <span class="hub-card__t">把来水说清楚</span>
+          <span class="hub-card__d">洪水预报、风暴潮与宁波智能体：三个节点，对应时效、精度与方案生成的三次跃迁。</span>
+          <span class="hub-card__list">
+            <span>首套大数据驱动洪水预报</span><span>风暴潮：从小时级到分钟级</span><span>宁波：秒级生成，人工审定</span>
+          </span>
+          <span class="hub-card__meta"><b>3 个子目</b><span>87% · 分钟级 · 秒级</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>2.4</b><span>算 · 让模型跑得动<em>三种耦合，一条流水线</em></span></div>
-        <a class="toc__row" href="#p2-4-1"><span class="toc__n">2.4.1</span><span class="toc__t">物理模型 + 机器学习</span><span class="toc__d">率定 · 修正 · 集成</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-4-2"><span class="toc__n">2.4.2</span><span class="toc__t">水利知识图谱</span><span class="toc__d">对象 · 事理 · 场景</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-4-3"><span class="toc__n">2.4.3</span><span class="toc__t">数字孪生与预演</span><span class="toc__d">先在虚拟流域里跑一遍</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-4-4"><span class="toc__n">2.4.4</span><span class="toc__t">大模型与专业模型的分工</span><span class="toc__d">语言模型不替代水动力模型</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p2-4">
+          <span class="hub-card__n">2.4 · 算（计算）</span>
+          <span class="hub-card__t">让模型跑得动，也说得清</span>
+          <span class="hub-card__d">物理模型与机器学习如何耦合、水利知识如何成图、数字孪生如何预演。</span>
+          <span class="hub-card__list">
+            <span>物理模型 + 机器学习</span><span>水利知识图谱</span><span>数字孪生与预演</span><span>语言模型与水利模型的分工</span>
+          </span>
+          <span class="hub-card__meta"><b>4 个子目</b><span>率定 · 修正 · 集成</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>2.5</b><span>管 · 把方案落下去<em>从会商室到闸门</em></span></div>
-        <a class="toc__row" href="#p2-5-1"><span class="toc__n">2.5.1</span><span class="toc__t">四预闭环</span><span class="toc__d">预报 · 预警 · 预演 · 预控</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-5-2"><span class="toc__n">2.5.2</span><span class="toc__t">蓄滞洪区：一张真实账单</span><span class="toc__d">蒙洼 2020 · 海河 2023</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-5-3"><span class="toc__n">2.5.3</span><span class="toc__t">港航：窗口与回淤</span><span class="toc__d">潮位、波浪、船期、航道</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p2-5-4"><span class="toc__n">2.5.4</span><span class="toc__t">从「算得出」到「敢签字」</span><span class="toc__d">可解释、留痕、责任</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p2-5">
+          <span class="hub-card__n">2.5 · 管（管控）</span>
+          <span class="hub-card__t">让方案落地</span>
+          <span class="hub-card__d">从会商室到闸门：四预闭环、蓄滞洪区的真实账单、港航窗口，以及「敢签字」的制度条件。</span>
+          <span class="hub-card__list">
+            <span>预报 · 预警 · 预演 · 预控</span><span>一张真实的调度账单</span><span>潮位窗口，决定船期</span><span>从「算得出」到「敢签字」</span>
+          </span>
+          <span class="hub-card__meta"><b>4 个子目</b><span>预报 · 预警 · 预演 · 预控</span><span class="hub-card__go">→</span></span>
+        </a>
+
       </nav>
     </div>
   </div>
 </section>
 
-<section class="section section--night" id="act2-body">
+<section class="section section--night act-body-host" id="act2-body">
   <div class="wrap">
 
     <div class="group reveal" style="border-top:0;padding-top:0">
-      <p class="group__k">2.1 · 育</p>
-      <h2 class="group__t">先有人，<br>才有一套能传下去的系统。</h2>
-      <p class="group__d">AI 赋能不只靠服务器和接口。难的是：谁看得懂水位、谁调得动模型、谁在方案下面签字。这一节放在最前。一套系统可以采购，能同时懂水与懂算的人，只能自己培养。</p>
+      <p class="group__k">2.1 · 传承</p>
+      <h2 class="group__t">先有人，<br>方有一套可传承的系统。</h2>
+      <p class="group__d">AI 时代最先要回答的，不是采购什么系统，而是谁接得住这套系统。传承不是复述旧知识，而是把「懂水、懂数、懂责」三种能力交给下一代。故这一节置于四环之前：系统可以采购，能同时懂水与懂算的人，只能自己培养。</p>
     </div>
 
     <div class="node reveal" id="p2-1-1">
       <div class="node__meta"><span class="n">2.1.1</span><span>2009.7 · 大禹学院</span></div>
-      <h3 class="node__title">把「拔尖」先放在水里</h3>
+      <h3 class="node__title">大禹学院：以流域为课堂的拔尖培养</h3>
       <div class="node__split">
         <div class="node__body">
           <p>2009 年 7 月，河海大学在举办多年的<strong>水利类基地强化班</strong>基础上成立<strong>大禹学院</strong>，作为学校培养本科拔尖创新人才的荣誉学院。名字取自大禹，指向的却是同一条河：治水先治人。</p>
@@ -1262,7 +1377,7 @@ body.q-lock{overflow:hidden}
 
     <div class="node reveal" id="p2-1-3">
       <div class="node__meta"><span class="n">2.1.3</span><span>组织 · 以流域为单位</span></div>
-      <h3 class="node__title">把论文放到一条河上</h3>
+      <h3 class="node__title">以流域为单元组织科研</h3>
       <div class="node__split">
         <div class="node__body">
           <p>河海的科研组织方式，长期以「流域」为单位：一条河的水文、泥沙、岸线、生态与工程问题放在同一个团队里解决，而不是按学科切成互不相见的碎片。</p>
@@ -1294,9 +1409,9 @@ body.q-lock{overflow:hidden}
 
     <div class="node reveal" id="p2-1-4">
       <div class="node__meta"><span class="n">2.1.4</span><span>培养 · 三种能力</span></div>
-      <h3 class="node__title">三种能力，一个出口</h3>
+      <h3 class="node__title">三种能力：懂水、懂数、懂责</h3>
       <div class="node__body">
-        <p>如果只会调包，AI 是一个更快的计算器；如果只会看水位，AI 是一个不可信的黑箱。河海的培养目标，是让这两件事同时发生，并且加上第三件：<strong>在真实洪水面前，知道方案错了谁承担。</strong></p>
+        <p>如果只会调用现成工具，AI 是一个更快的计算器；如果只会看水位，AI 是一个不可信的黑箱。河海的培养目标，是让这两件事同时发生，并且加上第三件：<strong>在真实洪水面前，知道方案错了谁承担。</strong></p>
         <p>课程清单会变，能力不会变：懂水，是知道物理上什么不可能；懂数，是知道结果怎么来的；懂责，是知道这个按钮该不该按。</p>
         <p><strong>最稀缺的产出，是一批能把软件用到国家防汛系统里的人。</strong></p>
       </div>
@@ -1309,14 +1424,14 @@ body.q-lock{overflow:hidden}
     </div>
 
     <div class="group reveal">
-      <p class="group__k">2.2 · 测</p>
-      <h2 class="group__t">没有观测，<br>就没有智能。</h2>
-      <p class="group__d">测是入口。这一层的贡献，是把数据变成统一底座：能复用、能对齐、能被模型直接吃进去。</p>
+      <p class="group__k">2.2 · 测（感知）</p>
+      <h2 class="group__t">没有观测，<br>便没有智能。</h2>
+      <p class="group__d">先说清这一环：数字化第一步是「感知」——把水位、雨量、流量、地形与工程状态变成可传输、可对齐的数字。没有这一步，后面的模型只能凭空推演。河海在此的教育与贡献，是把云平台、空天地水监测与统一时空基准连成一套可复用的数据底座，并让相关专业的学生在真实流域里学会治理数据。</p>
     </div>
 
     <div class="node reveal" id="p2-2-1">
       <div class="node__meta"><span class="n">2.2.1</span><span>底座 · 全国首个水利云</span></div>
-      <h3 class="node__title">一次建成，多地复用</h3>
+      <h3 class="node__title">统一平台，多地复用</h3>
       <div class="node__split">
         <div class="node__body">
           <p>河海的「基于云计算的防汛防旱信息集成平台」，被称为<strong>全国第一个水利云平台</strong>，推广到江苏、福建和黄委。它把分散的雨情、水情、工情数据集中到一张底图上，让防汛防旱业务第一次有了统一底座。</p>
@@ -1392,9 +1507,9 @@ body.q-lock{overflow:hidden}
     </div>
 
     <div class="group reveal">
-      <p class="group__k">2.3 · 报</p>
+      <p class="group__k">2.3 · 报（预报）</p>
       <h2 class="group__t">把来水说清楚。</h2>
-      <p class="group__d">报是模型接受业务检验的地方。三个节点：一套大数据洪水预报系统、一个把时效压到分钟级的风暴潮模型、一个在宁波把方案生成压到秒级的智能体。</p>
+      <p class="group__d">先说清这一环：数字化第二步是「预报」——用模型把已经发生的观测，换算成尚未发生的来水。它回答的是时间问题：洪水什么时候到、有多大、持续多久。河海的贡献，在于把预报从经验判断推进到数据驱动：一套大数据洪水预报系统、一个把时效压至分钟级的风暴潮模型、一个在宁波把方案生成压至秒级的智能体；相关方法也进入水文与港航的课程与汛期值守。</p>
     </div>
 
     <div class="node reveal" id="p2-3-1">
@@ -1439,7 +1554,7 @@ body.q-lock{overflow:hidden}
       <h3 class="node__title">从小时级，到分钟级</h3>
       <div class="node__body">
         <p>精细化作业预报时效从<strong>小时级压缩到分钟级</strong>；在浙江 11 个站的最大潮位预报中，精度达到 <strong>87%</strong>。它服务广东、上海、浙江等沿海防汛部门。</p>
-        <p>风暴潮不是单一因素：天文潮、气压、风场、波浪相互叠加。智能模型把这些输入一起吃进去，输出的是具体站点、具体时刻的潮位。分钟级的意义在于，它能赶上港航作业窗口与人员撤离的时间表。</p>
+        <p>风暴潮不是单一因素：天文潮、气压、风场、波浪相互叠加。智能模型将这些输入纳入同一框架，输出的是具体站点、具体时刻的潮位。分钟级的意义在于，它能赶上港航作业窗口与人员撤离的时间表。</p>
         <p>公开资料没有给出「几小时到几分钟」的精确数值，本页只用两档表述，不写具体分钟数。</p>
       </div>
       <div class="facts">
@@ -1452,7 +1567,7 @@ body.q-lock{overflow:hidden}
 
     <div class="node reveal" id="p2-3-3">
       <div class="node__meta"><span class="n">2.3.3</span><span>2026 · 宁波 · 智能体</span></div>
-      <h3 class="node__title">秒级出方案，人来定稿</h3>
+      <h3 class="node__title">秒级生成方案，人工审定</h3>
       <div class="node__split">
         <div class="node__body">
           <p>宁波周公宅—皎口水库的 AI 预报调度智能体，把过去人工需要<strong>十几到二十分钟</strong>的方案编制，压到<strong>秒级</strong>生成多个候选方案。</p>
@@ -1544,10 +1659,10 @@ body.q-lock{overflow:hidden}
       </div>
     </div>
 
-    <div class="group reveal" style="margin-top:clamp(64px,9vw,110px)">
-      <p class="group__k">2.4 · 算</p>
-      <h2 class="group__t">让模型跑得动，<br>还要说得清。</h2>
-      <p class="group__d">算不只是加 GPU。这一层要解决三件事：怎么让物理模型与机器学习协同、怎么让机器读懂水利业务关系、怎么在虚拟流域里先跑一遍。</p>
+    <div class="group reveal">
+      <p class="group__k">2.4 · 算（计算）</p>
+      <h2 class="group__t">让模型跑得动，<br>也说得清。</h2>
+      <p class="group__d">先说清这一环：数字化第三步是「计算」——算力决定能算多大，算法决定算得多准，模型耦合决定结果能否被解释。算不只是增加 GPU，它要解决三件事：物理模型与机器学习如何协同、机器如何读懂水利业务关系、如何在虚拟流域中先行推演。河海在此做的不是替代物理模型，而是让物理约束与机器学习各就其位，并把知识图谱、数字孪生带进教学与工程。</p>
     </div>
 
     <div class="node reveal" id="p2-4-1">
@@ -1631,7 +1746,7 @@ body.q-lock{overflow:hidden}
                 <text x="263" y="254">下游压力小</text><text x="263" y="272">后续风险高</text>
                 <text x="468" y="254">分洪可控</text><text x="468" y="272">转移成本高</text>
               </g>
-              <g font-size="9.5" fill="#0071e3"><text x="40" y="330">预演不替你选，只把每种选择的代价摆出来。</text></g>
+              <g font-size="9.5" fill="#0071e3"><text x="40" y="330">预演不替代选择，只把每种选择的代价摆明。</text></g>
             </svg>
           </div>
           <p class="figure__cap"><span class="dot"></span>自绘示意 · 预演把「开闸一次」变成「先跑一百次」。</p>
@@ -1646,7 +1761,7 @@ body.q-lock{overflow:hidden}
         <div class="node__body">
           <p>大语言模型擅长语言理解、知识检索与解释生成，但它不擅长连续方程、边界条件与守恒律。它可以把「调度规程」翻译成可执行的步骤，但不能替代水动力模型算水位。</p>
           <p>正确的分工是：<strong>大模型做「翻译与调用」，专业模型做「计算与验证」，人做「判断与签字」。</strong></p>
-          <p>本站在线问答只做本地知识检索，不接大模型，也不让语言模型生成任何水位数字。这条边界既是技术选择，也是责任选择。</p>
+          <p>这条边界同样适用于本站：不让语言模型生成任何水位数字，也不让它在没有依据时替人下结论。技术选择背后，是责任选择。</p>
           <p class="cite">说明：本节点为站内技术边界声明，不对应某一具体产品。</p>
         </div>
         <figure class="figure">
@@ -1665,24 +1780,24 @@ body.q-lock{overflow:hidden}
       </div>
     </div>
     <div class="group reveal">
-      <p class="group__k">2.5 · 管</p>
+      <p class="group__k">2.5 · 管（管控）</p>
       <h2 class="group__t">从会商室，<br>到闸门。</h2>
-      <p class="group__d">管是最后一公里。预报再准，落不到闸门、泵站与蓄滞洪区，就不算完成。两个真实洪水年，一组账单。</p>
+      <p class="group__d">先说清这一环：数字化第四步是「管控」——方案只有落到闸门、泵站、蓄滞洪区与船期上，才算真正完成一次数字化。预报再准，停在这一步之前，也只是屏幕上的曲线。河海在这一环的教育与贡献，是让懂水的人同时懂系统、懂制度，知道方案落地之后由谁签字、由谁承担：两个真实洪水年，一组清晰账单。</p>
     </div>
 
     <div class="node reveal" id="p2-5-1">
       <div class="node__meta"><span class="n">2.5.1</span><span>闭环 · 四预</span></div>
       <h3 class="node__title">预报 · 预警 · 预演 · 预控</h3>
       <div class="node__body">
-        <p>「四预」是一条链：<strong>预报</strong>给出来水，<strong>预警</strong>把信息传到人，<strong>预演</strong>在数字孪生场景里把方案跑一遍，<strong>预控</strong>才落到闸门、泵站与蓄滞洪区。</p>
+        <p>「四预」是一条链：<strong>预报</strong>给出来水，<strong>预警</strong>把信息传到人，<strong>预演</strong>在数字孪生场景中先行推演，<strong>预控</strong>才落到闸门、泵站与蓄滞洪区。</p>
         <p>模型能接进去，说明它通过了业务检验：从实验室算法，变成国家防汛抗旱系统里的一个环节。</p>
         <p>河海的系统已接入国家防汛会商与「四预」平台。第一幕积累的模型与工程经验，在这里变成国家系统里的一次会商。</p>
       </div>
       <div class="facts">
         <div class="fact"><div class="fact__k">01 · 预报</div><div class="fact__v" style="font-size:1.4rem">来水</div><div class="fact__s">降雨 → 径流 → 水位</div></div>
         <div class="fact"><div class="fact__k">02 · 预警</div><div class="fact__v" style="font-size:1.4rem">到人</div><div class="fact__s">信息抵达责任人</div></div>
-        <div class="fact"><div class="fact__k">03 · 预演</div><div class="fact__v" style="font-size:1.4rem">跑一遍</div><div class="fact__s">方案比选 · 风险评估</div></div>
-        <div class="fact"><div class="fact__k">04 · 预控</div><div class="fact__v" style="font-size:1.4rem">落下去</div><div class="fact__s">闸门 · 泵站 · 蓄滞洪区</div></div>
+        <div class="fact"><div class="fact__k">03 · 预演</div><div class="fact__v" style="font-size:1.4rem">先行推演</div><div class="fact__s">方案比选 · 风险评估</div></div>
+        <div class="fact"><div class="fact__k">04 · 预控</div><div class="fact__v" style="font-size:1.4rem">落地</div><div class="fact__s">闸门 · 泵站 · 蓄滞洪区</div></div>
       </div>
       <p class="cite">资料：水利部「四预」系统公开报道、河海大学公开资料。</p>
     </div>
@@ -1692,7 +1807,7 @@ body.q-lock{overflow:hidden}
       <h3 class="node__title">一张真实的调度账单</h3>
       <div class="node__body">
         <p>调度不是一个抽象动作。它意味着：哪一片耕地被淹、多少人要在几小时内转移、多少库容要被消耗。下面这些数字，来自公开报道中的真实洪水年。</p>
-        <p>模型在这里的作用，是把「如果」提前算出来：如果早开闸，下游水位低多少；如果留库容，后续风险高多少；如果分洪，转移成本是多少。<strong>账单越清楚，决策越不靠拍脑袋。</strong></p>
+        <p>模型在这里的作用，是把「如果」提前算出来：如果早开闸，下游水位低多少；如果留库容，后续风险高多少；如果分洪，转移成本是多少。<strong>账单越清楚，决策越不依赖直觉。</strong></p>
       </div>
       <div class="bills">
         <div class="bill">
@@ -1774,7 +1889,7 @@ body.q-lock{overflow:hidden}
   <div class="wrap reveal">
     <p class="k" style="color:#6f7884;margin-bottom:18px">模块二收束</p>
     <p class="band__q">算力已经不是瓶颈。<br><span class="dim">瓶颈是人敢不敢签字。</span></p>
-    <p class="band__meta">测、报、算、管跑通了一段；育决定这段路能走多远。</p>
+    <p class="band__meta">测、报、算、管跑通了，系统才有资格把责任推回人前；而传承，决定这段路能走多远。这正是下一幕的起点。</p>
   </div>
 </section>
 </div><!-- /act2 -->
@@ -1784,55 +1899,78 @@ body.q-lock{overflow:hidden}
 
 <section class="act-cover act-cover--paper" id="act3">
   <div class="wrap">
-    <div class="cover__inner">
+    <div class="cover__inner cover__inner--hub">
       <div class="cover__main">
-        <p class="chapter"><span class="num">03</span><span class="tot">/ 03 · 未来之路</span></p>
+        <p class="chapter"><span class="num">03</span><span class="tot">/ 03 · 未来之路由谁决定</span></p>
         <div class="cover__num">03</div>
-        <h1 class="cover__title">未来之路</h1>
-        <p class="cover__thesis">算力没有立场。剩下要定的是：人愿意把哪一步交给它。先投一票，再看四层分责。</p>
-        <p class="cover__meta">现场投票 · 四层分责 · 三个场景</p>
+        <h1 class="cover__title">未来之路<br>由谁决定</h1>
+        <p class="cover__thesis">第二幕让系统跑通；系统一旦跑通，问题便从「能不能算」变成「谁来定」。算力不持有立场，模型也不承担后果。真正需要回答的是：在一条河的调度链上，人愿意把哪一步交给机器，又必须把哪一步留在自己手里。请先投票，再读人与 AI 的四层分责，最后进入三个真实场景。</p>
+        <p class="cover__meta">现场投票 · 四层分责 · 三个真实场景 · 三次位移</p>
+        <p class="hub-note"><span class="hub-note__dot"></span>建议依序阅读：先作选择，再看分层，最后进入场景。每一层都对应一个可以被追问的责任主体。</p>
       </div>
-      <nav class="cover__toc" aria-label="模块三目录">
-        <div class="toc__head"><span>模块三目录</span><span>现在进行时</span></div>
+      <nav class="hub-grid" aria-label="模块三主目录">
 
-        <div class="toc__g"><b>3.0</b><span>引入 · 你来决定<em>先投票，再往下读</em></span></div>
-        <a class="toc__row" href="#vote"><span class="toc__n">3.0.1</span><span class="toc__t">同一场洪水，谁来拍板？</span><span class="toc__d">全部交给 AI / 人机共决 / 人说了算</span><span class="toc__a">↓</span></a>
+        <a class="hub-card hub-card--wide" href="#part-p3-0">
+          <span class="hub-card__n">3.0 · 引入</span>
+          <span class="hub-card__t">同一场洪水，谁来裁定</span>
+          <span class="hub-card__d">在阅读之前，请先作一次选择：全部交给 AI、与人共决，或由人最终裁定。三种选择，对应三种真实制度。</span>
+          <span class="hub-card__list">
+            <span>全部交给 AI · 自动执行</span><span>人机共决 · 人复核签字</span><span>人最终裁定 · AI 仅参考</span>
+          </span>
+          <span class="hub-card__meta"><b>1 个互动</b><span>现场投票</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>3.1</b><span>协作 · 人机如何分层<em>从执行到价值</em></span></div>
-        <a class="toc__row" href="#p3-1-1"><span class="toc__n">3.1.1</span><span class="toc__t">第一层 · 执行</span><span class="toc__d">AI 做重复劳动，人保留体力</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p3-1-2"><span class="toc__n">3.1.2</span><span class="toc__t">第二层 · 认知</span><span class="toc__d">AI 给候选，人做判断</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p3-1-3"><span class="toc__n">3.1.3</span><span class="toc__t">第三层 · 责任</span><span class="toc__d">AI 留痕，人签字</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p3-1-4"><span class="toc__n">3.1.4</span><span class="toc__t">第四层 · 价值</span><span class="toc__d">四个目标，由你来排序</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p3-1">
+          <span class="hub-card__n">3.1 · 人与AI的四层分责</span>
+          <span class="hub-card__t">谁负责哪一步</span>
+          <span class="hub-card__d">从执行、认知、责任到价值，责任逐层加重，也越来越难被算法接管。</span>
+          <span class="hub-card__list">
+            <span>L1 执行层 · 机器做重复劳动</span><span>L2 认知层 · 人校验结论</span><span>L3 责任层 · 人签发留痕</span><span>L4 价值层 · 人定义取舍</span>
+          </span>
+          <span class="hub-card__meta"><b>4 个子目</b><span>L1 — L4</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>3.2–3.4</b><span>三个场景 · 三次位移<em>已经露头的未来</em></span></div>
-        <a class="toc__row" href="#p3-2"><span class="toc__n">3.2</span><span class="toc__t">辅助决策 → 自主调度</span><span class="toc__d">宁波：秒级初算，人仍定稿</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p3-3"><span class="toc__n">3.3</span><span class="toc__t">单点流域 → 全局流域</span><span class="toc__d">从一座库，到一张水网</span><span class="toc__a">↓</span></a>
-        <a class="toc__row" href="#p3-4"><span class="toc__n">3.4</span><span class="toc__t">人工管港 → 港自己说话</span><span class="toc__d">潮位、船期、回淤的实时协商</span><span class="toc__a">↓</span></a>
+        <a class="hub-card" href="#part-p3-2">
+          <span class="hub-card__n">3.2–3.4 · 真实场景</span>
+          <span class="hub-card__t">真实场景，已见端倪</span>
+          <span class="hub-card__d">调度、流域与港航：未来先在某个水库、某条流域、某个港口露出一角。</span>
+          <span class="hub-card__list">
+            <span>3.2 水库调度 · 秒级方案</span><span>3.3 流域尺度 · 一群水库</span><span>3.4 港航协商 · 船期与潮位</span>
+          </span>
+          <span class="hub-card__meta"><b>3 个场景</b><span>今天 → 位移 → 未决</span><span class="hub-card__go">→</span></span>
+        </a>
 
-        <div class="toc__g"><b>3.5</b><span>尾声 · 你来回答<em>按钮在谁手里</em></span></div>
-        <a class="toc__row" href="#p3-5"><span class="toc__n">3.5.1</span><span class="toc__t">六十年，三次位移</span><span class="toc__d">从尺子，到模型，到共决</span><span class="toc__a">↓</span></a>
-        <p class="cover__note">顺序：先投 3.0 的票，再读 3.1 的四层，最后看三个场景。</p>
+        <a class="hub-card hub-card--wide" href="#p3-5">
+          <span class="hub-card__n">3.5 · 尾声</span>
+          <span class="hub-card__t">六十年，三次位移</span>
+          <span class="hub-card__d">从尺子到模型，再到共决。技术不断前移，最终按下按钮的，仍应是人。</span>
+          <span class="hub-card__list">
+            <span>三次位移：尺子 · 传感器 · 共决</span><span>按钮在谁手里 · 现场选择</span><span>留言墙 · 留下判断</span>
+          </span>
+          <span class="hub-card__meta"><b>现场记录</b><span>按钮在谁手里</span><span class="hub-card__go">→</span></span>
+        </a>
+
       </nav>
     </div>
   </div>
 </section>
-<section class="section" id="act3-body">
+<section class="section part-page" id="part-p3-0" data-part="3.0">
   <div class="wrap">
 
     <div class="reveal" id="vote">
       <p class="eyebrow">3.0 · 引入</p>
-      <h2 class="display" style="margin-top:22px;max-width:16em">同一场洪水，<br>谁来拍板？</h2>
-      <p class="lede" style="margin-top:20px">先别急着往下读。假设你是那条河的调度负责人：上游暴雨，下游是一座城。系统给出三套方案，也给出每套方案的代价。现在，你愿意把最后那一下，交给谁？</p>
+      <h2 class="display" style="margin-top:22px;max-width:16em">同一场洪水，<br>由谁裁定？</h2>
+      <p class="lede" style="margin-top:20px">在作出判断之前，请先完成一次选择。假设你是那条河的调度负责人：上游暴雨，下游是一座城；系统给出三套方案，也如实列出每套方案的代价。此刻，你愿意把最后那一下，交给谁？</p>
 
       <div class="panel--night">
         <p class="k">你的选择 · 汇入下方现场记录</p>
         <div class="rank" style="margin-top:12px">
-          <p class="rank__t">如果只能选一种，你选哪一种？</p>
+          <p class="rank__t">若只能择其一，你选择哪一种？</p>
         </div>
         <div class="vote__opts" id="voteOpts" role="group" aria-label="调度决策权归属">
-          <button class="vote__opt" type="button" data-vote="ai">全部交给 AI：它算得比我快</button>
-          <button class="vote__opt" type="button" data-vote="joint">人机共决：AI 给方案，我签字</button>
-          <button class="vote__opt" type="button" data-vote="human">人说了算：AI 只能提参考</button>
+          <button class="vote__opt" type="button" data-vote="ai">全部交给 AI：由算法自动执行</button>
+          <button class="vote__opt" type="button" data-vote="joint">人机共决：AI 提案，人复核签字</button>
+          <button class="vote__opt" type="button" data-vote="human">人最终裁定：AI 仅提供参考</button>
         </div>
         <div class="vote__result" id="voteResult" aria-live="polite"></div>
         <p class="vote__note" id="voteNote">投票后可以看到当前分布，并汇入页面底部的「现场记录」。本地服务未启动时，数字只来自本机记录。</p>
@@ -1840,24 +1978,23 @@ body.q-lock{overflow:hidden}
 
       <p class="cite" style="max-width:56em;margin-top:20px">这个选择没有标准答案。它在真实世界里对应三种制度：算法自动执行、人机共决、人工最终裁决。</p>
     </div>
-
-    <div class="group reveal" style="margin-top:clamp(70px,10vw,120px)">
-      <p class="group__k">3.1 · 协作</p>
-      <h2 class="group__t">四层分责：<br>谁负责哪一步。</h2>
-      <p class="group__d">一个问题：这一步，谁负责？四层从下往上，责任越来越重，也越来越难被算法接管。</p>
-    </div>
   </div>
 </section>
 
-<section class="section section--night" style="padding-top:clamp(50px,7vw,90px)">
+<section class="section section--night part-page" id="part-p3-1" data-part="3.1">
   <div class="wrap">
-    <div class="layers reveal" style="border-top:0;margin-top:0">
+    <div class="group reveal" style="border-top:0;padding-top:0">
+      <p class="group__k">3.1 · 人与AI的四层分责</p>
+      <h2 class="group__t">谁负责哪一步。</h2>
+      <p class="group__d">四层自下而上：执行、认知、责任、价值。责任逐层加重，也逐层更难被算法接管。</p>
+    </div>
+    <div class="layers reveal" style="border-top:0;margin-top:clamp(30px,4vw,48px)">
       <div class="layer" id="p3-1-1">
         <div class="layer__n">L1</div>
         <div class="layer__t"><small>执行层</small>AI 做重复劳动，人保留体力</div>
-        <div class="layer__d"><p>查历史资料、整理报表、批量生成方案、逐条比对规程。这些工作过去消耗预报员大量时间，现在由系统完成。</p><p><strong>人得到的是时间</strong>——把注意力从「翻资料」转到「看趋势」。</p>
+        <div class="layer__d"><p>查历史资料、整理报表、批量生成方案、逐条比对规程。这些工作过去消耗预报员大量时间，现在由系统完成。</p><p><strong>人得到的是时间</strong>——把注意力从「检索资料」转向「研判趋势」。</p>
           <div class="layer__mini" data-mini="l1">
-            <p class="mini__k">小互动 1 · 先把一件活交给 AI</p>
+            <p class="mini__k">小互动 1 · 试将一项工作交予 AI</p>
             <div class="mini__tasks" id="l1Tasks">
               <button class="mini-btn" type="button" data-min="35">查历史相似洪水<span>35 分钟</span></button>
               <button class="mini-btn" type="button" data-min="20">整理雨情报表<span>20 分钟</span></button>
@@ -1873,13 +2010,13 @@ body.q-lock{overflow:hidden}
         <div class="layer__t"><small>认知层</small>AI 给候选，人做判断</div>
         <div class="layer__d"><p>宁波的智能体在秒级给出多个候选方案，但选哪一个、改哪一处，仍由预报员决定。AI 扩大了可选范围，人也承担了选择的重量。</p><p><strong>人得到的是视野</strong>，同时失去「只看一个方案」的轻松。</p>
           <div class="layer__mini" data-mini="l2">
-            <p class="mini__k">小互动 2 · 三个候选，你选一个</p>
+            <p class="mini__k">小互动 2 · 三个候选，请择其一</p>
             <div class="mini__opts" id="l2Opts">
               <button class="mini-btn" type="button" data-pick="A">A · 提前预泄 320 m³/s<span>置信度 91%</span></button>
               <button class="mini-btn" type="button" data-pick="B">B · 控泄 180 m³/s<span>置信度 62%</span></button>
               <button class="mini-btn" type="button" data-pick="C">C · 启用蓄滞洪区<span>置信度 88%</span></button>
             </div>
-            <p class="mini__out" id="l2Out">先选一个。AI 只给候选，不替你选。</p>
+            <p class="mini__out" id="l2Out">请先择其一。AI 只给候选，不替代判断。</p>
           </div>
         </div>
       </div>
@@ -1902,7 +2039,7 @@ body.q-lock{overflow:hidden}
       </div>
       <div class="layer" id="p3-1-4">
         <div class="layer__n">L4</div>
-        <div class="layer__t"><small>价值层</small>四个目标，由你来排序</div>
+        <div class="layer__t"><small>价值层</small>四个目标，由你排序</div>
         <div class="layer__d"><p>防洪安全、供水保障、生态流量、工程投资——四个目标在真实调度里经常互相冲突。AI 可以算出每个目标的代价，但不能替你决定哪个更重要。</p><p><strong>这一层，算法只能提供证据，不能提供立场。</strong></p></div>
       </div>
     </div>
@@ -1934,12 +2071,12 @@ body.q-lock{overflow:hidden}
   </div>
 </section>
 
-<section class="section" id="act3-scenes">
+<section class="section part-page" id="part-p3-2" data-part="3.2–3.4">
   <div class="wrap">
     <div class="group reveal" style="border-top:0;padding-top:0">
-      <p class="group__k">3.2 — 3.4 · 三个场景</p>
-      <h2 class="group__t">三次位移，<br>已经露头。</h2>
-      <p class="group__d">未来先在某个水库、某条流域、某个港口露出一角。三个场景都按「今天 → 位移 → 还没解决」展开。</p>
+      <p class="group__k">3.2 — 3.4 · 真实场景</p>
+      <h2 class="group__t">真实场景，<br>已见端倪。</h2>
+      <p class="group__d">未来先在某个水库、某条流域、某个港口露出一角。三个场景均按「今天 — 位移 — 未决」展开：今天的系统能做到什么，位移发生在哪一步，尚未决定的责任留给谁。</p>
     </div>
 
     <div class="scenario reveal" id="p3-2">
@@ -1953,7 +2090,7 @@ body.q-lock{overflow:hidden}
         <div class="sc">
           <div class="sc__k">今天</div>
           <div class="sc__t">AI 初算，人定稿</div>
-          <div class="sc__d">宁波周公宅—皎口水库：AI 秒级生成多个候选方案，预报员校核后正式上报。机器快，人稳。</div>
+          <div class="sc__d">宁波周公宅—皎口水库：AI 秒级生成多个候选方案，预报员校核后正式上报。机器求快，人求稳。</div>
           <div class="sc__tags"><span>2026</span><span>宁波</span><span>AI 初算—人工校核—上报</span></div>
         </div>
         <div class="sc">
@@ -1964,7 +2101,7 @@ body.q-lock{overflow:hidden}
         </div>
         <div class="sc">
           <div class="sc__k">还没解决</div>
-          <div class="sc__t">误判谁负责？</div>
+          <div class="sc__t">误判由谁负责？</div>
           <div class="sc__d">自主调度最难的是制度：谁授权、谁监控、出错谁承担。没有这三条，系统只能停在「建议」。</div>
           <div class="sc__tags"><span>授权</span><span>监控</span><span>追责</span></div>
         </div>
@@ -2002,10 +2139,10 @@ body.q-lock{overflow:hidden}
 
     <div class="scenario reveal" id="p3-4">
       <div class="scenario__meta"><span class="n">3.4</span><span>港航 · 从人工到自主协商</span></div>
-      <h3 class="scenario__title">人工管港 → 港自己说话</h3>
+      <h3 class="scenario__title">人工管港 → 港口自主协商</h3>
       <figure class="scene__shot">
         <img src="assets/smartport.jpg" alt="洋山四期自动化集装箱码头" width="900" height="600" loading="lazy">
-        <figcaption><span>潮位、船期、回淤实时协商，港口开始「自己说话」。</span><span>图源：新华网</span></figcaption>
+        <figcaption><span>潮位、船期与回淤实时协商，港口开始以数据自主协商。</span><span>图源：新华网</span></figcaption>
       </figure>
       <div class="scenario__grid">
         <div class="sc">
@@ -2033,25 +2170,25 @@ body.q-lock{overflow:hidden}
   </div>
 </section>
 
-<section class="ending" id="p3-5">
+<section class="ending part-page" id="p3-5" data-part="3.5">
   <div class="ending__glow" aria-hidden="true"></div>
   <div class="wrap">
     <p class="eyebrow" style="color:#6f7884">3.5 · 尾声</p>
-    <h2 class="ending__line" style="margin-top:26px">六十年，<br>三次位移。<br><span class="dim">按钮还在人手里。</span></h2>
-    <p class="ending__sub">1960 年代，河海把「看水」变成「算水」；2010 年代，把「算水」变成「数据 + 物理」；2026 年，宁波的系统已经能在秒级给出方案。三次位移，人负责的东西越来越少，也越来越重：从计算，到判断，到价值。</p>
+    <h2 class="ending__line" style="margin-top:26px">六十年，<br>三次位移。<br><span class="dim">最后的按钮，仍在人手中。</span></h2>
+    <p class="ending__sub">1960 年代，河海把「看水」变成「算水」；2010 年代，把「算水」变成「数据 + 物理」；2026 年，宁波的系统已经能在秒级给出方案。三次位移，人负责的部分愈少，分量愈重：从计算，到判断，到价值。</p>
 
     <div class="trail">
       <div class="trail__i">
-        <div class="k">第一幕 · 底蕴</div>
-        <div class="v">一条 45 度线，一套新安江模型，一批真实工程。方法从现场长出来。</div>
+        <div class="k">第一幕 · 因：深厚学科底蕴</div>
+        <div class="v">一条 45 度线，一套新安江模型，一批真实工程。方法从现场长出来，成为可被调用的资产。</div>
       </div>
       <div class="trail__i">
-        <div class="k">第二幕 · 赋能</div>
-        <div class="v">育、测、报、算、管。模型没被推翻，被接上了数据、算力与业务。</div>
+        <div class="k">第二幕 · 承：传承与革新</div>
+        <div class="v">先有人接住方法，再让测、报、算、管四环跑起来。模型未被推翻，被替换的是速度与协同方式。</div>
       </div>
       <div class="trail__i">
-        <div class="k">第三幕 · 未来</div>
-        <div class="v">从辅助到自主，从单点到全局，从人工管港到港自己说话。位移已开始。</div>
+        <div class="k">第三幕 · 问：未来之路由谁决定</div>
+        <div class="v">系统越强，责任越要向人回流。从辅助到自主，从单点到全局，从人工调度到港口协商，位移已开始。</div>
       </div>
     </div>
 
@@ -2063,7 +2200,7 @@ body.q-lock{overflow:hidden}
       <div class="wall__grid">
         <div><p class="wall__n" id="wallVotes">0</p><p class="wall__t">张投票</p></div>
         <div><p class="wall__n" id="wallLayers">0</p><p class="wall__t">次分层互动</p></div>
-        <div><p class="wall__n" id="wallAsks">0</p><p class="wall__t">个提问</p></div>
+        <div><p class="wall__n" id="wallNotesN">0</p><p class="wall__t">条留言</p></div>
       </div>
       <div class="wall__bars" id="wallBars"></div>
       <form class="wall__form" id="wallForm">
@@ -2075,7 +2212,7 @@ body.q-lock{overflow:hidden}
 
     <div style="margin-top:clamp(40px,6vw,64px);padding-top:clamp(24px,3.6vw,34px);border-top:1px solid rgba(255,255,255,.1);display:flex;gap:22px;flex-wrap:wrap;align-items:center">
       <a class="btn" href="#acts">回到三幕 <span class="arr">↑</span></a>
-      <a href="#act2" style="font-size:12.5px;color:#9aa2ae;border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px">重看「数字赋能」</a>
+      <a href="#act2" style="font-size:12.5px;color:#9aa2ae;border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px">重看「AI时代下的传承与革新」</a>
     </div>
   </div>
 </section>
@@ -2094,39 +2231,11 @@ body.q-lock{overflow:hidden}
     </div>
     <p class="footer__src">资料说明：页面事实来自河海大学校史与院系公开资料、水利部与流域机构公开报道、中国水利报（2026-10-24 宁波智能体）、世界气象组织（WMO）公开文件，以及 1963 年《华东水利学院学报》原始论文。凡公开资料未披露的数值（如智慧港口项目、实验室设施清单、具体课程设置），本页一律留白，不做估算。</p>
     <div class="footer__rule"></div>
-    <p class="footer__src">本作品为静态页面，可离线打开。互动数据默认保存在本机浏览器；若启动随附的本地服务，投票会写入本机数据库。本站不接入外部大模型，问答内容只来自页面内置知识库，不生成任何水位数字。</p>
+    <p class="footer__src">本作品为静态页面，可离线打开。互动数据默认保存在本机浏览器；若启动随附的本地服务，投票与留言会写入本机数据库。本站不接入外部大模型，也不让语言模型生成任何水位数字。</p>
   </div>
 </footer>
 
 </div><!-- /act3 -->
-
-<div class="ask-backdrop" id="askBackdrop"></div>
-<aside class="ask-panel" id="askPanel" aria-hidden="true" aria-label="你有什么想问河海的">
-  <div class="ask-head">
-    <div>
-      <p class="k" style="color:#6f7884">学科底蕴 · 招生问答</p>
-      <div class="ask-title">你有什么想问河海的</div>
-    </div>
-    <button class="ask-close" id="askClose" type="button" aria-label="关闭">×</button>
-  </div>
-  <p class="ask-intro">关于河海的学科实力、专业选择与招生录取，先在这里问。只检索本站知识库、附出处；查不到就直说，不编数字。</p>
-  <div class="ask-chips" id="askChips">
-    <button class="ask-chip" type="button">水利工程有多强</button>
-    <button class="ask-chip" type="button">大禹学院</button>
-    <button class="ask-chip" type="button">转专业</button>
-    <button class="ask-chip" type="button">录取规则</button>
-    <button class="ask-chip" type="button">港航专业</button>
-    <button class="ask-chip" type="button">学费多少</button>
-  </div>
-  <div class="ask-thread" id="askThread">
-    <div class="msg msg--bot">你好。这里能回答河海的学科实力、水利水文港航专业、大禹学院与招生录取问题。试试点上面的关键词，或直接输入。<div class="msg__src">范围：本站 26 个知识块 · 只检索、不生成数字</div></div>
-  </div>
-  <form class="ask-form" id="askForm">
-    <input class="ask-input" id="askInput" type="text" maxlength="120" placeholder="例如：河海的水利工程有多强？" autocomplete="off">
-    <button class="ask-send" type="submit" aria-label="发送">↑</button>
-  </form>
-  <p class="ask-foot">离线可用 · 回答来自本页内置知识块，按关键词、标题与语义片段加权检索；不生成任何分数线或水位数字。</p>
-</aside>
 
 <script>
 (function(){
@@ -2141,64 +2250,80 @@ body.q-lock{overflow:hidden}
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var W = 0, H = 0, DPR = 1, HZ = 0, T = 0;
     var running = false, visible = true, rafId = 0, lastTs = 0;
-    var gSky, gWater, gHaze, gBankL, gBankR, gLight;
-    var layers = [], dashes = [];
+    var gSky, gWater, gHaze, gLight, gGlint, gBankL, gBankR;
+    var layers = [], flows = [], rollers = [];
 
     function buildGradients(){
       if(!W || !H) return;
       gSky = ctx.createLinearGradient(0, 0, 0, HZ + 1);
-      gSky.addColorStop(0, '#04060a');
-      gSky.addColorStop(.52, '#061018');
-      gSky.addColorStop(1, '#0a222e');
+      gSky.addColorStop(0, '#ffffff');
+      gSky.addColorStop(.55, '#f7fdff');
+      gSky.addColorStop(1, '#e4f6fe');
       gWater = ctx.createLinearGradient(0, HZ, 0, H);
-      gWater.addColorStop(0, '#123a4d');
-      gWater.addColorStop(.3, '#0a2636');
-      gWater.addColorStop(1, '#050a10');
-      gHaze = ctx.createRadialGradient(W*.64, HZ, 0, W*.64, HZ, Math.max(W*.62, 320));
-      gHaze.addColorStop(0, 'rgba(118,182,210,.28)');
-      gHaze.addColorStop(.45, 'rgba(64,128,160,.11)');
-      gHaze.addColorStop(1, 'rgba(6,14,20,0)');
-      gLight = ctx.createRadialGradient(W*.64, HZ + H*.04, 0, W*.64, HZ + H*.04, W*.42);
-      gLight.addColorStop(0, 'rgba(136,198,222,.22)');
-      gLight.addColorStop(1, 'rgba(6,14,20,0)');
-      gBankL = ctx.createLinearGradient(0, 0, W*.3, 0);
-      gBankL.addColorStop(0, 'rgba(2,4,7,.88)');
-      gBankL.addColorStop(.55, 'rgba(2,4,7,.3)');
-      gBankL.addColorStop(1, 'rgba(2,4,7,0)');
-      gBankR = ctx.createLinearGradient(W*.7, 0, W, 0);
-      gBankR.addColorStop(0, 'rgba(2,4,7,0)');
-      gBankR.addColorStop(.5, 'rgba(2,4,7,.26)');
-      gBankR.addColorStop(1, 'rgba(2,4,7,.72)');
+      gWater.addColorStop(0, '#bfe8f9');
+      gWater.addColorStop(.18, '#94d5f0');
+      gWater.addColorStop(.46, '#6bbce3');
+      gWater.addColorStop(.74, '#479fd3');
+      gWater.addColorStop(1, '#2879ae');
+      gHaze = ctx.createRadialGradient(W*.66, HZ, 0, W*.66, HZ, Math.max(W*.55, 300));
+      gHaze.addColorStop(0, 'rgba(255,255,255,.82)');
+      gHaze.addColorStop(.42, 'rgba(223,245,253,.34)');
+      gHaze.addColorStop(1, 'rgba(210,240,252,0)');
+      gLight = ctx.createRadialGradient(W*.66, HZ + H*.05, 0, W*.66, HZ + H*.05, W*.46);
+      gLight.addColorStop(0, 'rgba(255,255,255,.46)');
+      gLight.addColorStop(1, 'rgba(255,255,255,0)');
+      gGlint = ctx.createLinearGradient(0, HZ, 0, H);
+      gGlint.addColorStop(0, 'rgba(255,255,255,.34)');
+      gGlint.addColorStop(.42, 'rgba(255,255,255,.10)');
+      gGlint.addColorStop(1, 'rgba(255,255,255,0)');
+      gBankL = ctx.createLinearGradient(0, 0, W*.22, 0);
+      gBankL.addColorStop(0, 'rgba(118,150,170,.14)');
+      gBankL.addColorStop(1, 'rgba(118,150,170,0)');
+      gBankR = ctx.createLinearGradient(W*.78, 0, W, 0);
+      gBankR.addColorStop(0, 'rgba(118,150,170,0)');
+      gBankR.addColorStop(1, 'rgba(118,150,170,.12)');
     }
 
     function buildLayers(){
       layers = [];
-      var n = W < 700 ? 15 : 24;
+      var n = W < 700 ? 16 : 30;
       for(var i = 0; i < n; i++){
         var p = i / (n - 1);
         layers.push({
           p: p,
-          sp: .28 + p * 1.05,
-          amp: 2 + p * 15,
-          alpha: .07 + p * .23,
-          lw: .55 + p * 1.5,
+          sp: .22 + p * 1.05,
+          amp: 2 + p * 24,
+          alpha: .14 + p * .5,
+          lw: .7 + p * 2.8,
           ph: Math.random() * 6.283,
-          f: .0045 + Math.random() * .004
+          f: .0042 + Math.random() * .0038
         });
       }
     }
 
-    function buildDashes(){
-      dashes = [];
-      var n = W < 700 ? 16 : 28;
+    function buildFlows(){
+      flows = [];
+      var n = W < 700 ? 26 : 56;
       for(var i = 0; i < n; i++){
-        dashes.push({
-          x: Math.random(),
-          y: .52 + Math.random() * .46,
-          len: 18 + Math.random() * (W < 700 ? 48 : 104),
-          sp: .012 + Math.random() * .055,
-          a: .12 + Math.random() * .3,
-          w: .6 + Math.random() * 1.2,
+        flows.push({
+          u: Math.random(),
+          lane: Math.random() * 2 - 1,
+          sp: .009 + Math.random() * .026,
+          len: .55 + Math.random() * .75,
+          ph: Math.random() * 6.283,
+          w: .65 + Math.random() * 1.8,
+          dark: Math.random() < .3,
+          foam: Math.random() < .42
+        });
+      }
+      rollers = [];
+      var m = W < 700 ? 10 : 20;
+      for(var j = 0; j < m; j++){
+        rollers.push({
+          u: Math.random(),
+          lane: Math.random() * 2 - 1,
+          sp: .006 + Math.random() * .014,
+          len: .5 + Math.random() * .8,
           ph: Math.random() * 6.283
         });
       }
@@ -2213,50 +2338,132 @@ body.q-lock{overflow:hidden}
       ctx.fillRect(0, HZ, W, H - HZ);
 
       ctx.fillStyle = gHaze;
-      ctx.fillRect(0, HZ - H * .1, W, H * .24);
+      ctx.fillRect(0, HZ - H * .12, W, H * .3);
       ctx.fillStyle = gLight;
-      ctx.fillRect(0, HZ - H * .04, W, H * .2);
-      ctx.fillStyle = 'rgba(146,196,220,.12)';
-      ctx.fillRect(0, HZ - .5, W, 1);
+      ctx.fillRect(0, HZ - H * .04, W, H * .22);
 
-      var x, y, yy, i, L;
+      ctx.fillStyle = gGlint;
+      ctx.beginPath();
+      ctx.moveTo(W * .62, HZ);
+      ctx.lineTo(W * .5, H);
+      ctx.lineTo(W * .76, H);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = 'rgba(255,255,255,.5)';
+      ctx.beginPath();
+      for(x = -20; x <= W + 20; x += 12){
+        yy = HZ + Math.sin(x * .011 + T * .6) * 1.8 + Math.sin(x * .026 - T * .9) * 1.2;
+        if(x === -20) ctx.moveTo(x, yy); else ctx.lineTo(x, yy);
+      }
+      ctx.strokeStyle = 'rgba(255,255,255,.9)';
+      ctx.lineWidth = 2.2;
+      ctx.stroke();
+      ctx.save();
+      ctx.translate(0, 2.6);
+      ctx.strokeStyle = 'rgba(86,164,203,.5)';
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = 'rgba(86,164,203,.10)';
+      ctx.fillRect(0, HZ + 3, W, 10);
+
+      var x, y, yy, i, L, e, len, a, hgt;
+
       for(i = 0; i < layers.length; i++){
         L = layers[i];
         y = HZ + Math.pow(L.p, 1.5) * (H - HZ) * .995;
         ctx.beginPath();
-        for(x = -30; x <= W + 30; x += (W < 700 ? 16 : 22)){
+        for(x = -30; x <= W + 30; x += (W < 700 ? 15 : 20)){
           yy = y + Math.sin(x * L.f + T * L.sp + L.ph) * L.amp
-                 + Math.sin(x * L.f * 2.4 - T * L.sp * .62 + L.ph * 1.7) * L.amp * .3;
+                 + Math.sin(x * L.f * 2.6 - T * L.sp * .62 + L.ph * 1.7) * L.amp * .33;
           if(x === -30) ctx.moveTo(x, yy); else ctx.lineTo(x, yy);
         }
-        ctx.strokeStyle = 'rgba(140,188,214,' + L.alpha.toFixed(3) + ')';
+        ctx.strokeStyle = 'rgba(14,92,146,' + L.alpha.toFixed(3) + ')';
         ctx.lineWidth = L.lw;
         ctx.stroke();
-        if(L.p > .42){
-          ctx.strokeStyle = 'rgba(196,230,244,' + (L.alpha * .55).toFixed(3) + ')';
-          ctx.lineWidth = L.lw * .55;
-          ctx.stroke();
+        ctx.save();
+        ctx.translate(0, -1.4 - L.p * 2);
+        ctx.strokeStyle = 'rgba(255,255,255,' + (L.alpha * .82).toFixed(3) + ')';
+        ctx.lineWidth = L.lw * .72;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      for(i = 0; i < flows.length; i++){
+        var F = flows[i];
+        F.u += F.sp * dt;
+        if(F.u > 1){
+          F.u = 0;
+          F.lane = Math.random() * 2 - 1;
+        }
+        e = Math.pow(F.u, 1.7);
+        y = HZ + e * (H - HZ);
+        len = (6 + e * 62) * F.len;
+        a = (1 - F.u) * .42 * (.55 + .45 * Math.sin(T * .8 + F.ph));
+        if(a <= 0) continue;
+        x = W * .63 + F.lane * (.11 + e * .52) * W
+            + Math.sin(F.u * 5 + F.ph + T * .42) * W * .012 * e;
+        ctx.strokeStyle = F.dark
+          ? 'rgba(30,112,166,' + (a * .75).toFixed(3) + ')'
+          : 'rgba(255,255,255,' + a.toFixed(3) + ')';
+        ctx.lineWidth = F.w + e * 1.6;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.quadraticCurveTo(
+          x + Math.sin(F.ph + F.u * 4) * len * .16, y + len * .5,
+          x + Math.sin(F.ph + F.u * 4 + .7) * len * .24, y + len
+        );
+        ctx.stroke();
+        if(F.foam && !F.dark && e > .16){
+          ctx.fillStyle = 'rgba(255,255,255,' + (a * .92).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.ellipse(x + len * .18, y + len * .62, .7 + e * 2.4, .5 + e * 1.2,
+                      Math.sin(F.ph) * .7, 0, 6.283);
+          ctx.fill();
         }
       }
 
-      for(i = 0; i < dashes.length; i++){
-        var D = dashes[i];
-        D.x += D.sp * dt;
-        if(D.x > 1.06) D.x = -.06;
-        var dy = HZ + Math.pow(D.y, 1.4) * (H - HZ) * .96;
-        var a = D.a * (.55 + .45 * Math.sin(T * .9 + D.ph));
-        ctx.strokeStyle = 'rgba(200,232,245,' + Math.max(0, a).toFixed(3) + ')';
-        ctx.lineWidth = D.w;
+      for(i = 0; i < rollers.length; i++){
+        var R = rollers[i];
+        R.u += R.sp * dt;
+        if(R.u > 1){
+          R.u = 0;
+          R.lane = Math.random() * 2 - 1;
+        }
+        e = Math.pow(R.u, 1.55);
+        y = HZ + e * (H - HZ);
+        len = (12 + e * 92) * R.len;
+        a = (1 - R.u) * .72;
+        if(a <= 0) continue;
+        x = W * .61 + R.lane * (.16 + e * .55) * W
+            + Math.sin(R.u * 4.2 + R.ph + T * .35) * W * .018 * e;
+        hgt = len * (.32 + .12 * Math.sin(T * .9 + R.ph));
         ctx.beginPath();
-        ctx.moveTo(D.x * W, dy);
-        ctx.lineTo(D.x * W + D.len * (.3 + D.y * .7), dy + Math.sin(D.x * 4 + D.ph) * 1.4);
+        ctx.moveTo(x, y);
+        ctx.quadraticCurveTo(x + len * .5, y - hgt, x + len, y - len * .05);
+        ctx.quadraticCurveTo(x + len * .55, y + len * .17, x, y);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(255,255,255,' + (a * .30).toFixed(3) + ')';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
+        ctx.lineWidth = .9 + e * 2;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.quadraticCurveTo(x + len * .5, y - hgt, x + len, y - len * .05);
+        ctx.stroke();
+        ctx.strokeStyle = 'rgba(16,78,126,' + (a * .42).toFixed(3) + ')';
+        ctx.lineWidth = 1.8 + e * 3.2;
+        ctx.beginPath();
+        ctx.moveTo(x + len * .1, y + len * .08);
+        ctx.quadraticCurveTo(x + len * .55, y + len * .22, x + len * .96, y + len * .04);
         ctx.stroke();
       }
 
       ctx.fillStyle = gBankL;
-      ctx.fillRect(0, 0, W * .3, H);
+      ctx.fillRect(0, 0, W * .22, H);
       ctx.fillStyle = gBankR;
-      ctx.fillRect(W * .7, 0, W * .3, H);
+      ctx.fillRect(W * .78, 0, W * .22, H);
     }
 
     function loop(ts){
@@ -2287,10 +2494,10 @@ body.q-lock{overflow:hidden}
       cvs.width = Math.round(W * DPR);
       cvs.height = Math.round(H * DPR);
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      HZ = H * .46;
+      HZ = H * .44;
       buildGradients();
       buildLayers();
-      buildDashes();
+      buildFlows();
       draw(.016);
     }
 
@@ -2316,16 +2523,84 @@ body.q-lock{overflow:hidden}
     });
   })();
 
+  /* ---------- 分部：把长页按主干拆成独立分部页 ---------- */
+  (function(){
+    function slug(num){ return num.replace(/[^\d.]/g,'').replace(/\./g,'-'); }
+    ['act1-body','act2-body'].forEach(function(id){
+      var host = document.getElementById(id);
+      if(!host) return;
+      var wrap = host.querySelector('.wrap');
+      if(!wrap) return;
+      var kids = Array.prototype.slice.call(wrap.children);
+      var parts = [], cur = null;
+      kids.forEach(function(el){
+        if(el.nodeType !== 1) return;
+        if(el.classList.contains('group')){
+          var k = el.querySelector('.group__k');
+          var num = k ? k.textContent.split('·')[0].trim() : '';
+          cur = document.createElement('section');
+          cur.className = 'part-page';
+          cur.id = 'part-p' + slug(num);
+          cur.setAttribute('data-part', num);
+          parts.push(cur);
+        }
+        if(cur) cur.appendChild(el);
+      });
+      parts.forEach(function(p){ wrap.appendChild(p); });
+    });
+  })();
+
   /* ---------- router ---------- */
   var views = Array.prototype.slice.call(document.querySelectorAll('.act-view'));
   var landing = document.getElementById('landing');
   var back = document.getElementById('viewBack');
+  var backLabel = document.getElementById('backLabel');
 
   function setView(view){
     views.forEach(function(v){ v.classList.toggle('is-active', v === view); });
     if(landing) landing.classList.toggle('is-active', !view);
     document.body.classList.toggle('is-light-view', !!view);
     if(back) back.classList.toggle('is-on', !!view);
+  }
+
+  function coverOf(view){ return view.querySelector('.act-cover'); }
+  function partsOf(view){ return Array.prototype.slice.call(view.querySelectorAll('.part-page')); }
+
+  function setBack(view, part){
+    if(!back) return;
+    if(part){
+      var cover = coverOf(view);
+      back.setAttribute('href', cover && cover.id ? '#' + cover.id : '#acts');
+      back.setAttribute('aria-label', '返回本模块目录');
+      if(backLabel) backLabel.textContent = '返回模块目录';
+    } else {
+      back.setAttribute('href', '#acts');
+      back.setAttribute('aria-label', '返回三幕总览');
+      if(backLabel) backLabel.textContent = '返回三幕总览';
+    }
+  }
+
+  function showHub(view, instant){
+    view.classList.add('is-hub');
+    view.classList.remove('is-part');
+    partsOf(view).forEach(function(p){ p.classList.remove('is-current'); });
+    setBack(view, null);
+    if(instant) window.scrollTo(0, 0);
+    else window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function showPart(view, part, target, instant){
+    view.classList.remove('is-hub');
+    view.classList.add('is-part');
+    partsOf(view).forEach(function(p){ p.classList.toggle('is-current', p === part); });
+    setBack(view, part);
+    requestAnimationFrame(function(){
+      if(target && target !== part){
+        target.scrollIntoView({behavior: instant ? 'auto' : 'smooth', block:'start'});
+      } else {
+        window.scrollTo({top:0, behavior: instant ? 'auto' : 'smooth'});
+      }
+    });
   }
 
   function route(hash, instant){
@@ -2344,22 +2619,17 @@ body.q-lock{overflow:hidden}
       return;
     }
     var el = document.getElementById(hash);
-    var view = el ? el.closest('.act-view') : null;
+    if(!el) return;
+    var view = el.closest('.act-view');
     if(!view) return;
     setView(view);
-    if(instant){
-      var now = document.getElementById(hash);
-      var nowCover = view.querySelector('.act-cover');
-      if(now && now !== nowCover) now.scrollIntoView({block:'start'});
-      else window.scrollTo(0, 0);
+    if(el.classList.contains('part-page')){
+      showPart(view, el, null, instant);
       return;
     }
-    requestAnimationFrame(function(){
-      var target = document.getElementById(hash);
-      var cover = view.querySelector('.act-cover');
-      if(target && target !== cover) target.scrollIntoView({behavior:'smooth', block:'start'});
-      else window.scrollTo({top:0, behavior:'smooth'});
-    });
+    var part = el.closest('.part-page');
+    if(part) showPart(view, part, el, instant);
+    else showHub(view, instant);
   }
 
   document.addEventListener('click', function(e){
@@ -2402,7 +2672,7 @@ body.q-lock{overflow:hidden}
   /* ---------- 逐段浮现：给各段落里的文字加错时入场 ---------- */
   var trEls = [];
   (function(){
-    var SEL = 'h1,h2,h3,.eyebrow,.display,.headline,.lede,.group__k,.node__t,.cover__title,.cover__thesis,.cover__meta,.cover__num,.chapter,.band__q,.band__meta,.toc__head,.toc__g,.toc__row';
+    var SEL = 'h1,h2,h3,.eyebrow,.display,.headline,.lede,.group__k,.group__t,.node__t,.cover__title,.cover__thesis,.cover__meta,.cover__num,.chapter,.band__q,.band__meta,.hub-note,.hub-card__n,.hub-card__t,.hub-card__d,.hub-card__list';
     var scopes = document.querySelectorAll('.section, .band, .act-cover');
     Array.prototype.forEach.call(scopes, function(scope){
       var nodes = scope.querySelectorAll(SEL);
@@ -2446,59 +2716,77 @@ body.q-lock{overflow:hidden}
     var frag = document.createDocumentFragment();
     var view = document.querySelector('.act-view.is-active');
     var topLink = document.getElementById('qTopLink');
-    if(topLink){
-      var cv = view ? view.querySelector('.act-cover') : null;
-      topLink.setAttribute('href', cv && cv.id ? '#' + cv.id : '#top');
+    var part = view && view.classList.contains('is-part') ? view.querySelector('.part-page.is-current') : null;
+    if(topLink) topLink.setAttribute('href', part ? '#' + part.id : (view && view.querySelector('.act-cover') && view.querySelector('.act-cover').id ? '#' + view.querySelector('.act-cover').id : '#top'));
+
+    function link(href, num, label){
+      var a = document.createElement('a');
+      a.className = 'qsheet__link';
+      a.href = href;
+      var b = document.createElement('b');
+      b.textContent = num || '';
+      var s = document.createElement('span');
+      s.textContent = label || '';
+      a.appendChild(b); a.appendChild(s);
+      return a;
     }
+    function groupHead(num, label){
+      var g = document.createElement('div');
+      g.className = 'qsheet__g';
+      var b = document.createElement('b'); b.textContent = num || '';
+      var s = document.createElement('span'); s.textContent = label || '';
+      g.appendChild(b); g.appendChild(s);
+      return g;
+    }
+
     if(view){
       var ct = view.querySelector('.cover__title');
-      if(qtitle) qtitle.textContent = (ct ? ct.textContent : '本幕') + ' · 目录';
-      var toc = view.querySelector('.cover__toc');
-      if(toc){
-        Array.prototype.forEach.call(toc.children, function(n){
-          if(n.classList.contains('toc__g')){
-            var g = document.createElement('div');
-            g.className = 'qsheet__g';
-            var gb = document.createElement('b');
-            gb.textContent = (n.querySelector('b') || {}).textContent || '';
-            var gs = document.createElement('span');
-            gs.textContent = (n.querySelector('span') || {}).textContent || '';
-            g.appendChild(gb); g.appendChild(gs);
-            frag.appendChild(g);
-          } else if(n.classList.contains('toc__row')){
-            var a = document.createElement('a');
-            a.className = 'qsheet__link';
-            a.href = n.getAttribute('href');
-            var nb = document.createElement('b');
-            nb.textContent = (n.querySelector('.toc__n') || {}).textContent || '';
-            var st = document.createElement('span');
-            st.textContent = (n.querySelector('.toc__t') || {}).textContent || '';
-            a.appendChild(nb); a.appendChild(st);
-            frag.appendChild(a);
+      var title = ct ? ct.textContent : '本幕';
+      if(qtitle) qtitle.textContent = title + (part ? ' · ' + (part.getAttribute('data-part') || '') + ' 分部' : ' · 目录');
+      if(part){
+        frag.appendChild(groupHead(part.getAttribute('data-part') || '', '本分部'));
+        var cover = view.querySelector('.act-cover');
+        frag.appendChild(link(cover && cover.id ? '#' + cover.id : '#acts', '←', '返回本模块目录'));
+        var items = part.querySelectorAll('.node, .layer, .scenario');
+        Array.prototype.forEach.call(items, function(el){
+          var nEl = el.querySelector('.node__meta .n, .layer__n, .scenario__meta .n');
+          var tEl = el.querySelector('.node__title, .layer__t, .scenario__title');
+          var label = '';
+          if(tEl){
+            var clone = tEl.cloneNode(true);
+            Array.prototype.forEach.call(clone.querySelectorAll('small'), function(sm){ sm.remove(); });
+            label = clone.textContent.trim();
           }
+          if(label) frag.appendChild(link('#' + el.id, nEl ? nEl.textContent.trim() : '', label));
+        });
+        var vote = part.querySelector('#vote');
+        if(vote) frag.appendChild(link('#vote', '3.0.1', '同一场洪水，由谁裁定'));
+        if(!items.length && !vote){
+          frag.appendChild(link('#' + part.id, '·', (part.getAttribute('data-part') || '') + ' 分部'));
+        }
+      } else {
+        var cards = view.querySelectorAll('.hub-card');
+        Array.prototype.forEach.call(cards, function(card){
+          var nEl = card.querySelector('.hub-card__n');
+          var tEl = card.querySelector('.hub-card__t');
+          frag.appendChild(link(card.getAttribute('href'), nEl ? nEl.textContent.split('·')[0].trim() : '', tEl ? tEl.textContent : ''));
         });
       }
     } else {
       if(qtitle) qtitle.textContent = '三幕导览';
       [
-        ['#acts', '00', '三幕之间，是一条因果链'],
-        ['#act1', '01', '河海底蕴 · 河海讲 AI 的底气'],
-        ['#act2', '02', '数字赋能 · 换掉的是速度'],
-        ['#act3', '03', '未来之路 · 人往哪里去']
+        ['#acts', '00', '三幕相承，互为因果'],
+        ['#act1', '01', '河海的深厚学科底蕴'],
+        ['#act2', '02', 'AI时代下的传承与革新'],
+        ['#act3', '03', '未来之路由谁决定']
       ].forEach(function(r){
-        var a = document.createElement('a');
-        a.className = 'qsheet__link';
-        a.href = r[0];
-        var b = document.createElement('b'); b.textContent = r[1];
-        var s = document.createElement('span'); s.textContent = r[2];
-        a.appendChild(b); a.appendChild(s);
-        frag.appendChild(a);
+        frag.appendChild(link(r[0], r[1], r[2]));
       });
     }
     if(!frag.childNodes.length){
       var p = document.createElement('p');
       p.className = 'qsheet__empty';
-      p.textContent = '本幕暂无可跳转的目录，可直接上下滑动浏览。';
+      p.textContent = '本页暂无可跳转的条目，可直接上下滑动浏览。';
       frag.appendChild(p);
     }
     qbody.appendChild(frag);
@@ -2639,7 +2927,7 @@ body.q-lock{overflow:hidden}
   }
 
   /* ---------- vote ---------- */
-  var voteLabels = {ai:'全部交给 AI', joint:'人机共决', human:'人说了算'};
+  var voteLabels = {ai:'全部交给 AI', joint:'人机共决', human:'人最终裁定'};
   var voteOpts = document.getElementById('voteOpts');
   var voteResult = document.getElementById('voteResult');
   var voteNote = document.getElementById('voteNote');
@@ -2795,7 +3083,7 @@ body.q-lock{overflow:hidden}
   /* ---------- wall ---------- */
   var wallVotes = document.getElementById('wallVotes');
   var wallLayers = document.getElementById('wallLayers');
-  var wallAsks = document.getElementById('wallAsks');
+  var wallNotesN = document.getElementById('wallNotesN');
   var wallBars = document.getElementById('wallBars');
   var wallNotes = document.getElementById('wallNotes');
   var wallForm = document.getElementById('wallForm');
@@ -2816,7 +3104,7 @@ body.q-lock{overflow:hidden}
   function paintBars(v){
     if(!wallBars) return;
     var total = (v.ai || 0) + (v.joint || 0) + (v.human || 0) || 1;
-    wallBars.innerHTML = [['ai','全部交给 AI'],['joint','人机共决'],['human','人说了算']].map(function(x){
+    wallBars.innerHTML = [['ai','全部交给 AI'],['joint','人机共决'],['human','人最终裁定']].map(function(x){
       var p = Math.round((v[x[0]] || 0) / total * 100);
       return '<div class="wall__bar"><span>' + x[1] + '</span><i><em style="width:' + p + '%"></em></i><span>' + p + '%</span></div>';
     }).join('');
@@ -2824,7 +3112,7 @@ body.q-lock{overflow:hidden}
   function renderWall(d){
     if(wallVotes) wallVotes.textContent = d.votes_total || 0;
     if(wallLayers) wallLayers.textContent = d.layers_total || 0;
-    if(wallAsks) wallAsks.textContent = d.questions || 0;
+    if(wallNotesN) wallNotesN.textContent = d.notes || 0;
     paintBars(d.votes || {});
     if(d.recent_notes) paintNotes(d.recent_notes);
   }
@@ -2839,6 +3127,7 @@ body.q-lock{overflow:hidden}
       if(wallLayers) wallLayers.textContent = layerCount;
       var arr = [];
       try { arr = JSON.parse(localStorage.getItem(WNOTE) || '[]'); } catch(e){}
+      if(wallNotesN) wallNotesN.textContent = arr.length;
       paintNotes(arr.slice(0, 6));
     });
   }
@@ -2867,159 +3156,6 @@ body.q-lock{overflow:hidden}
     });
   }
 
-  /* ---------- ask panel ---------- */
-  var KB = [
-    {h:'学校定位', k:['河海大学','学校介绍','简介','双一流','211','985','教育部直属','几个校区','常州','江宁','西康路','历史','强不强','怎么样'], t:'河海大学是教育部直属全国重点大学，国家「双一流」建设、「211工程」重点建设、「985工程优势学科创新平台」建设高校，设有研究生院。学校源于1915年张謇创办的河海工程专门学校，是中国第一所培养水利人才的高等学府；1952年组建华东水利学院，1985年恢复「河海大学」校名。现有南京西康路、江宁和常州三个校区。', s:'来源：河海大学《学校简介》（2025-04）、2025年本科招生章程'},
-    {h:'学科评估', k:['学科评估','A+','第四轮','水利工程','土木','环境','排名','最强','实力','水平'], t:'全国第四轮学科评估（2017年公布）：河海大学水利工程获评 A+，为全国前 2% 的最高一档；土木工程、环境科学与工程为 A-，跻身全国前 10%；马克思主义理论、管理科学与工程、工商管理为 B+，位列前 20%。', s:'来源：河海大学《我校水利工程学科在第四轮学科评估中获评A+》（2017-12-29）'},
-    {h:'一流学科与国家重点学科', k:['一流学科','双一流学科','国家重点学科','港航','港口海岸','近海工程','博士点','学科链'], t:'水利工程、环境科学与工程 2 个学科入围国家「双一流」建设名单，2017、2022 两轮均在列。水利工程是 1 个一级学科国家重点学科，覆盖水文学及水资源、水力学及河流动力学、水工结构工程、水利水电工程、港口海岸及近海工程 5 个二级学科；另有 7 个二级学科国家重点学科。', s:'来源：河海大学《学校简介》、港口海岸与近海工程学院《学院概况》'},
-    {h:'水文与水资源', k:['水文','水文学及水资源','水文与水资源工程','1952','第一个水文系','陆地水文','水资源'], t:'1952 年组建华东水利学院时，建立新中国第一个水文系；1954 年开办我国第一个陆地水文本科专业。水文与水资源工程是国家级一流本科专业建设点，也是大禹学院水利类第二学期分流的三专业之一。', s:'来源：河海大学校史、大禹学院与招生信息网'},
-    {h:'港航专业', k:['港航','港口航道与海岸工程','港口海岸','近海','1957','海洋工程水文','航道'], t:'港口、海岸及近海工程是国家重点建设学科；1957 年河海设立我国第一个海洋工程水文专业。港口航道与海岸工程为国家级一流本科专业建设点，也是大禹学院水利类分流专业之一，方向包括河口海岸水沙演变、港航与近海工程结构、海岸带资源利用。', s:'来源：河海大学港航院《学院概况》、2025年招生章程'},
-    {h:'环境学科', k:['环境','环境科学','环境工程','生态','水环境'], t:'环境科学与工程是河海 2 个国家「双一流」建设学科之一，第四轮学科评估为 A-（全国前 10%）。它和水文、水工共同支撑水环境治理、河湖生态修复与水生态监测。', s:'来源：河海大学《学校简介》、第四轮学科评估结果'},
-    {h:'水利类专业与课程', k:['学什么','课程','水利类','水利水电工程','专业','就业方向','土木'], t:'水利类核心在「水—土—结构」：水力学、水文、土力学、水工结构、水电站、施工与管理。河海的水文与水资源工程、水利水电工程、港口航道与海岸工程均为国家级一流本科专业建设点；毕业去向包括流域机构、设计院、水利局、电站与继续深造。', s:'来源：河海大学招生信息网专业目录、2025年招生章程'},
-    {h:'大禹学院', k:['大禹','大禹学院','拔尖','强化班','本硕博','贯通','水利类','分流','荣誉学院','保研'], t:'大禹学院是河海的拔尖创新人才培养学院，2025 年按水利类（大禹学院）、工程力学（大禹学院）、计算机类（大禹学院）3 个专业（类）招生。水利类第二学期结束后分流到水文与水资源工程、水利水电工程、港口航道与海岸工程；实施本硕博贯通培养，2025 届升学率约 80%。', s:'来源：河海大学2025年招生章程、大禹学院《学院简介》'},
-    {h:'招生规模与专业', k:['招生','计划','5770','64个','31个省','招生专业','招多少人','名额'], t:'2025 年学校面向全国 31 个省（区、市）招收普通本科生 5770 名，招生专业 64 个。学校共有 72 个本科专业，其中 37 个为国家级一流本科专业建设点。', s:'来源：河海大学2025年本科招生章程 第三章'},
-    {h:'录取规则', k:['录取','规则','分数线','投档','调剂','级差','加分','同分','退档','填报','志愿'], t:'普通类平行志愿批次调档比例原则上不超过 105%，服从专业调剂且体检合格者不退档；顺序志愿批次原则上不超过 120%。专业志愿之间不设级差；同分依次比较语文数学总分、数学成绩。认可省级加分，不超过 20 分，加分不适用于不做分省计划的类型。', s:'来源：河海大学2025年本科招生章程 第四章'},
-    {h:'转专业', k:['转专业','换专业','转系','转出','转入','大类招生','专业分流'], t:'集中转专业在一年级下学期申请并参加学校考核，二年级上学期进入新专业；二、三年级可每学期初（前 3 周）或学期末（后 3 周）申请个别转专业。所有学生均可提出申请（不允许转专业的招生类型除外），对大一成绩没有硬性要求，转出比例不限，不受高考科类、选考、校区限制。', s:'来源：河海大学《普通全日制本科生转专业管理及实施细则（试行）》、招办答考生问'},
-    {h:'校区与就读', k:['校区','在哪','常州校区','江宁校区','西康路','南京','大一在哪','住宿'], t:'学校在南京设西康路校区（鼓楼区西康路 1 号）和江宁校区（佛城西路 8 号），在常州设常州校区（河海大道 1915 号）。本科标准学制 4 年，学生按录取专业分年级在相应校区就读。', s:'来源：河海大学2025年本科招生章程 第一章'},
-    {h:'学费与住宿费', k:['学费','多少钱','费用','住宿费','6380','5800','中外合作','河海里尔','一年'], t:'普通类专业学费为 5200—6380 元/生·年（水利类等多为 6380 元）；河海里尔学院中外合作办学专业学费为 58000 元/生·年；住宿费 900—1500 元/生·年。', s:'来源：河海大学2025年本科招生章程 第五章'},
-    {h:'奖助学金', k:['奖学金','助学金','资助','绿色通道','贷款','勤工助学','困难'], t:'学校设有 40 余项奖助学金，覆盖超过 70% 的学生；家庭经济困难学生可通过绿色通道入学，并申请国家助学贷款、勤工助学与临时困难补助。', s:'来源：河海大学2025年本科招生章程'},
-    {h:'升学与就业', k:['保研','保研率','推免','考研','升学','升学率','读研','就业','去向','落实率','95%','毕业'], t:'近年来学校毕业生去向落实率保持在 95% 以上；大禹学院 2025 届升学率约 80%。水利类毕业生主要去向为流域管理机构、水利设计院、省市水利局、水电与新能源企业，以及继续攻读硕士、博士。', s:'来源：河海大学《学校简介》、大禹学院《学院简介》'},
-    {h:'招生咨询', k:['咨询','电话','招生办','官网','联系','400-025-1915','怎么问'], t:'河海大学本科生招生办公室咨询电话：400-025-1915；招生信息网：zsw.hhu.edu.cn；学校官网：www.hhu.edu.cn。分省分专业计划以各省级招生考试机构公布为准。', s:'来源：河海大学2025年本科招生章程'},
-    {h:'45度线与蓄满产流', k:['45度','45 度','蓄满','产流','超渗','1963','赵人俊','庄一鸰','降雨径流'], t:'1961—1963 年，赵人俊在浙江、江西、湖南的百余个流域复核降雨径流关系，发现曲线高端折成一条 45 度线：湿润地区包气带蓄满后，降雨几乎全部变成径流，即「蓄满产流」。1963 年，他与庄一鸰在《华东水利学院学报》发表《降雨径流关系的区域规律》。', s:'来源：1963 年《华东水利学院学报》增刊'},
-    {h:'新安江模型', k:['新安江','模型','1973','参数','15个','7个','三分','汇流'], t:'1973 年，为编制新安江水库入库径流预报方案，赵人俊把蒸散发、产流、水源划分、汇流整合成中国第一个完整的集总式流域水文模型。不计河道演算共 15 个参数，其中 7 个敏感；结构为「三分」：分单元、分水源、分阶段。', s:'来源：河海大学校史、水文水资源学院'},
-    {h:'佛子岭连拱坝', k:['佛子岭','连拱坝','1954','汪胡桢','第一坝','水库','大坝'], t:'佛子岭水库 1952 年 1 月动工、1954 年建成，汪胡桢主持，是新中国第一座自主设计、自主施工的大型水库，也是我国第一座钢筋混凝土连拱坝：坝长 510 米，最大坝高 74.4 米（后加高至 75.9 米）。', s:'来源：安徽省水利厅《「新中国第一坝」建成70周年》、河海大学校史'},
-    {h:'南水北调泵站', k:['南水北调','东线','泵站','13级','65米','徐辉','调水'], t:'南水北调东线一期共 13 级泵站，水位差约 40 米、总扬程约 65 米。河海徐辉团队主持的「大型泵站水力系统高效运行与安全保障关键技术及应用」获 2020 年度国家科技进步二等奖。', s:'来源：南水北调东线工程公开资料、国家科技奖励公告'},
-    {h:'三峡与流域决策', k:['三峡','决策支持','调度','百座水库','实时','重大工程'], t:'流域决策支持系统应用于三峡、南水北调等百余项重大工程的实时调度管理，覆盖百余座大型水库，并接入国家防汛会商与「四预」平台。关键词是「实时」：在运行的工程上做决策支撑。', s:'来源：河海大学公开介绍'},
-    {h:'四预', k:['四预','预报','预警','预演','预控','数字孪生'], t:'「四预」是预报、预警、预演、预控的闭环：预报给出来水，预警把信息传到人，预演在数字孪生场景里把方案跑一遍，预控才落到闸门、泵站与蓄滞洪区。', s:'来源：水利部「四预」系统公开报道'},
-    {h:'人机共决', k:['人机','共决','责任','签字','四层','执行层','认知层','价值层'], t:'人机协作分四层：执行层让 AI 做重复劳动；认知层 AI 给候选、人做判断；责任层 AI 留痕、人签字；价值层由人决定防洪、供水、生态、投资哪个更重要。算法能提供证据，不能提供立场。', s:'来源：本站第三幕 3.1'},
-    {h:'宁波智能体', k:['宁波','智能体','周公宅','皎口','秒级','候选方案'], t:'宁波周公宅—皎口水库的 AI 预报调度智能体，把人工需要十几到二十分钟的方案编制压到秒级，一次生成多个候选方案。流程是「AI 初算—人工校核—正式上报」，人仍然定稿。', s:'来源：中国水利报 2026-10-24'},
-    {h:'蓄滞洪区', k:['蓄滞洪区','蒙洼','海河','东淀','转移','蓄洪'], t:'2020 年淮河蒙洼蓄洪 3.75 亿立方米，转移 2017 人，18 万亩耕地被淹；2023 年海河 8 个蓄滞洪区最大蓄洪 25.3 亿立方米，河北转移 84.74 万人；东淀最大蓄洪 8 亿立方米，过水面积 322.5 平方公里。', s:'来源：水利部与流域机构公开报道'},
-    {h:'风暴潮', k:['风暴潮','潮位','浙江','分钟级','沿海','预报'], t:'河海的风暴潮预报把精细化作业预报时效从小时级压缩到分钟级；在浙江 11 个站的最大潮位预报中，精度达到 87%，服务广东、上海、浙江等沿海防汛部门。', s:'来源：河海大学港航学院公开资料'}
-  ];
-
-  function norm(s){
-    return String(s).toLowerCase().replace(/[\s，。、？！,.?!:：；;"'“”‘’（）()【】\[\]·]/g, '');
-  }
-  function grams(s){
-    var g = {}, i;
-    for(i = 0; i < s.length - 1; i++){ g[s.substr(i, 2)] = 1; }
-    return g;
-  }
-  function scoreEntry(n, e){
-    var sc = 0, hit = 0, nlen = n.length;
-    e.k.forEach(function(k){
-      var kk = norm(k);
-      if(!kk) return;
-      if(n.indexOf(kk) >= 0){ sc += 8 + kk.length * 1.7; hit++; }
-      else if(nlen >= 2 && kk.indexOf(n) >= 0){ sc += 5; hit++; }
-    });
-    var hn = norm(e.h), tn = norm(e.t), g = grams(n), key;
-    for(key in g){
-      if(hn.indexOf(key) >= 0) sc += 3.2;
-      else if(tn.indexOf(key) >= 0) sc += 0.8;
-    }
-    if(hit >= 2) sc += 5;
-    if(hn && n.indexOf(hn) >= 0) sc += 12;
-    return sc;
-  }
-  function answerOf(q){
-    var n = norm(q);
-    if(!n) return null;
-    var best = null, bestScore = 0, second = null;
-    KB.forEach(function(e){
-      var sc = scoreEntry(n, e);
-      if(sc > bestScore){ second = best; bestScore = sc; best = e; }
-      else if(!second || sc > scoreEntry(n, second)){ second = e; }
-    });
-    if(best && bestScore >= 14){
-      return {e:best, rel: second && scoreEntry(n, second) >= 8 ? second : null};
-    }
-    return null;
-  }
-
-  var askPanel = document.getElementById('askPanel');
-  var askBackdrop = document.getElementById('askBackdrop');
-  var askOpen = document.getElementById('askOpen');
-  var askClose = document.getElementById('askClose');
-  var askForm = document.getElementById('askForm');
-  var askInput = document.getElementById('askInput');
-  var askThread = document.getElementById('askThread');
-
-  function openAsk(){
-    if(!askPanel) return;
-    askPanel.classList.add('is-open');
-    askPanel.setAttribute('aria-hidden','false');
-    askBackdrop.classList.add('in');
-    document.body.classList.add('is-locked');
-    setTimeout(function(){ if(askInput) askInput.focus(); }, 260);
-  }
-  function closeAsk(){
-    if(!askPanel) return;
-    askPanel.classList.remove('is-open');
-    askPanel.setAttribute('aria-hidden','true');
-    askBackdrop.classList.remove('in');
-    document.body.classList.remove('is-locked');
-  }
-  if(askOpen) askOpen.addEventListener('click', openAsk);
-  if(askClose) askClose.addEventListener('click', closeAsk);
-  if(askBackdrop) askBackdrop.addEventListener('click', closeAsk);
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAsk(); });
-
-  function addMsg(text, src, who){
-    if(!askThread) return;
-    var el = document.createElement('div');
-    el.className = 'msg msg--' + (who || 'bot');
-    el.textContent = text;
-    if(src){
-      var s = document.createElement('div');
-      s.className = 'msg__src';
-      s.textContent = src;
-      el.appendChild(s);
-    }
-    askThread.appendChild(el);
-    askThread.scrollTop = askThread.scrollHeight;
-  }
-
-  function ask(q){
-    q = String(q || '').trim();
-    if(!q) return;
-    addMsg(q, null, 'user');
-    var found = answerOf(q);
-    var local = function(){
-      if(found){
-        var src = found.e.s + (found.rel ? ' · 相关：' + found.rel.h : '');
-        addMsg(found.e.t, src, 'bot');
-      } else {
-        addMsg('这个问题本站知识库里没有。可以试试问：水利工程 A+、大禹学院、转专业、录取规则、学费、港航专业，或者「人机共决」。', '范围：本站 26 个知识块 · 只覆盖学科与招生', 'bot');
-      }
-    };
-    fetch('/api/ask', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({q:q})
-    }).then(function(r){
-      if(!r.ok) throw new Error('bad');
-      return r.json();
-    }).then(function(d){
-      if(!d || !d.answer){ local(); return; }
-      var src = (d.source || '本站知识库') +
-        (d.related && d.related.length ? ' · 相关：' + d.related[0].title : '');
-      addMsg(d.answer, src, 'bot');
-      refreshWall();
-    }).catch(local);
-  }
-
-  if(askForm){
-    askForm.addEventListener('submit', function(e){
-      e.preventDefault();
-      var v = askInput.value;
-      askInput.value = '';
-      ask(v);
-    });
-  }
-  Array.prototype.forEach.call(document.querySelectorAll('.ask-chip'), function(chip){
-    chip.addEventListener('click', function(){ ask(chip.textContent); });
-  });
 })();
 </script>
 </body>

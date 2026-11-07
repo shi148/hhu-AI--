@@ -3,4 +3,5 @@ _shot_*.png
 .trae-html-share-packages/
 ~$*
 app.db
+app.db-*
 __pycache__/
