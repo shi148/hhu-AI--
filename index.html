@@ -29,10 +29,10 @@ h1,h2,h3,h4,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-deco
 /* nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:80;height:52px;display:flex;align-items:center;background:rgba(255,255,255,.7);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,40,80,.08);color:var(--ink);transition:background .45s var(--ease),color .45s}
 .nav.is-solid,body.is-light-view .nav{background:rgba(255,255,255,.82);border-color:rgba(0,0,0,.1);color:var(--ink);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px)}
-.nav__inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav__inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.06em;font-weight:600;white-space:nowrap}
 .brand svg{width:20px;height:20px;opacity:.92}
-.nav__links{display:flex;align-items:center;gap:clamp(12px,2.2vw,30px);font-size:12px;letter-spacing:.06em;opacity:.84}
+.nav__links{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:clamp(12px,2.2vw,30px);font-size:12px;letter-spacing:.06em;opacity:.84}
 .nav__links a{padding:4px 0;transition:opacity .25s}.nav__links a:hover{opacity:.55}
 .nav__meta{font-size:11px;letter-spacing:.14em;opacity:.6;white-space:nowrap}
 @media(max-width:820px){.nav__links{display:none}.nav__meta{font-size:10px;letter-spacing:.1em}}
@@ -1065,7 +1065,7 @@ body.q-lock{overflow:hidden}
         </figure>
       </div>
       <figure class="shot">
-        <img src="assets/lab.jpg" alt="水工模型试验大厅：缩尺坝体与水工建筑物模型" loading="lazy" width="1264" height="656">
+        <img src="assets/lab.jpg?v=2" alt="水工模型试验大厅：缩尺坝体与水工建筑物模型" loading="lazy" decoding="async" width="1264" height="656">
         <figcaption><span><b>水工模型试验大厅</b>　缩尺坝体 · 量测断面 · 受控放水</span><span>图源：河海大学水利水电学院</span></figcaption>
       </figure>
     </div>
@@ -1110,15 +1110,15 @@ body.q-lock{overflow:hidden}
       <p class="group__d">工程层检验的是：在关键节点上，是否给出了可实施的方案。此处只保留三个项目：新中国第一座自主设计施工的大型水库、世界级调水泵站群、流域级实时调度系统。</p>
       <div class="photo-row reveal">
         <figure class="shot">
-          <img src="assets/dam.jpg" alt="佛子岭连拱坝与水库航拍" width="1000" height="563" loading="lazy">
+          <img src="assets/dam.jpg?v=2" alt="佛子岭连拱坝与水库航拍" width="1000" height="563" loading="lazy" decoding="async">
           <figcaption><b>佛子岭 · 连拱坝</b><span>图源：搜狐 ·「70 岁的新中国第一坝」</span></figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/pump.jpg" alt="江都水利枢纽航拍：南水北调东线源头" width="930" height="620" loading="lazy">
+          <img src="assets/pump.jpg?v=2" alt="江都水利枢纽航拍：南水北调东线源头" width="930" height="620" loading="lazy" decoding="async">
           <figcaption><b>南水北调 · 泵站群</b><span>图源：中新网</span></figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/three.jpg" alt="三峡大坝与泄洪航拍" width="1000" height="670" loading="lazy">
+          <img src="assets/three.jpg?v=2" alt="三峡大坝与泄洪航拍" width="1000" height="670" loading="lazy" decoding="async">
           <figcaption><b>三峡 · 流域级调度</b><span>图源：新华网</span></figcaption>
         </figure>
       </div>
@@ -1354,7 +1354,7 @@ body.q-lock{overflow:hidden}
         <div class="fact"><div class="fact__k">培养</div><div class="fact__v" style="font-size:1.4rem">本硕博贯通</div><div class="fact__s">国家级师资与课程</div></div>
       </div>
       <figure class="shot shot--43">
-        <img src="assets/dayu.jpg" alt="大禹学院 2021 届本科生毕业典礼" width="1269" height="846" loading="lazy">
+        <img src="assets/dayu.jpg?v=2" alt="大禹学院 2021 届本科生毕业典礼" width="1269" height="846" loading="lazy" decoding="async">
         <figcaption><span><b>从选拔到毕业：</b>大禹学院的培养链是贯通的，拔尖不是一次考试的结果。</span><span>图源：大禹学院官网</span></figcaption>
       </figure>
     </div>
@@ -1876,7 +1876,7 @@ body.q-lock{overflow:hidden}
         <div class="fact"><div class="fact__k">可追责</div><div class="fact__v" style="font-size:1.45rem">签发</div><div class="fact__s">谁按下那个按钮</div></div>
       </div>
       <figure class="shot">
-        <img src="assets/control.jpg" alt="气象与防汛会商室的大屏与值守人员" width="800" height="462" loading="lazy">
+        <img src="assets/control.jpg?v=2" alt="气象与防汛会商室的大屏与值守人员" width="800" height="462" loading="lazy" decoding="async">
         <figcaption><span><b>会商室里：</b>屏幕上是同一场雨，桌上是同一份责任。AI 可以把方案算到秒级，签字仍然要人。</span><span>图源：河北新闻网</span></figcaption>
       </figure>
     </div>
@@ -2081,7 +2081,7 @@ body.q-lock{overflow:hidden}
       <div class="scenario__meta"><span class="n">3.2</span><span>调度 · 从辅助到自主</span></div>
       <h3 class="scenario__title">辅助决策 → 自主调度</h3>
       <figure class="scene__shot">
-        <img src="assets/reservoir.jpg" alt="水库泄洪与下游河道航拍" width="2000" height="1334" loading="lazy">
+        <img src="assets/reservoir.jpg?v=2" alt="水库泄洪与下游河道航拍" width="1280" height="854" loading="lazy" decoding="async">
         <figcaption><span>同一场洪水，先算、再核对、最后签字。</span><span>图源：航拍四川 SCOL</span></figcaption>
       </figure>
       <div class="scenario__grid">
@@ -2110,7 +2110,7 @@ body.q-lock{overflow:hidden}
       <div class="scenario__meta"><span class="n">3.3</span><span>尺度 · 从单点到全局</span></div>
       <h3 class="scenario__title">单点流域 → 全局流域</h3>
       <figure class="scene__shot">
-        <img src="assets/network.jpg" alt="金沙江梯级水电工程与水库群航拍" width="2048" height="1535" loading="lazy">
+        <img src="assets/network.jpg?v=2" alt="金沙江梯级水电工程与水库群航拍" width="1280" height="959" loading="lazy" decoding="async">
         <figcaption><span>从一座库到一张水网：先蓄谁、后放谁，要一起算。</span><span>图源：网易新闻</span></figcaption>
       </figure>
       <div class="scenario__grid">
@@ -2139,7 +2139,7 @@ body.q-lock{overflow:hidden}
       <div class="scenario__meta"><span class="n">3.4</span><span>港航 · 从人工到自主协商</span></div>
       <h3 class="scenario__title">人工管港 → 港口自主协商</h3>
       <figure class="scene__shot">
-        <img src="assets/smartport.jpg" alt="洋山四期自动化集装箱码头" width="900" height="600" loading="lazy">
+        <img src="assets/smartport.jpg?v=2" alt="洋山四期自动化集装箱码头" width="900" height="600" loading="lazy" decoding="async">
         <figcaption><span>潮位、船期与回淤实时协商，港口开始以数据自主协商。</span><span>图源：新华网</span></figcaption>
       </figure>
       <div class="scenario__grid">
